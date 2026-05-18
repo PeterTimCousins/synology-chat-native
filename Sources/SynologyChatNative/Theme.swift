@@ -644,8 +644,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupin
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-listitem-header {
   margin: 0 20px !important;
   padding: 0 !important;
-  height: 30px !important;
-  line-height: 30px !important;
+  height: 26px !important;
+  line-height: 26px !important;
   background: transparent !important;
   border-bottom: 1px solid #2b3748 !important;
   box-sizing: border-box !important;
@@ -655,7 +655,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupin
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem {
   padding: 0 20px !important;
   box-sizing: border-box !important;
-  line-height: 36px !important;
+  height: 34px !important;
+  line-height: 34px !important;
   background: transparent !important;
   color: #a7b2c4 !important;
   white-space: nowrap !important;
