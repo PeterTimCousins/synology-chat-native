@@ -216,6 +216,15 @@ html[data-scn-theme="modernDark"] body.syno-chat .msgs {
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel > .x-panel-bwrap > .x-panel-body {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  overflow: hidden !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .msg-title {
   color: #7fb2ff !important;
 }
@@ -281,7 +290,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
-  background: transparent !important;
+  background: #121b27 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-line {
