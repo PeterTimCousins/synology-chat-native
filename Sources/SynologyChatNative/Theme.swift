@@ -264,7 +264,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
-  background: #111822 !important;
+  background: #151c28 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-line {
@@ -274,7 +274,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .d
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-text {
-  background: #111822 !important;
+  background: #151c28 !important;
   color: #a9b6c8 !important;
 }
 
@@ -302,26 +302,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-contenteditable-field.x-f
   color: #7f8da1 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn,
-html[data-scn-theme="modernDark"] body.syno-chat .button-wrap .x-btn {
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons {
   background: transparent !important;
-  border-color: transparent !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn:hover {
-  background: transparent !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn-text,
-html[data-scn-theme="modernDark"] body.syno-chat .button-wrap .x-btn-text {
-  background-color: transparent !important;
-  opacity: .78 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn:hover .x-btn-text {
-  opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-send-btn:not(.x-item-disabled) {
