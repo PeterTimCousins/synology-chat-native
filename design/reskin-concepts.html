@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synology Chat Native Reskin Concepts</title>
+  <style>
+    :root {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      color-scheme: dark;
+      letter-spacing: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #0f141c;
+      color: var(--text);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .concept-switcher {
+      position: fixed;
+      z-index: 20;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--stroke);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--panel) 92%, transparent);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .28);
+    }
+
+    .concept-switcher button {
+      height: 30px;
+      padding: 0 12px;
+      border: 0;
+      border-radius: 7px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .concept-switcher button.active {
+      color: var(--button-text);
+      background: var(--accent);
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 252px minmax(0, 1fr);
+      grid-template-rows: 64px minmax(0, 1fr);
+      height: 100vh;
+      background: var(--app);
+    }
+
+    .chat-win-topbar-dsm7 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 252px minmax(280px, 1fr) auto;
+      align-items: center;
+      min-height: 64px;
+      padding: 0 16px 0 14px;
+      border-bottom: 1px solid var(--stroke);
+      background: var(--topbar);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-strong);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--button-text);
+      background: var(--brand);
+      font-weight: 800;
+    }
+
+    .smart-search-ct-dsm7 {
+      justify-self: center;
+      width: min(430px, 100%);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid var(--control-stroke);
+      border-radius: var(--control-radius);
+      background: var(--control);
+      color: var(--muted);
+    }
+
+    .chat-searchfield {
+      flex: 1;
+      min-width: 0;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topbar-btn {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--control-stroke);
+      border-radius: var(--icon-radius);
+      color: var(--muted);
+      background: var(--control);
+    }
+
+    .avatar {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--avatar-radius);
+      background: linear-gradient(135deg, #8b7357, #2f271f);
+      border: 1px solid var(--control-stroke);
+    }
+
+    .status-dot {
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #54c16b;
+      border: 2px solid var(--topbar);
+    }
+
+    .channel-list-main {
+      min-height: 0;
+      overflow: auto;
+      padding: 14px 12px;
+      border-right: 1px solid var(--stroke);
+      background: var(--sidebar);
+    }
+
+    .jump-to-button {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      margin-bottom: 18px;
+      border: 1px solid var(--control-stroke);
+      border-radius: var(--control-radius);
+      color: var(--muted);
+      background: var(--control);
+    }
+
+    .channel-list-group {
+      margin-bottom: 20px;
+    }
+
+    .channel-list-group-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 24px;
+      padding: 0 8px;
+      color: var(--label);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .channel-list-item {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px;
+      margin: 2px 0;
+      border-radius: var(--row-radius);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .channel-list-item.selected {
+      color: var(--selected-text);
+      background: var(--selected);
+    }
+
+    .channel-list-item:hover {
+      background: var(--hover);
+    }
+
+    .presence {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #57b96b;
+    }
+
+    .presence.offline {
+      background: transparent;
+      border: 2px solid var(--control-stroke);
+    }
+
+    .chat-content-panel {
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: 78px minmax(0, 1fr) auto;
+      background: var(--message-bg);
+    }
+
+    .msg-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 0;
+      padding: 0 22px;
+      border-bottom: 1px solid var(--stroke);
+      color: var(--text-strong);
+      background: var(--message-bg);
+    }
+
+    .msg-title-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 22px;
+      font-weight: 750;
+    }
+
+    .title-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-msgview {
+      min-height: 0;
+      overflow: auto;
+      padding: 18px 22px 22px;
+      background: var(--message-bg);
+    }
+
+    .date-splitter-wrapper {
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+      gap: 10px;
+      align-items: center;
+      margin: 4px 0 16px;
+      color: var(--label);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .date-splitter-line {
+      height: 1px;
+      background: var(--stroke);
+    }
+
+    .date-splitter-text {
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: var(--date-pill);
+    }
+
+    .item-wrap {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 12px;
+      padding: 8px 10px;
+      border-radius: var(--row-radius);
+    }
+
+    .item-wrap:hover {
+      background: var(--hover);
+    }
+
+    .msg-avatar-icon,
+    .fake-avatar {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--avatar-radius);
+      color: white;
+      background: linear-gradient(135deg, #15b8c3, #3b82f6);
+      font-weight: 800;
+    }
+
+    .msg-user-name {
+      display: inline;
+      margin-right: 8px;
+      color: var(--text-strong);
+      font-weight: 750;
+    }
+
+    .msg-post-time {
+      color: var(--label);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .msg-text {
+      margin-top: 3px;
+      color: var(--text);
+      line-height: 1.42;
+      font-size: 14px;
+    }
+
+    .attachment {
+      width: min(420px, 80%);
+      aspect-ratio: 16 / 9;
+      margin-top: 8px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--media-radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+        repeating-linear-gradient(0deg, var(--media-line), var(--media-line) 1px, transparent 1px, transparent 18px),
+        var(--media);
+    }
+
+    .chat-input-aria-main-v2 {
+      padding: 16px 22px 18px;
+      border-top: 1px solid var(--stroke);
+      background: var(--composer-bg);
+    }
+
+    .msg-inputarea-textarea-wrap {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      border: 1px solid var(--control-stroke);
+      border-radius: var(--composer-radius);
+      color: var(--muted);
+      background: var(--composer-field);
+    }
+
+    .msg-inputarea-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 36px;
+      margin-top: 8px;
+    }
+
+    .tool-btn {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: var(--icon-radius);
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .tool-btn:hover {
+      color: var(--text);
+      background: var(--hover);
+    }
+
+    .send-btn {
+      margin-left: auto;
+      height: 30px;
+      min-width: 82px;
+      border: 0;
+      border-radius: var(--button-radius);
+      color: var(--button-text);
+      background: var(--send);
+      font-weight: 700;
+    }
+
+    body.graphite {
+      --app: #0e141d;
+      --topbar: #111924;
+      --sidebar: #111823;
+      --message-bg: #121b27;
+      --composer-bg: #121b27;
+      --composer-field: #0d131c;
+      --panel: #151e2b;
+      --control: #141d2a;
+      --control-stroke: #2b3748;
+      --stroke: #253142;
+      --hover: rgba(255,255,255,.045);
+      --selected: #263a58;
+      --selected-text: #ffffff;
+      --date-pill: #121b27;
+      --brand: #6fcb35;
+      --accent: #2f7df6;
+      --send: #5abf73;
+      --button-text: #ffffff;
+      --text: #dbe5f2;
+      --text-strong: #f5f8fc;
+      --muted: #9aa8bb;
+      --label: #8190a5;
+      --media: #1f2937;
+      --media-line: rgba(255,255,255,.05);
+      --control-radius: 10px;
+      --composer-radius: 10px;
+      --row-radius: 8px;
+      --button-radius: 7px;
+      --icon-radius: 8px;
+      --avatar-radius: 50%;
+      --media-radius: 8px;
+    }
+
+    body.midnight {
+      --app: #090c13;
+      --topbar: #0d111b;
+      --sidebar: #0b1019;
+      --message-bg: #0e1420;
+      --composer-bg: #0e1420;
+      --composer-field: #101929;
+      --panel: #121b2b;
+      --control: #111a2a;
+      --control-stroke: #273656;
+      --stroke: #202c43;
+      --hover: rgba(111, 164, 255, .08);
+      --selected: rgba(88, 166, 255, .18);
+      --selected-text: #f4f8ff;
+      --date-pill: #0e1420;
+      --brand: #37c5d6;
+      --accent: #4f8ef7;
+      --send: #4f8ef7;
+      --button-text: #ffffff;
+      --text: #d7e4f7;
+      --text-strong: #f5f9ff;
+      --muted: #93a6c4;
+      --label: #778aaa;
+      --media: #162033;
+      --media-line: rgba(106, 145, 210, .08);
+      --control-radius: 12px;
+      --composer-radius: 12px;
+      --row-radius: 10px;
+      --button-radius: 9px;
+      --icon-radius: 50%;
+      --avatar-radius: 12px;
+      --media-radius: 10px;
+    }
+
+    body.quartz {
+      color-scheme: light;
+      --app: #edf2f7;
+      --topbar: #ffffff;
+      --sidebar: #f4f7fb;
+      --message-bg: #ffffff;
+      --composer-bg: #ffffff;
+      --composer-field: #f8fafc;
+      --panel: #ffffff;
+      --control: #eef3f9;
+      --control-stroke: #d4deeb;
+      --stroke: #dde6f1;
+      --hover: #f1f5fa;
+      --selected: #dbeafe;
+      --selected-text: #10223d;
+      --date-pill: #ffffff;
+      --brand: #61bd35;
+      --accent: #0969da;
+      --send: #238636;
+      --button-text: #ffffff;
+      --text: #1f2937;
+      --text-strong: #111827;
+      --muted: #667085;
+      --label: #7b8794;
+      --media: #e8eef6;
+      --media-line: rgba(20, 45, 75, .06);
+      --control-radius: 10px;
+      --composer-radius: 10px;
+      --row-radius: 8px;
+      --button-radius: 7px;
+      --icon-radius: 8px;
+      --avatar-radius: 50%;
+      --media-radius: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        grid-template-columns: 82px minmax(0, 1fr);
+      }
+
+      .chat-win-topbar-dsm7 {
+        grid-template-columns: 82px minmax(160px, 1fr) auto;
+      }
+
+      .brand span,
+      .channel-list-group-name,
+      .channel-list-item .name,
+      .jump-to-button span {
+        display: none;
+      }
+
+      .channel-list-main {
+        padding-inline: 10px;
+      }
+
+      .channel-list-item {
+        justify-content: center;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body class="graphite">
+  <main class="shell">
+    <header class="chat-win-topbar-dsm7">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <span>Synology Chat</span>
+      </div>
+
+      <div class="smart-search-ct-dsm7">
+        <span>Search</span>
+        <div class="chat-searchfield">in:@MySpace</div>
+      </div>
+
+      <div class="top-actions">
+        <button class="topbar-btn" aria-label="Tasks">✓</button>
+        <button class="topbar-btn" aria-label="Apps">▦</button>
+        <button class="topbar-btn" aria-label="Notifications">●</button>
+        <div class="avatar" aria-label="Account"><span class="status-dot"></span></div>
+      </div>
+    </header>
+
+    <aside class="channel-list-main">
+      <div class="jump-to-button"><span>Find</span></div>
+
+      <section class="channel-list-group">
+        <div class="channel-list-group-name">Channels <span>+</span></div>
+        <div class="channel-list-item"><span>#</span><span class="name">General</span></div>
+        <div class="channel-list-item"><span>#</span><span class="name">Random</span></div>
+      </section>
+
+      <section class="channel-list-group">
+        <div class="channel-list-group-name">Conversations <span>+</span></div>
+        <div class="channel-list-item selected"><span>◆</span><span class="name">My Space</span></div>
+        <div class="channel-list-item"><span class="presence"></span><span class="name">Dariusz Stopczyk</span></div>
+        <div class="channel-list-item"><span class="presence"></span><span class="name">Katie Cousins</span></div>
+        <div class="channel-list-item"><span class="presence"></span><span class="name">Maddy Harker</span></div>
+        <div class="channel-list-item"><span class="presence offline"></span><span class="name">Photography</span></div>
+      </section>
+
+      <section class="channel-list-group">
+        <div class="channel-list-group-name">Bots <span>+</span></div>
+        <div class="channel-list-item"><span>▣</span><span class="name">Calendar</span></div>
+        <div class="channel-list-item"><span>▣</span><span class="name">Synology_Drive</span></div>
+      </section>
+    </aside>
+
+    <section class="chat-content-panel">
+      <div class="msg-title">
+        <div class="msg-title-main"><span>★</span><span>My Space</span></div>
+        <div class="title-actions">
+          <button class="topbar-btn" aria-label="Tools">⌘</button>
+          <button class="topbar-btn" aria-label="People">●</button>
+          <button class="topbar-btn" aria-label="Panel">▣</button>
+        </div>
+      </div>
+
+      <div class="chat-msgview">
+        <div class="date-splitter-wrapper">
+          <div class="date-splitter-line"></div>
+          <div class="date-splitter-text">12-12-2025</div>
+          <div class="date-splitter-line"></div>
+        </div>
+
+        <div class="item-wrap">
+          <div class="fake-avatar">P</div>
+          <div class="msg-wrap">
+            <div>
+              <span class="msg-user-name">Peter Cousins</span>
+              <span class="msg-post-time">12:22 pm</span>
+            </div>
+            <div class="msg-text">Uploaded a file: <a>image.png</a></div>
+            <div class="attachment"></div>
+          </div>
+        </div>
+
+        <div class="item-wrap">
+          <div class="fake-avatar">K</div>
+          <div class="msg-wrap">
+            <div>
+              <span class="msg-user-name">Katie Cousins</span>
+              <span class="msg-post-time">12:27 pm</span>
+            </div>
+            <div class="msg-text">That is the one. Send it over when ready.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-aria-main-v2">
+        <div class="msg-inputarea-textarea-wrap">
+          <div class="msg-inputarea-textarea">Write a message in My Space</div>
+        </div>
+        <div class="msg-inputarea-buttons">
+          <button class="tool-btn" aria-label="Emoji">○</button>
+          <button class="tool-btn" aria-label="Upload">⇧</button>
+          <button class="tool-btn" aria-label="Snippet">{ }</button>
+          <button class="tool-btn" aria-label="Poll">☑</button>
+          <button class="tool-btn" aria-label="Image">▧</button>
+          <button class="send-btn">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="concept-switcher" aria-label="Concept switcher">
+    <button class="active" data-theme="graphite">Graphite</button>
+    <button data-theme="midnight">Midnight</button>
+    <button data-theme="quartz">Quartz</button>
+  </nav>
+
+  <script>
+    const buttons = document.querySelectorAll('.concept-switcher button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        document.body.className = button.dataset.theme;
+        buttons.forEach((item) => item.classList.toggle('active', item === button));
+      });
+    });
+  </script>
+</body>
+</html>
