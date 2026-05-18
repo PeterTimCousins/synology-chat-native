@@ -386,18 +386,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:
   width: 20px !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:after {
-  border-bottom: 2px solid #ffffff !important;
-  border-right: 2px solid #ffffff !important;
-  content: "" !important;
-  height: 6px !important;
-  left: 14px !important;
-  position: absolute !important;
-  top: 10px !important;
-  transform: rotate(45deg) !important;
-  width: 6px !important;
-}
-
 html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn {
   background: #182333 !important;
   border: 1px solid #2b3748 !important;
