@@ -159,9 +159,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-searchfield {
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main,
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main .contentwrapper,
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-container,
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-view {
-  background: #111823 !important;
+  background: #12141a !important;
   color: #d9e1ec !important;
 }
 
@@ -169,7 +171,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .x-border-panel:has(.jump-to-bu
 html[data-scn-theme="modernDark"] body.syno-chat .x-border-panel:has(.channel-list-main),
 html[data-scn-theme="modernDark"] body.syno-chat .x-panel:has(.channel-list-main),
 html[data-scn-theme="modernDark"] body.syno-chat .x-panel-body:has(.channel-list-main) {
-  background: #111823 !important;
+  background: #12141a !important;
   border-color: #253142 !important;
 }
 
