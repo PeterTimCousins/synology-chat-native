@@ -365,7 +365,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text {
-  background: none !important;
+  background-color: transparent !important;
   color: #d7e4f7 !important;
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -373,17 +373,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text 
   line-height: 30px !important;
   padding: 0 15px 0 35px !important;
   position: relative !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:before {
-  background: #6f7c8e !important;
-  border-radius: 999px !important;
-  content: "" !important;
-  height: 20px !important;
-  left: 8px !important;
-  position: absolute !important;
-  top: 5px !important;
-  width: 20px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn {
