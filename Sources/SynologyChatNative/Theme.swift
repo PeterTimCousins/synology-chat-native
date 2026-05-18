@@ -935,14 +935,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog textare
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-wrap {
   position: relative !important;
-  border: 1px solid #2b3748 !important;
+  border: 0 !important;
   box-sizing: border-box !important;
   overflow: visible !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-wrap input.x-form-text {
-  border: 0 !important;
-  padding-right: 32px !important;
+  border: 1px solid #2b3748 !important;
+  border-right: 0 !important;
+  box-sizing: border-box !important;
+  height: 30px !important;
+  padding-right: 8px !important;
+  width: calc(100% - 41px) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog input.x-form-text:focus,
@@ -952,37 +956,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog textare
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-trigger {
   background: #0d131c !important;
-  background-image: none !important;
-  border: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  box-sizing: border-box !important;
   filter: none !important;
+  height: 30px !important;
   opacity: 1 !important;
   position: relative !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:before {
-  content: "" !important;
-  position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 1px !important;
-  background: #2b3748 !important;
-  pointer-events: none !important;
-  z-index: 3 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:after {
-  content: "" !important;
-  position: absolute !important;
-  right: 13px !important;
-  top: 50% !important;
-  width: 7px !important;
-  height: 7px !important;
-  border-right: 2px solid #93a6c4 !important;
-  border-bottom: 2px solid #93a6c4 !important;
-  transform: translateY(-65%) rotate(45deg) !important;
-  pointer-events: none !important;
-  z-index: 4 !important;
+  width: 41px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-wrap,
