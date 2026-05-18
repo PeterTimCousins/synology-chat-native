@@ -29,11 +29,11 @@ enum Theme: String, CaseIterable {
           const theme = \(rawValue.javaScriptLiteral);
           const css = \(css.javaScriptLiteral);
           const root = document.documentElement;
-          root.dataset.scnTheme = theme;
 
           let style = document.getElementById(id);
           if (theme === 'original' || !css.trim()) {
             if (style) style.remove();
+            delete root.dataset.scnTheme;
             return;
           }
 
@@ -43,6 +43,34 @@ enum Theme: String, CaseIterable {
             document.head.appendChild(style);
           }
           style.textContent = css;
+
+          const chatSelectors = [
+            '.syno-chat',
+            '.chat-msgview',
+            '.chat-msginput',
+            '.chat-msg-list',
+            '[class*="chat-msg"]',
+            '[class*="chat-channel"]',
+            '[class*="chat-room"]'
+          ];
+
+          const applyWhenChatIsReady = () => {
+            const chatRoot = chatSelectors.some((selector) => document.querySelector(selector));
+            if (chatRoot) {
+              root.dataset.scnTheme = theme;
+            } else {
+              delete root.dataset.scnTheme;
+            }
+          };
+
+          applyWhenChatIsReady();
+          if (!window.__synologyChatNativeThemeObserver) {
+            window.__synologyChatNativeThemeObserver = new MutationObserver(applyWhenChatIsReady);
+            window.__synologyChatNativeThemeObserver.observe(document.documentElement, {
+              childList: true,
+              subtree: true
+            });
+          }
         })();
         """
     }
@@ -75,7 +103,7 @@ private extension String {
 }
 
 private let modernDarkCSS = """
-:root {
+html[data-scn-theme="modernDark"] {
   color-scheme: dark;
 }
 
@@ -200,7 +228,7 @@ html[data-scn-theme="modernDark"] ::selection {
 """
 
 private let modernLightCSS = """
-:root {
+html[data-scn-theme="modernLight"] {
   color-scheme: light;
 }
 
