@@ -878,7 +878,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-m
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-modal-tab-panel .x-tab-strip-active .x-tab-strip-inner {
-  border-bottom: 3px solid #4fb76a !important;
+  border-bottom: 2px solid #4fb76a !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-modal-tab-panel .x-tab-strip-text,
