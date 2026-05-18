@@ -14,6 +14,16 @@ https://costwisegroup.synology.me:2891/?launchApp=SYNO.SDS.Chat.Application#chan
 
 You can change it from `Synology Chat Native > Settings...`.
 
+## Themes
+
+Settings includes three theme modes:
+
+- `Modern Dark`: Default. Applies a dark, more current visual layer over Synology Chat.
+- `Modern Light`: Keeps the app bright but removes some of the older visual weight.
+- `Original Synology`: Removes the wrapper theme and leaves the web app untouched.
+
+The themes are CSS-only. They do not intercept requests, modify authentication, replace routes, or alter how Synology Chat loads and sends messages.
+
 ## Build
 
 ```sh
@@ -31,6 +41,7 @@ The packaged app is ad-hoc signed for local use.
 - Opens external links in the default browser.
 - Supports back, forward, reload, and home commands from the menu.
 - Allows the server URL to be changed without rebuilding.
+- Adds selectable CSS-only themes.
 
 ## Notes
 

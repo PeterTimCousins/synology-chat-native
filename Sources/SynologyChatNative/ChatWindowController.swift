@@ -9,6 +9,7 @@ final class ChatWindowController: NSWindowController {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .default()
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.userContentController.addUserScript(Theme.current.userScript)
 
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsBackForwardNavigationGestures = true
@@ -59,6 +60,16 @@ final class ChatWindowController: NSWindowController {
         webView.reload()
     }
 
+    func applyTheme() {
+        webView.evaluateJavaScript(Theme.current.installScript)
+        switch Theme.current {
+        case .original, .modernLight:
+            window?.appearance = NSAppearance(named: .aqua)
+        case .modernDark:
+            window?.appearance = NSAppearance(named: .darkAqua)
+        }
+    }
+
     private func configureContentView() {
         guard let contentView = window?.contentView else { return }
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +108,7 @@ extension ChatWindowController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         progressIndicator.stopAnimation(nil)
+        applyTheme()
         window?.title = webView.title?.isEmpty == false ? webView.title! : "Synology Chat"
     }
 

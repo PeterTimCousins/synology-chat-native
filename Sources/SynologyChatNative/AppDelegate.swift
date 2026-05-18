@@ -6,7 +6,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         UserDefaults.standard.register(defaults: [
-            Defaults.chatURL: "https://costwisegroup.synology.me:2891/?launchApp=SYNO.SDS.Chat.Application#channels/11"
+            Defaults.chatURL: "https://costwisegroup.synology.me:2891/?launchApp=SYNO.SDS.Chat.Application#channels/11",
+            Defaults.theme: Theme.modernDark.rawValue
         ])
 
         let controller = ChatWindowController()
