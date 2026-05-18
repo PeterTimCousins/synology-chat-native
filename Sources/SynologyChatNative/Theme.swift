@@ -165,6 +165,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-view {
   color: #d9e1ec !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .x-border-panel:has(.jump-to-button),
+html[data-scn-theme="modernDark"] body.syno-chat .x-border-panel:has(.channel-list-main),
+html[data-scn-theme="modernDark"] body.syno-chat .x-panel:has(.channel-list-main),
+html[data-scn-theme="modernDark"] body.syno-chat .x-panel-body:has(.channel-list-main) {
+  background: #111823 !important;
+  border-color: #253142 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .jump-to-button {
   background: #141d2a !important;
   border: 1px solid #2b3748 !important;
