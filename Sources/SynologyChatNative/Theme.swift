@@ -958,17 +958,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
   position: relative !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-trigger:after {
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:after {
   content: "" !important;
   position: absolute !important;
-  left: 50% !important;
+  right: 11px !important;
   top: 50% !important;
   width: 7px !important;
   height: 7px !important;
   border-right: 2px solid #93a6c4 !important;
   border-bottom: 2px solid #93a6c4 !important;
-  transform: translate(-50%, -65%) rotate(45deg) !important;
+  transform: translateY(-65%) rotate(45deg) !important;
   pointer-events: none !important;
+  z-index: 2 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-wrap,
