@@ -454,6 +454,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .chat-infini
   border-color: #2b3748 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-panel-body {
+  padding: 0 16px 16px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-inner {
+  width: auto !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-grouping-topblock,
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .chat-grouping-topblock,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .x-panel-header {
@@ -468,6 +476,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .item-wrap,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .chat-search-result-item {
   background: transparent !important;
   color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .x-view-selected *,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-view-selected * {
+  background: #182333 !important;
+  color: #f4f8ff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .one-row:hover,
@@ -600,6 +616,17 @@ html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-strip-activ
 
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip-text {
   color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-edge,
+html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-edge * {
+  background: transparent !important;
+  border: 0 !important;
+  min-width: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-edge .x-tab-strip-text {
+  color: transparent !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat input,
