@@ -263,6 +263,21 @@ html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
   padding: 2px 9px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
+  background: #111822 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-line {
+  background: transparent !important;
+  border-top: 1px solid #2a3547 !important;
+  height: 1px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-text {
+  background: #111822 !important;
+  color: #a9b6c8 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-input-aria-main-v2,
 html[data-scn-theme="modernDark"] body.syno-chat .msg-edit-input,
 html[data-scn-theme="modernDark"] body.syno-chat .msg-panel .x-panel-footer,
@@ -290,13 +305,23 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-contenteditable-field.x-f
 html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .button-wrap .x-btn {
   background: transparent !important;
-  border: 1px solid #2c384b !important;
-  border-radius: 7px !important;
+  border-color: transparent !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn:hover {
-  background: #1b2534 !important;
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn-text,
+html[data-scn-theme="modernDark"] body.syno-chat .button-wrap .x-btn-text {
+  background-color: transparent !important;
+  opacity: .78 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn:hover .x-btn-text {
+  opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-send-btn:not(.x-item-disabled) {
