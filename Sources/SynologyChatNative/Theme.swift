@@ -953,6 +953,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
   background: #0d131c !important;
   background-image: none !important;
   border: 0 !important;
+  border-right: 1px solid #2b3748 !important;
   filter: none !important;
   opacity: 1 !important;
   position: relative !important;
