@@ -1,0 +1,87 @@
+import AppKit
+
+final class SettingsWindowController: NSWindowController {
+    static let shared = SettingsWindowController()
+
+    private let urlField = NSTextField()
+    private weak var chatWindowController: ChatWindowController?
+
+    private init() {
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 640, height: 160),
+            styleMask: [.titled, .closable],
+            backing: .buffered,
+            defer: false
+        )
+        window.title = "Settings"
+        super.init(window: window)
+        configureContentView()
+    }
+
+    required init?(coder: NSCoder) {
+        nil
+    }
+
+    func show(for controller: ChatWindowController) {
+        chatWindowController = controller
+        urlField.stringValue = UserDefaults.standard.string(forKey: Defaults.chatURL) ?? ""
+        window?.center()
+        showWindow(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    private func configureContentView() {
+        guard let contentView = window?.contentView else { return }
+
+        let label = NSTextField(labelWithString: "Synology Chat URL")
+        let saveButton = NSButton(title: "Save and Reload", target: self, action: #selector(saveAndReload))
+        let cancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancel))
+
+        urlField.placeholderString = "https://example.synology.me:5001/?launchApp=SYNO.SDS.Chat.Application"
+
+        for view in [label, urlField, saveButton, cancelButton] {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(view)
+        }
+
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+
+            urlField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            urlField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            urlField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 8),
+
+            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+
+            cancelButton.trailingAnchor.constraint(equalTo: saveButton.leadingAnchor, constant: -10),
+            cancelButton.centerYAnchor.constraint(equalTo: saveButton.centerYAnchor)
+        ])
+    }
+
+    @objc private func saveAndReload() {
+        let value = urlField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: value), url.scheme == "https" || url.scheme == "http" else {
+            showInvalidURLAlert()
+            return
+        }
+
+        UserDefaults.standard.set(value, forKey: Defaults.chatURL)
+        close()
+        chatWindowController?.loadHome()
+    }
+
+    @objc private func cancel() {
+        close()
+    }
+
+    private func showInvalidURLAlert() {
+        let alert = NSAlert()
+        alert.messageText = "Invalid URL"
+        alert.informativeText = "Enter a full Synology Chat URL starting with https:// or http://."
+        alert.alertStyle = .warning
+        alert.beginSheetModal(for: window!)
+    }
+}
