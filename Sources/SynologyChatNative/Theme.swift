@@ -455,11 +455,26 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .chat-infini
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-panel-body {
-  padding: 0 16px 16px !important;
+  padding: 0 20px 16px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-inner {
   width: auto !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-item,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .flexcrollactive,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .scrollwrapper {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-item:not(.chat-grouping-topblock),
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .flexcrollactive {
+  left: 20px !important;
+  width: calc(100% - 40px) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-grouping-topblock,
@@ -486,9 +501,24 @@ html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-view-sele
   color: #f4f8ff !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .x-view-over,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .x-view-over *,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-view-over,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-view-over *,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .dataview-item-over,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .dataview-item-over *,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .dataview-item-over,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .dataview-item-over * {
+  background: #182333 !important;
+  color: #f4f8ff !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .one-row:hover,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .search-option:hover,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .item:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .channel-list-item:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .member-list-item:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .conversation-list-item:hover,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .item-wrap:hover,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .chat-search-result-item:hover {
   background: #182333 !important;
@@ -569,7 +599,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-profile-card {
 html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window),
 html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-window-mc,
 html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-panel-bwrap,
 html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-tab-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window:not(.chat-standalone-window) .x-tab-panel-body,
 html[data-scn-theme="modernDark"] body.syno-chat .syno-d-package-window,
 html[data-scn-theme="modernDark"] body.syno-chat .syno-d-package-window-body {
   background: #111a2a !important;
@@ -603,15 +638,17 @@ html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip li,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-right,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-left,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip-inner {
-  background: #182333 !important;
-  border-color: #2b3748 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-strip-active,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-strip-active .x-tab-right,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-strip-active .x-tab-left,
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip .x-tab-strip-active .x-tab-strip-inner {
-  background: #223555 !important;
+  background: transparent !important;
+  border-bottom: 3px solid #4fb76a !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .x-tab-strip-text {
