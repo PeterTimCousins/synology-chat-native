@@ -1301,6 +1301,29 @@ html[data-scn-theme="modernDark"] body.syno-chat .x-btn.syno-ux-button-grey .x-b
   color: #253142 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn button,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn .x-btn-text {
+  background: #182333 !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn {
+  border: 1px solid #2b3748 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn button {
+  border: 0 !important;
+  border-radius: 999px !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat ::selection {
   background: rgba(79, 142, 247, .42) !important;
 }
