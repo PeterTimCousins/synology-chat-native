@@ -583,11 +583,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .chat-infini
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-panel-body {
-  padding: 0 20px 16px !important;
+  padding: 0 0 14px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-inner {
-  width: auto !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel,
@@ -601,8 +601,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .scrollwrapp
 
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .x-box-item:not(.chat-grouping-topblock),
 html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .flexcrollactive {
-  left: 20px !important;
-  width: calc(100% - 40px) !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-grouping-topblock,
@@ -610,6 +610,71 @@ html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel .chat-groupi
 html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel .x-panel-header {
   background: #111a2a !important;
   border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist {
+  background: #111a2a !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .x-box-inner,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .x-box-item,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist [style*="background-color: rgb(255, 255, 255)"] {
+  background: #111a2a !important;
+  color: #d7e4f7 !important;
+  border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-grouping-topblock {
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  line-height: 46px !important;
+  font-weight: 700 !important;
+  color: #d7e4f7 !important;
+  text-align: left !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-listitem-header {
+  margin: 0 20px !important;
+  padding: 0 !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  background: transparent !important;
+  border-bottom: 1px solid #2b3748 !important;
+  box-sizing: border-box !important;
+  color: #58c56f !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem {
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  line-height: 36px !important;
+  background: transparent !important;
+  color: #a7b2c4 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem .highlight {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+  font-weight: 700 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem:hover *,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem.x-view-over,
+html[data-scn-theme="modernDark"] body.syno-chat .search-list-panel.chat-groupinglist .chat-searchitem.x-view-over * {
+  background: #182333 !important;
+  color: #f4f8ff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist .one-row,
