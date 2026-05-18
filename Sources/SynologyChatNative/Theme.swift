@@ -1006,26 +1006,49 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-g
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn button {
   background: #182333 !important;
+  background-image: none !important;
   border-color: #2b3748 !important;
   color: #d7e4f7 !important;
   border-radius: 999px !important;
   box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn {
+  border: 1px solid #2b3748 !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn button {
+  border: 0 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn button {
   background: #2f7df6 !important;
+  background-image: none !important;
   border-color: #2f7df6 !important;
   color: #ffffff !important;
   border-radius: 999px !important;
   box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn {
+  border: 1px solid #2f7df6 !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-green-btn button {
+  border: 0 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn.x-item-disabled,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn.x-item-disabled em,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn.x-item-disabled button {
   background: #182333 !important;
+  background-image: none !important;
   border-color: #2b3748 !important;
   color: #71819a !important;
   opacity: 1 !important;
