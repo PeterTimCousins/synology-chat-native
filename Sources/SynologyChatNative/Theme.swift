@@ -45,10 +45,12 @@ enum Theme: String, CaseIterable {
           style.textContent = css;
 
           const chatSelectors = [
-            '.syno-chat',
             '.chat-msgview',
             '.chat-msginput',
             '.chat-msg-list',
+            '.channel-list-main',
+            '.chat-input-aria-main-v2',
+            '.msg-inputarea-textarea',
             '[class*="chat-msg"]',
             '[class*="chat-channel"]',
             '[class*="chat-room"]'
@@ -107,123 +109,198 @@ html[data-scn-theme="modernDark"] {
   color-scheme: dark;
 }
 
-html[data-scn-theme="modernDark"],
-html[data-scn-theme="modernDark"] body {
-  background: #111318 !important;
-  color: #edf0f4 !important;
-}
-
-html[data-scn-theme="modernDark"] body,
-html[data-scn-theme="modernDark"] input,
-html[data-scn-theme="modernDark"] textarea,
-html[data-scn-theme="modernDark"] button,
-html[data-scn-theme="modernDark"] select {
+html[data-scn-theme="modernDark"] body.syno-chat,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-mc,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-content-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-content-panel > .x-panel-bwrap > .x-panel-body {
+  background: #0f141c !important;
+  color: #edf2f7 !important;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif !important;
 }
 
-html[data-scn-theme="modernDark"] .x-border-layout-ct,
-html[data-scn-theme="modernDark"] .x-panel,
-html[data-scn-theme="modernDark"] .x-panel-body,
-html[data-scn-theme="modernDark"] .x-window,
-html[data-scn-theme="modernDark"] .x-container,
-html[data-scn-theme="modernDark"] [class*="syno"],
-html[data-scn-theme="modernDark"] [class*="Syno"] {
-  background-color: #111318 !important;
-  color: #edf0f4 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-win-topbar-dsm7 {
+  background: #111822 !important;
+  border-bottom: 1px solid #273143 !important;
+  box-shadow: none !important;
 }
 
-html[data-scn-theme="modernDark"] [class*="toolbar"],
-html[data-scn-theme="modernDark"] [class*="header"],
-html[data-scn-theme="modernDark"] [class*="topbar"],
-html[data-scn-theme="modernDark"] [class*="titlebar"],
-html[data-scn-theme="modernDark"] .x-toolbar {
-  background: #171a21 !important;
-  border-color: #2a2f3a !important;
-  color: #f5f6f8 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-logo {
+  filter: saturate(1.08) brightness(1.05);
 }
 
-html[data-scn-theme="modernDark"] [class*="sidebar"],
-html[data-scn-theme="modernDark"] [class*="channel-list"],
-html[data-scn-theme="modernDark"] [class*="conversation-list"],
-html[data-scn-theme="modernDark"] [class*="left"],
-html[data-scn-theme="modernDark"] .x-tree-panel,
-html[data-scn-theme="modernDark"] .x-grid,
-html[data-scn-theme="modernDark"] .x-grid-body {
-  background: #151820 !important;
-  border-color: #272c36 !important;
-  color: #d9dee7 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn .x-btn-text,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-account-btn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
-html[data-scn-theme="modernDark"] [class*="selected"],
-html[data-scn-theme="modernDark"] [class*="active"],
-html[data-scn-theme="modernDark"] .x-grid-item-selected,
-html[data-scn-theme="modernDark"] .x-tree-selected {
-  background: #22344f !important;
-  color: #ffffff !important;
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 {
+  background: #171f2b !important;
+  border: 1px solid #2a3547 !important;
+  border-radius: 15px !important;
 }
 
-html[data-scn-theme="modernDark"] [class*="hover"]:hover,
-html[data-scn-theme="modernDark"] .x-grid-item:hover,
-html[data-scn-theme="modernDark"] .x-tree-node-text:hover {
-  background: #202633 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-searchfield {
+  background: transparent !important;
+  color: #e8edf5 !important;
 }
 
-html[data-scn-theme="modernDark"] [class*="message"],
-html[data-scn-theme="modernDark"] [class*="msg"],
-html[data-scn-theme="modernDark"] [class*="post"],
-html[data-scn-theme="modernDark"] [class*="thread"] {
-  color: #edf0f4 !important;
-  border-color: #2a2f3a !important;
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-container,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-view {
+  background: #121824 !important;
+  color: #d9e1ec !important;
 }
 
-html[data-scn-theme="modernDark"] [class*="msg-wrap"],
-html[data-scn-theme="modernDark"] [class*="message-wrap"],
-html[data-scn-theme="modernDark"] [class*="post-wrap"] {
+html[data-scn-theme="modernDark"] body.syno-chat .jump-to-button {
+  background: #151d2a !important;
+  border: 1px solid #2b3547 !important;
   border-radius: 8px !important;
 }
 
-html[data-scn-theme="modernDark"] a {
-  color: #7bb7ff !important;
+html[data-scn-theme="modernDark"] body.syno-chat .jump-to-button-text,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-group-name {
+  color: #97a5b8 !important;
 }
 
-html[data-scn-theme="modernDark"] input,
-html[data-scn-theme="modernDark"] textarea,
-html[data-scn-theme="modernDark"] [contenteditable="true"],
-html[data-scn-theme="modernDark"] .x-form-text,
-html[data-scn-theme="modernDark"] .x-form-textarea {
-  background: #1c202a !important;
-  color: #f5f6f8 !important;
-  border-color: #343b49 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item {
+  border-radius: 7px !important;
+  color: #cbd5e1 !important;
+  margin: 2px 10px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item:hover {
+  background: #1b2534 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item.x-view-selected {
+  background: #243652 !important;
+  color: #ffffff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .name,
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .item-title {
+  color: inherit !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview,
+html[data-scn-theme="modernDark"] body.syno-chat .msgs {
+  background: #151c28 !important;
+  color: #edf2f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-title {
+  color: #8fbcff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .item-wrap {
+  background: transparent !important;
+  border-radius: 8px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover {
+  background: rgba(255,255,255,.035) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-wrap {
+  color: #edf2f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-user-name {
+  color: #f5f8fc !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-post-time,
+html[data-scn-theme="modernDark"] body.syno-chat .system-text {
+  color: #9aa8bb !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text,
+html[data-scn-theme="modernDark"] body.syno-chat .text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .markdown {
+  color: #edf2f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .markdown a,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text a {
+  color: #78b7ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-line {
+  background: #2a3444 !important;
+  border-color: #2a3444 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
+  background: #151c28 !important;
+  color: #94a3b8 !important;
+  border-radius: 999px !important;
+  padding: 2px 10px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-input-aria-main-v2,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-edit-input,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel .x-panel-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msg-foot-toolbar {
+  background: #151c28 !important;
+  border-color: #273143 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-textarea-wrap {
+  background: #0f141c !important;
+  border: 1px solid #2a3547 !important;
+  border-radius: 10px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-textarea {
+  background: transparent !important;
+  color: #f5f8fc !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-textarea:empty:before,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-contenteditable-field.x-form-empty-field:before {
+  color: #7f8da1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-buttons .x-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .button-wrap .x-btn {
+  background: #1b2534 !important;
+  border: 1px solid #2c384b !important;
   border-radius: 8px !important;
   box-shadow: none !important;
 }
 
-html[data-scn-theme="modernDark"] input::placeholder,
-html[data-scn-theme="modernDark"] textarea::placeholder {
-  color: #8c95a5 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-send-btn:not(.x-item-disabled) {
+  background: #2f7df6 !important;
+  border-color: #2f7df6 !important;
 }
 
-html[data-scn-theme="modernDark"] button,
-html[data-scn-theme="modernDark"] .x-btn,
-html[data-scn-theme="modernDark"] [role="button"] {
-  border-radius: 8px !important;
-  border-color: #3a4352 !important;
+html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-send-btn .x-btn-text {
+  color: #ffffff !important;
 }
 
-html[data-scn-theme="modernDark"] .x-menu,
-html[data-scn-theme="modernDark"] .x-menu-body,
-html[data-scn-theme="modernDark"] .x-boundlist,
-html[data-scn-theme="modernDark"] [class*="dropdown"],
-html[data-scn-theme="modernDark"] [class*="popover"],
-html[data-scn-theme="modernDark"] [class*="modal"] {
-  background: #1a1e27 !important;
-  border-color: #303746 !important;
-  color: #edf0f4 !important;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, .42) !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-menu,
+html[data-scn-theme="modernDark"] body.syno-chat .emoji-menu,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-groupinglist,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-search-panel {
+  background: #171f2b !important;
+  border-color: #2b3547 !important;
+  color: #edf2f7 !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
 }
 
-html[data-scn-theme="modernDark"] ::selection {
-  background: rgba(80, 147, 255, .45) !important;
+html[data-scn-theme="modernDark"] body.syno-chat ::selection {
+  background: rgba(79, 142, 247, .42) !important;
 }
 """
 
@@ -232,117 +309,171 @@ html[data-scn-theme="modernLight"] {
   color-scheme: light;
 }
 
-html[data-scn-theme="modernLight"],
-html[data-scn-theme="modernLight"] body {
-  background: #f5f7fb !important;
+html[data-scn-theme="modernLight"] body.syno-chat,
+html[data-scn-theme="modernLight"] body.syno-chat .x-window,
+html[data-scn-theme="modernLight"] body.syno-chat .x-window-mc,
+html[data-scn-theme="modernLight"] body.syno-chat .x-window-body,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-content-panel,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-content-panel > .x-panel-bwrap,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-content-panel > .x-panel-bwrap > .x-panel-body {
+  background: #f4f7fb !important;
   color: #18202b !important;
-}
-
-html[data-scn-theme="modernLight"] body,
-html[data-scn-theme="modernLight"] input,
-html[data-scn-theme="modernLight"] textarea,
-html[data-scn-theme="modernLight"] button,
-html[data-scn-theme="modernLight"] select {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif !important;
 }
 
-html[data-scn-theme="modernLight"] .x-border-layout-ct,
-html[data-scn-theme="modernLight"] .x-panel,
-html[data-scn-theme="modernLight"] .x-panel-body,
-html[data-scn-theme="modernLight"] .x-window,
-html[data-scn-theme="modernLight"] .x-container,
-html[data-scn-theme="modernLight"] [class*="syno"],
-html[data-scn-theme="modernLight"] [class*="Syno"] {
-  background-color: #f5f7fb !important;
-  color: #18202b !important;
-}
-
-html[data-scn-theme="modernLight"] [class*="toolbar"],
-html[data-scn-theme="modernLight"] [class*="header"],
-html[data-scn-theme="modernLight"] [class*="topbar"],
-html[data-scn-theme="modernLight"] [class*="titlebar"],
-html[data-scn-theme="modernLight"] .x-toolbar {
+html[data-scn-theme="modernLight"] body.syno-chat .chat-win-topbar-dsm7 {
   background: #ffffff !important;
-  border-color: #dde3ee !important;
-  color: #111827 !important;
+  border-bottom: 1px solid #dce3ee !important;
+  box-shadow: none !important;
 }
 
-html[data-scn-theme="modernLight"] [class*="sidebar"],
-html[data-scn-theme="modernLight"] [class*="channel-list"],
-html[data-scn-theme="modernLight"] [class*="conversation-list"],
-html[data-scn-theme="modernLight"] [class*="left"],
-html[data-scn-theme="modernLight"] .x-tree-panel,
-html[data-scn-theme="modernLight"] .x-grid,
-html[data-scn-theme="modernLight"] .x-grid-body {
+html[data-scn-theme="modernLight"] body.syno-chat .smart-search-ct-dsm7 {
   background: #eef3f9 !important;
-  border-color: #dce3ee !important;
-  color: #273244 !important;
+  border: 1px solid #d4deeb !important;
+  border-radius: 15px !important;
 }
 
-html[data-scn-theme="modernLight"] [class*="selected"],
-html[data-scn-theme="modernLight"] [class*="active"],
-html[data-scn-theme="modernLight"] .x-grid-item-selected,
-html[data-scn-theme="modernLight"] .x-tree-selected {
-  background: #dbeafe !important;
-  color: #10223d !important;
-}
-
-html[data-scn-theme="modernLight"] [class*="hover"]:hover,
-html[data-scn-theme="modernLight"] .x-grid-item:hover,
-html[data-scn-theme="modernLight"] .x-tree-node-text:hover {
-  background: #e7edf6 !important;
-}
-
-html[data-scn-theme="modernLight"] [class*="message"],
-html[data-scn-theme="modernLight"] [class*="msg"],
-html[data-scn-theme="modernLight"] [class*="post"],
-html[data-scn-theme="modernLight"] [class*="thread"] {
+html[data-scn-theme="modernLight"] body.syno-chat .chat-searchfield {
+  background: transparent !important;
   color: #18202b !important;
-  border-color: #dde3ee !important;
 }
 
-html[data-scn-theme="modernLight"] [class*="msg-wrap"],
-html[data-scn-theme="modernLight"] [class*="message-wrap"],
-html[data-scn-theme="modernLight"] [class*="post-wrap"] {
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-main,
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-main .x-panel-body,
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-container,
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-view {
+  background: #eef3f9 !important;
+  color: #334155 !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .jump-to-button {
+  background: #ffffff !important;
+  border: 1px solid #d4deeb !important;
   border-radius: 8px !important;
 }
 
-html[data-scn-theme="modernLight"] a {
+html[data-scn-theme="modernLight"] body.syno-chat .jump-to-button-text,
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-group-name {
+  color: #64748b !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-item {
+  border-radius: 7px !important;
+  color: #334155 !important;
+  margin: 2px 10px !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-item:hover {
+  background: #e3ebf6 !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .channel-list-item.x-view-selected {
+  background: #d8e8ff !important;
+  color: #10223d !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .chat-center-content-panel,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-right-content-panel,
+html[data-scn-theme="modernLight"] body.syno-chat .msg-panel,
+html[data-scn-theme="modernLight"] body.syno-chat .msg-panel .x-panel-body,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-msgview,
+html[data-scn-theme="modernLight"] body.syno-chat .msgs {
+  background: #ffffff !important;
+  color: #18202b !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-title {
   color: #0969da !important;
 }
 
-html[data-scn-theme="modernLight"] input,
-html[data-scn-theme="modernLight"] textarea,
-html[data-scn-theme="modernLight"] [contenteditable="true"],
-html[data-scn-theme="modernLight"] .x-form-text,
-html[data-scn-theme="modernLight"] .x-form-textarea {
-  background: #ffffff !important;
+html[data-scn-theme="modernLight"] body.syno-chat .item-wrap {
+  background: transparent !important;
+  border-radius: 8px !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .item-wrap:hover {
+  background: #f3f6fb !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-user-name {
   color: #111827 !important;
-  border-color: #cfd8e6 !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-post-time,
+html[data-scn-theme="modernLight"] body.syno-chat .system-text {
+  color: #64748b !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-text,
+html[data-scn-theme="modernLight"] body.syno-chat .text-wrapper,
+html[data-scn-theme="modernLight"] body.syno-chat .markdown {
+  color: #18202b !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .markdown a,
+html[data-scn-theme="modernLight"] body.syno-chat .msg-text a {
+  color: #0969da !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .date-splitter-line {
+  background: #dce3ee !important;
+  border-color: #dce3ee !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .date-splitter-text {
+  background: #ffffff !important;
+  color: #64748b !important;
+  border-radius: 999px !important;
+  padding: 2px 10px !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .chat-input-aria-main-v2,
+html[data-scn-theme="modernLight"] body.syno-chat .msg-edit-input,
+html[data-scn-theme="modernLight"] body.syno-chat .msg-panel .x-panel-footer,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-msg-foot-toolbar {
+  background: #ffffff !important;
+  border-color: #dce3ee !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-inputarea-textarea-wrap {
+  background: #ffffff !important;
+  border: 1px solid #cfd8e6 !important;
+  border-radius: 10px !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-inputarea-textarea {
+  background: transparent !important;
+  color: #111827 !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .msg-inputarea-buttons .x-btn,
+html[data-scn-theme="modernLight"] body.syno-chat .button-wrap .x-btn {
+  background: #f4f7fb !important;
+  border: 1px solid #d4deeb !important;
   border-radius: 8px !important;
   box-shadow: none !important;
 }
 
-html[data-scn-theme="modernLight"] button,
-html[data-scn-theme="modernLight"] .x-btn,
-html[data-scn-theme="modernLight"] [role="button"] {
-  border-radius: 8px !important;
-  border-color: #cfd8e6 !important;
+html[data-scn-theme="modernLight"] body.syno-chat .msg-inputarea-send-btn:not(.x-item-disabled) {
+  background: #0969da !important;
+  border-color: #0969da !important;
 }
 
-html[data-scn-theme="modernLight"] .x-menu,
-html[data-scn-theme="modernLight"] .x-menu-body,
-html[data-scn-theme="modernLight"] .x-boundlist,
-html[data-scn-theme="modernLight"] [class*="dropdown"],
-html[data-scn-theme="modernLight"] [class*="popover"],
-html[data-scn-theme="modernLight"] [class*="modal"] {
+html[data-scn-theme="modernLight"] body.syno-chat .msg-inputarea-send-btn .x-btn-text {
+  color: #ffffff !important;
+}
+
+html[data-scn-theme="modernLight"] body.syno-chat .chat-menu,
+html[data-scn-theme="modernLight"] body.syno-chat .emoji-menu,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-groupinglist,
+html[data-scn-theme="modernLight"] body.syno-chat .chat-search-panel {
   background: #ffffff !important;
-  border-color: #dbe2ee !important;
+  border-color: #d4deeb !important;
   color: #18202b !important;
-  box-shadow: 0 18px 50px rgba(42, 55, 80, .18) !important;
+  box-shadow: 0 18px 48px rgba(42,55,80,.18) !important;
 }
 
-html[data-scn-theme="modernLight"] ::selection {
-  background: rgba(56, 139, 253, .24) !important;
+html[data-scn-theme="modernLight"] body.syno-chat ::selection {
+  background: rgba(56,139,253,.24) !important;
 }
 """
