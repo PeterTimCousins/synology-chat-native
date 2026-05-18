@@ -934,36 +934,20 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog textare
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-wrap {
-  position: relative !important;
   border: 0 !important;
-  box-sizing: border-box !important;
-  overflow: visible !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-wrap input.x-form-text {
   border: 1px solid #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap input.x-form-text {
   border-right: 0 !important;
-  box-sizing: border-box !important;
-  height: 30px !important;
-  padding-right: 8px !important;
-  width: calc(100% - 41px) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog input.x-form-text:focus,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog textarea.x-form-textarea:focus {
   border-color: #4f8ef7 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap input.x-form-text:focus,
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap input.x-form-focus {
-  border-color: #4f8ef7 !important;
-  border-right: 0 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:has(input.x-form-text:focus) .x-form-trigger,
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:has(input.x-form-focus) .x-form-trigger {
-  border-color: #4f8ef7 !important;
-  border-left: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-trigger {
@@ -974,15 +958,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
   background-size: 12px 12px !important;
   border: 1px solid #2b3748 !important;
   border-left: 0 !important;
-  box-sizing: border-box !important;
   filter: none !important;
-  height: 30px !important;
-  margin: 0 !important;
   opacity: 1 !important;
-  position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-  width: 41px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-wrap,
