@@ -238,6 +238,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-title .channel-star {
 html[data-scn-theme="modernDark"] body.syno-chat .item-wrap {
   background: transparent !important;
   border-radius: 10px !important;
+  margin-left: 14px !important;
+  margin-right: 14px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover {
@@ -292,12 +294,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
   background: #121b27 !important;
   box-sizing: border-box !important;
-  left: -14px !important;
+  left: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding-left: 14px !important;
   padding-right: 14px !important;
-  width: calc(100% + 28px) !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper .date-splitter-line {
