@@ -965,8 +965,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
   box-sizing: border-box !important;
   filter: none !important;
   height: 30px !important;
+  margin: 0 !important;
   opacity: 1 !important;
-  position: relative !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
   width: 41px !important;
 }
 
