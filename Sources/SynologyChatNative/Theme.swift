@@ -533,13 +533,30 @@ html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-i
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-selected,
-html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-selected *,
 html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-item:hover,
-html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-item:hover *,
-html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover,
-html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover * {
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover {
   background: #182333 !important;
   color: #f4f8ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-selected .name,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-selected .channel-order-time,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-selected .chat-channel-item-enter,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-item:hover .name,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-item:hover .channel-order-time,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .chat-groupinglist-item:hover .chat-channel-item-enter,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover .name,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover .channel-order-time,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-list-item:hover .chat-channel-item-enter {
+  background: transparent !important;
+  color: #f4f8ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .avatar-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .avatar-wrap *,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .fake-avatar,
+html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .online-status {
+  color: #ffffff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat #chat-jump-list .channel-order-time,
