@@ -941,6 +941,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-wrap input.x-form-text {
   border: 0 !important;
+  padding-right: 32px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog input.x-form-text:focus,
@@ -952,7 +953,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
   background: #0d131c !important;
   background-image: none !important;
   border: 0 !important;
-  border-left: 1px solid #2b3748 !important;
   filter: none !important;
   opacity: 1 !important;
   position: relative !important;
@@ -961,7 +961,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:after {
   content: "" !important;
   position: absolute !important;
-  right: 11px !important;
+  right: 13px !important;
   top: 50% !important;
   width: 7px !important;
   height: 7px !important;
