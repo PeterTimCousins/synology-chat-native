@@ -360,21 +360,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn {
   border-radius: 999px !important;
   box-shadow: 0 8px 22px rgba(0,0,0,.24) !important;
   color: #d7e4f7 !important;
-  height: 30px !important;
-  padding: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text {
-  background-color: transparent !important;
-  background-position: 7px center !important;
-  background-size: 22px 22px !important;
   color: #d7e4f7 !important;
-  font-size: 13px !important;
   font-weight: 500 !important;
-  height: 30px !important;
-  line-height: 30px !important;
-  padding: 0 15px 0 38px !important;
-  position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn {
