@@ -951,21 +951,23 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog textare
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-trigger {
   background: #0d131c !important;
   background-image: none !important;
+  border: 0 !important;
   border-left: 1px solid #2b3748 !important;
   filter: none !important;
   opacity: 1 !important;
+  position: relative !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-field-trigger-wrap:after {
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-trigger:after {
   content: "" !important;
   position: absolute !important;
-  right: 13px !important;
+  left: 50% !important;
   top: 50% !important;
   width: 7px !important;
   height: 7px !important;
   border-right: 2px solid #93a6c4 !important;
   border-bottom: 2px solid #93a6c4 !important;
-  transform: translateY(-65%) rotate(45deg) !important;
+  transform: translate(-50%, -65%) rotate(45deg) !important;
   pointer-events: none !important;
 }
 
@@ -1030,6 +1032,31 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-g
   border-color: #2b3748 !important;
   color: #71819a !important;
   opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list,
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list .x-combo-list-inner,
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list .x-combo-list-item {
+  background: #111a2a !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list {
+  border: 1px solid #2b3748 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list .x-combo-list-item {
+  padding: 7px 12px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list .x-combo-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .x-combo-list .x-combo-list-item:hover {
+  background: #182333 !important;
+  color: #f4f8ff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .cal_todo_window,
