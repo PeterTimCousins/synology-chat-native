@@ -354,6 +354,77 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-inputarea-send-btn .x-btn-
   color: #ffffff !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn {
+  background: #182333 !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.24) !important;
+  color: #d7e4f7 !important;
+  height: 30px !important;
+  padding: 0 13px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text {
+  background-color: transparent !important;
+  color: #d7e4f7 !important;
+  font-weight: 600 !important;
+  line-height: 28px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:before {
+  filter: brightness(1.25) saturate(.95) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn {
+  background: #182333 !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  height: 34px !important;
+  margin-left: 8px !important;
+  min-width: 34px !important;
+  width: 34px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn:hover {
+  background: #20304a !important;
+  border-color: #3a4a60 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn .x-btn-text {
+  background-color: transparent !important;
+  filter: invert(1) brightness(1.7) saturate(.35) opacity(.86) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container {
+  background: #182333 !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 9px !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.28) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-action-divider {
+  background: #2b3748 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-hashtag-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-reaction-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-jump-comment-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-action-btn {
+  background-color: transparent !important;
+  filter: invert(1) brightness(1.65) saturate(.35) opacity(.82) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-hashtag-btn:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-reaction-btn:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-jump-comment-btn:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-action-container .msg-add-action-btn:hover {
+  background-color: rgba(111, 164, 255, .12) !important;
+  filter: invert(1) brightness(1.9) saturate(.45) opacity(.95) !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-menu,
 html[data-scn-theme="modernDark"] body.syno-chat .emoji-menu,
 html[data-scn-theme="modernDark"] body.syno-chat .x-menu,
