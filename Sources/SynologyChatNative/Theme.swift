@@ -366,12 +366,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn {
 
 html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text {
   background-color: transparent !important;
+  background-position: 7px center !important;
+  background-size: 22px 22px !important;
   color: #d7e4f7 !important;
   font-size: 13px !important;
   font-weight: 500 !important;
   height: 30px !important;
   line-height: 30px !important;
-  padding: 0 15px 0 35px !important;
+  padding: 0 15px 0 38px !important;
   position: relative !important;
 }
 
