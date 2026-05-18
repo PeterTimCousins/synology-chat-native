@@ -14,6 +14,11 @@ let package = Package(
         .executableTarget(
             name: "SynologyChatNative",
             path: "Sources/SynologyChatNative"
+        ),
+        .testTarget(
+            name: "SynologyChatNativeTests",
+            dependencies: ["SynologyChatNative"],
+            path: "Tests/SynologyChatNativeTests"
         )
     ]
 )

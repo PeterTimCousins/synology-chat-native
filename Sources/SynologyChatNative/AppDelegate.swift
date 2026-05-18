@@ -3,20 +3,38 @@ import WebKit
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private var windowController: ChatWindowController?
+    private var setupWindowController: SetupWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         UserDefaults.standard.register(defaults: [
-            Defaults.chatURL: "https://costwisegroup.synology.me:2891/?launchApp=SYNO.SDS.Chat.Application#channels/11",
             Defaults.theme: Theme.modernDark.rawValue
         ])
 
-        let controller = ChatWindowController()
-        controller.showWindow(nil)
-        windowController = controller
+        guard UserDefaults.standard.string(forKey: Defaults.chatURL)?.isEmpty == false else {
+            showSetup()
+            return
+        }
+
+        openChat()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         true
+    }
+
+    private func showSetup() {
+        let controller = SetupWindowController { [weak self] in
+            self?.setupWindowController = nil
+            self?.openChat()
+        }
+        controller.showWindow(nil)
+        setupWindowController = controller
+    }
+
+    private func openChat() {
+        let controller = ChatWindowController()
+        controller.showWindow(nil)
+        windowController = controller
     }
 
     @IBAction func openSettings(_ sender: Any?) {

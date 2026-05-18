@@ -35,12 +35,12 @@ final class SettingsWindowController: NSWindowController {
     private func configureContentView() {
         guard let contentView = window?.contentView else { return }
 
-        let label = NSTextField(labelWithString: "Synology Chat URL")
+        let label = NSTextField(labelWithString: "Synology server address, QuickConnect ID, or Chat URL")
         let themeLabel = NSTextField(labelWithString: "Theme")
         let saveButton = NSButton(title: "Save and Reload", target: self, action: #selector(saveAndReload))
         let cancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancel))
 
-        urlField.placeholderString = "https://example.synology.me:5001/?launchApp=SYNO.SDS.Chat.Application"
+        urlField.placeholderString = "example.synology.me:5001 or QuickConnectID"
         Theme.allCases.forEach { themePopup.addItem(withTitle: $0.title) }
 
         for view in [label, urlField, themeLabel, themePopup, saveButton, cancelButton] {
@@ -73,13 +73,15 @@ final class SettingsWindowController: NSWindowController {
     }
 
     @objc private func saveAndReload() {
-        let value = urlField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let url = URL(string: value), url.scheme == "https" || url.scheme == "http" else {
+        let normalizedURL: String
+        do {
+            normalizedURL = try ServerAddress.normalizedChatURL(from: urlField.stringValue)
+        } catch {
             showInvalidURLAlert()
             return
         }
 
-        UserDefaults.standard.set(value, forKey: Defaults.chatURL)
+        UserDefaults.standard.set(normalizedURL, forKey: Defaults.chatURL)
         UserDefaults.standard.set(selectedTheme.rawValue, forKey: Defaults.theme)
         close()
         chatWindowController?.applyTheme()
@@ -92,8 +94,8 @@ final class SettingsWindowController: NSWindowController {
 
     private func showInvalidURLAlert() {
         let alert = NSAlert()
-        alert.messageText = "Invalid URL"
-        alert.informativeText = "Enter a full Synology Chat URL starting with https:// or http://."
+        alert.messageText = "Invalid Server Address"
+        alert.informativeText = "Enter a full Synology Chat URL, a server address such as example.synology.me:5001, or a QuickConnect ID."
         alert.alertStyle = .warning
         alert.beginSheetModal(for: window!)
     }

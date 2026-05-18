@@ -4,15 +4,16 @@ A native macOS wrapper for the Synology Chat web app.
 
 This is intentionally not Electron. It uses AppKit and `WKWebView`, so the app runs natively on Apple Silicon and uses the system WebKit engine.
 
-## Default URL
+## First Run
 
-The bundled default is:
+On first launch, enter your Synology server address or QuickConnect ID. You can use a full Chat URL, a simpler address, or a bare QuickConnect ID:
 
 ```text
-https://costwisegroup.synology.me:2891/?launchApp=SYNO.SDS.Chat.Application#channels/11
+example.synology.me:5001
+MyQuickConnectID
 ```
 
-You can change it from `Synology Chat Native > Settings...`.
+The app normalizes that into a DSM Chat launch URL. You can change it later from `Synology Chat Native > Settings...`.
 
 ## Themes
 
