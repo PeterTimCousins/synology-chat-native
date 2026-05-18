@@ -360,23 +360,42 @@ html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn {
   border-radius: 999px !important;
   box-shadow: 0 8px 22px rgba(0,0,0,.24) !important;
   color: #d7e4f7 !important;
-  height: 32px !important;
+  height: 30px !important;
   padding: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text {
-  background-color: transparent !important;
-  background-position: 12px center !important;
-  background-size: auto !important;
+  background: none !important;
   color: #d7e4f7 !important;
-  font-weight: 600 !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  padding: 0 16px 0 42px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  padding: 0 15px 0 35px !important;
+  position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:before {
-  filter: brightness(1.25) saturate(.95) !important;
+  background: #6f7c8e !important;
+  border-radius: 999px !important;
+  content: "" !important;
+  height: 20px !important;
+  left: 8px !important;
+  position: absolute !important;
+  top: 5px !important;
+  width: 20px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .scroll-bottom-btn .x-btn-text:after {
+  border-bottom: 2px solid #ffffff !important;
+  border-right: 2px solid #ffffff !important;
+  content: "" !important;
+  height: 6px !important;
+  left: 14px !important;
+  position: absolute !important;
+  top: 10px !important;
+  transform: rotate(45deg) !important;
+  width: 6px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn {
