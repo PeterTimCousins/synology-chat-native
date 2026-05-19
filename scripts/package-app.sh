@@ -13,6 +13,7 @@ rm -rf "$APP_DIR"
 mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
 cp "$EXECUTABLE" "$APP_DIR/Contents/MacOS/SynologyChatNative"
 cp "$ROOT/packaging/Info.plist" "$APP_DIR/Contents/Info.plist"
+cp "$ROOT/packaging/AppIcon.icns" "$APP_DIR/Contents/Resources/AppIcon.icns"
 
 codesign --force --deep --sign - "$APP_DIR"
 

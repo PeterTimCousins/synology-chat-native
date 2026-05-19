@@ -8,6 +8,8 @@
 	<string>SynologyChatNative</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.costwisegroup.synology-chat-native</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
