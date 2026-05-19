@@ -554,8 +554,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn {
-  background: #e8f0fb !important;
-  color: #2f7fe8 !important;
+  background: #243144 !important;
+  border: 1px solid #2b3748 !important;
+  box-shadow: none !important;
+  color: #7fb2ff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-additional-wrapper,
