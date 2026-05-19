@@ -205,13 +205,13 @@ final class ChatWindowController: NSWindowController {
         let body = payload["body"] as? String ?? ""
         let isCurrentChannel = payload["isCurrentChannel"] as? Bool ?? false
 
-        if !isNativeWindowActive {
-            playMessageSound(soft: false, muted: muted)
-            showNativeNotification(id: id, title: title, body: body)
+        if isNativeWindowActive && isCurrentChannel {
+            playMessageSound(soft: true, muted: muted)
             return
         }
 
-        playMessageSound(soft: isCurrentChannel, muted: muted)
+        playMessageSound(soft: false, muted: muted)
+        showNativeNotification(id: id, title: title, body: body)
     }
 
     private func handleBrowserNotification(payload: [String: Any]) {
@@ -221,13 +221,8 @@ final class ChatWindowController: NSWindowController {
         let title = payload["title"] as? String ?? "Chat"
         let body = payload["body"] as? String ?? ""
 
-        if !isNativeWindowActive {
-            playMessageSound(soft: false, muted: muted)
-            showNativeNotification(id: id, title: title, body: body)
-            return
-        }
-
         playMessageSound(soft: false, muted: muted)
+        showNativeNotification(id: id, title: title, body: body)
     }
 
     private func playMessageSound(soft: Bool, muted: Bool) {

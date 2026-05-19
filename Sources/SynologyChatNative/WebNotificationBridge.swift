@@ -165,6 +165,7 @@ enum WebNotificationBridge {
     const chat = getChat();
     const socket = chat?.Socket;
     const socketController = chat?.AppUtils?.Controller?.Socket;
+    const channelController = chat?.AppUtils?.Controller?.Channel;
     const notification = chat?.App?.Utils?.Notification;
 
     if (notification && !notification.__scnNativeNotificationHooked) {
@@ -182,8 +183,21 @@ enum WebNotificationBridge {
       socket.on?.('clientpostcreate', routeChatPost);
     }
 
+    if (channelController && !channelController.__scnNativeNotificationHooked) {
+      channelController.__scnNativeNotificationHooked = true;
+      const originalChannelPostCreate = channelController.onPostCreate;
+      if (typeof originalChannelPostCreate === 'function') {
+        channelController.onPostCreate = function(event) {
+          const result = originalChannelPostCreate.apply(this, arguments);
+          routeChatPost(event);
+          return result;
+        };
+      }
+    }
+
     if (!socketController || socketController.__scnNativeNotificationHooked) {
-      return !!socket?.__scnNativeNotificationHooked && !!notification?.__scnNativeNotificationHooked;
+      return !!notification?.__scnNativeNotificationHooked &&
+        (!!socket?.__scnNativeNotificationHooked || !!channelController?.__scnNativeNotificationHooked);
     }
 
     socketController.__scnNativeNotificationHooked = true;
@@ -196,7 +210,8 @@ enum WebNotificationBridge {
       };
     }
 
-    return !!socket?.__scnNativeNotificationHooked && !!notification?.__scnNativeNotificationHooked;
+    return !!notification?.__scnNativeNotificationHooked &&
+      (!!socket?.__scnNativeNotificationHooked || !!channelController?.__scnNativeNotificationHooked);
   };
 
   const scheduleChatHookInstall = () => {
