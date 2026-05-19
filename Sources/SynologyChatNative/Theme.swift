@@ -315,8 +315,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .welcome-hello {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc {
-  background: #182333 !important;
-  background-image: none !important;
+  background-color: #182333 !important;
   border: 1px solid #2b3748 !important;
   border-radius: 8px !important;
   box-shadow: none !important;
@@ -330,7 +329,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc > div {
   color: #d7e4f7 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc::before,
 html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc::after {
   background: #182333 !important;
   background-image: none !important;
