@@ -305,7 +305,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.coll
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel > .x-panel-bwrap,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel > .x-panel-bwrap > .x-panel-body {
-  border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
 
