@@ -1257,6 +1257,40 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-tri
   opacity: 1 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
+  background: #0d131c !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  box-shadow: none !important;
+  color: #c6d2e3 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn {
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  box-sizing: border-box !important;
+  height: 30px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
+  align-items: center !important;
+  display: flex !important;
+  height: 28px !important;
+  justify-content: center !important;
+  line-height: 28px !important;
+  padding: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button::before {
+  color: #c6d2e3 !important;
+  content: "×" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-split-bar {
   background: #2b3748 !important;
 }
@@ -1270,7 +1304,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-item-dis
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap {
   background: transparent !important;
   color: #d7e4f7 !important;
-  min-height: 18px !important;
+  min-height: 20px !important;
   position: relative !important;
 }
 
@@ -1278,9 +1312,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   background: transparent !important;
   color: #d7e4f7 !important;
   display: inline-block !important;
-  line-height: 18px !important;
+  line-height: 20px !important;
   margin-left: 24px !important;
   padding-left: 0 !important;
+  vertical-align: top !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
@@ -1303,7 +1338,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   height: 18px !important;
   left: 0 !important;
   position: absolute !important;
-  top: 0 !important;
+  top: 1px !important;
   width: 18px !important;
 }
 
