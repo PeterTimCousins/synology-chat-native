@@ -1673,8 +1673,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .filename,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-desc,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .syno-ux-checkbox-label {
   background: transparent !important;
+  align-items: center !important;
   color: #d7e4f7 !important;
-  display: inline-block !important;
+  display: inline-flex !important;
+  height: 18px !important;
   line-height: 18px !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -1765,6 +1767,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-f
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap {
   left: 10px !important;
   position: relative !important;
+  top: 12px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap {
