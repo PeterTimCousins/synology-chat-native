@@ -291,6 +291,20 @@ html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-text {
   padding: 2px 9px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .new-msg-splitter-line {
+  background: transparent !important;
+  border-top: 1px solid #2b3748 !important;
+  height: 1px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .new-msg-splitter-text {
+  background: #182333 !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 999px !important;
+  color: #58c56f !important;
+  padding: 2px 10px !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
   background: #121b27 !important;
   box-sizing: border-box !important;
