@@ -2658,6 +2658,27 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.
 html[data-scn-theme="modernDark"] body.syno-chat ::selection {
   background: rgba(79, 142, 247, .42) !important;
 }
+
+html[data-scn-theme="modernDark"] body.syno-chat * {
+  scrollbar-color: #33445b #121b27 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+  background: #121b27 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-track,
+html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-corner {
+  background: #121b27 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-thumb {
+  background: #33445b !important;
+  border: 2px solid #121b27 !important;
+  border-radius: 999px !important;
+}
 """
 
 private let modernLightCSS = """
