@@ -430,6 +430,41 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat
   background: #182333 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu {
+  background: #121b27 !important;
+  border-color: #9aa8b9 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu:hover {
+  background: #182333 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-additional-wrapper {
+  background: transparent !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-count {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .action-buttons {
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-jump-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-more-btn {
+  background-color: transparent !important;
+  filter: invert(1) brightness(1.6) saturate(.35) opacity(.9) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .button-divider {
+  background: #526174 !important;
+  opacity: .75 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .msg-title {
   color: #7fb2ff !important;
 }
