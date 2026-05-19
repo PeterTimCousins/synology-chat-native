@@ -331,6 +331,31 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.coll
   box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel::before {
+  background: #121b27 !important;
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: -14px !important;
+  width: 14px !important;
+  pointer-events: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel > .x-panel-bwrap > .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  overflow: hidden !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-panel-header,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-wrap,
@@ -2657,27 +2682,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.
 
 html[data-scn-theme="modernDark"] body.syno-chat ::selection {
   background: rgba(79, 142, 247, .42) !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat * {
-  scrollbar-color: #33445b #121b27 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar {
-  width: 10px !important;
-  height: 10px !important;
-  background: #121b27 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-track,
-html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-corner {
-  background: #121b27 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat *::-webkit-scrollbar-thumb {
-  background: #33445b !important;
-  border: 2px solid #121b27 !important;
-  border-radius: 999px !important;
 }
 """
 
