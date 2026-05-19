@@ -129,7 +129,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-win-topbar-dsm7 {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-logo {
-  background-image: url("images/dark/1x/logo.png?v=609000589724afc4747b24f8d816252b") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/logo.png?v=609000589724afc4747b24f8d816252b") !important;
   filter: saturate(1.08) brightness(1.05);
 }
 
@@ -254,12 +254,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .chat-sea
 
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .search-icon:before,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .search-icon:before {
-  background-image: url("images/dark/1x/bt_search.png?v=a8c868df1708cfbccf4ac2b5d3f6772e") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/bt_search.png?v=a8c868df1708cfbccf4ac2b5d3f6772e") !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .search-trigger .trigger-icon,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .search-trigger .trigger-icon {
-  background-image: url("images/dark/1x/icon_search_clear.png?v=2c3dc2f57024f1fd10be4d115f7796be") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/icon_search_clear.png?v=2c3dc2f57024f1fd10be4d115f7796be") !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main,
@@ -316,40 +316,40 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .item-title 
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main .channel-list-group .channel-list-group-add-btn {
-  background-image: url("images/dark/1x/c_bt_add.png?v=51b9f79707b13b27321b834068094062") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_bt_add.png?v=51b9f79707b13b27321b834068094062") !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .public {
-  background-image: url("images/dark/1x/c_indicator_channel.png?v=5b89c927caf80ed563ee118a9fe6999d") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_channel.png?v=5b89c927caf80ed563ee118a9fe6999d") !important;
   background-position: 0 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .private {
-  background-image: url("images/dark/1x/c_indicator_private_channel.png?v=0de20087d46d3a9b9a8798cf01483587") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_private_channel.png?v=0de20087d46d3a9b9a8798cf01483587") !important;
   background-position: 0 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .encrypted {
-  background-image: url("images/dark/1x/c_indicator_encrypted.png?v=341c621d72550d9a8f9545bde339247e") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_encrypted.png?v=341c621d72550d9a8f9545bde339247e") !important;
   background-position: 0 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .synobot {
-  background-image: url("images/dark/1x/c_indicator_myspace.png?v=69f45266af8da4a06fd79e1b83b5e5f7") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_myspace.png?v=69f45266af8da4a06fd79e1b83b5e5f7") !important;
   background-position: 0 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .chatbot {
-  background-image: url("images/dark/1x/c_indicator_synobot.png?v=e0d26901bfe7aafd982d7a0815fbe456") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_synobot.png?v=e0d26901bfe7aafd982d7a0815fbe456") !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .online-status.online,
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .online-status.offline {
-  background-image: url("images/dark/1x/c_indicator_status.png?v=27d50e2cb6d6e79a0af5fcc51e313cfe") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_indicator_status.png?v=27d50e2cb6d6e79a0af5fcc51e313cfe") !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .hide-channel-btn {
-  background-image: url("images/dark/1x/c_bt_remove.png?v=67e5f3921e768a59c519faf421e109b5") !important;
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_bt_remove.png?v=67e5f3921e768a59c519faf421e109b5") !important;
   background-position: 0 0 !important;
 }
 
