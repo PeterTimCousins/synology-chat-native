@@ -1694,12 +1694,46 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap:h
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-desc {
+  bottom: 22px !important;
   color: #d7e4f7 !important;
+  left: 0 !important;
+  position: absolute !important;
+  text-align: center !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn {
-  filter: invert(1) brightness(1.35) saturate(.35) !important;
-  opacity: .9 !important;
+  background: transparent !important;
+  background-image: none !important;
+  filter: none !important;
+  height: 42px !important;
+  left: 50% !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  top: 30px !important;
+  transform: translateX(-50%) !important;
+  width: 42px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn::before,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn::after {
+  background: #d7e4f7 !important;
+  content: "" !important;
+  left: 50% !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn::before {
+  height: 4px !important;
+  width: 42px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn::after {
+  height: 42px !important;
+  width: 4px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-contenteditable-field {
@@ -1712,6 +1746,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-conte
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-contenteditable-field:empty:before {
   color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-field .x-form-element {
+  padding-left: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap {
+  position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap {
