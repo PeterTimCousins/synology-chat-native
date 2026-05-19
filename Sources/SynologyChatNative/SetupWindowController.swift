@@ -15,6 +15,7 @@ final class SetupWindowController: NSWindowController {
             defer: false
         )
         window.title = "Set Up Synology Chat"
+        window.isReleasedWhenClosed = false
         super.init(window: window)
         configureContentView()
     }

@@ -31,6 +31,7 @@ final class ChatWindowController: NSWindowController {
         )
         window.title = "Synology Chat"
         window.minSize = NSSize(width: 760, height: 520)
+        window.isReleasedWhenClosed = false
         window.center()
 
         super.init(window: window)

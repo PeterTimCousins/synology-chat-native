@@ -19,10 +19,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        true
+        false
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            showPrimaryWindow()
+        }
+        return true
     }
 
     private func showSetup() {
+        if let controller = setupWindowController {
+            controller.showWindow(nil)
+            return
+        }
+
         let controller = SetupWindowController { [weak self] in
             self?.setupWindowController = nil
             self?.openChat()
@@ -32,9 +44,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func openChat() {
+        if let controller = windowController {
+            controller.showWindow(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+
         let controller = ChatWindowController()
         controller.showWindow(nil)
         windowController = controller
+    }
+
+    private func showPrimaryWindow() {
+        guard UserDefaults.standard.string(forKey: Defaults.chatURL)?.isEmpty == false else {
+            showSetup()
+            return
+        }
+
+        openChat()
     }
 
     @IBAction func openSettings(_ sender: Any?) {

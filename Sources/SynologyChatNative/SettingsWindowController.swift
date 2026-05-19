@@ -15,6 +15,7 @@ final class SettingsWindowController: NSWindowController {
             defer: false
         )
         window.title = "Settings"
+        window.isReleasedWhenClosed = false
         super.init(window: window)
         configureContentView()
     }
