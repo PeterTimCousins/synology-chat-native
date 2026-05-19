@@ -121,6 +121,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-content-panel > .x-panel-
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-win-topbar,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-win-topbar-dsm7 {
   background: #111822 !important;
   border-bottom: 1px solid #253142 !important;
@@ -135,8 +136,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn .x-btn-text,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-account-btn {
   background-color: transparent !important;
+  background-image: none !important;
   border-color: transparent !important;
   box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar .chat-snooze-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar-dsm7 .chat-snooze-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar .chat-app-launcher-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar-dsm7 .chat-app-launcher-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar .chat-calendar-todo-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-win-topbar-dsm7 .chat-calendar-todo-btn button {
+  filter: invert(1) brightness(1.55) saturate(.35) opacity(.9) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .avatar,
@@ -217,6 +228,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .window-tool-cl
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 {
   background: #0d131c !important;
   border: 1px solid #2b3748 !important;
@@ -224,6 +236,16 @@ html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 {
   overflow: hidden !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct.focused,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7.focused {
+  border-color: #3a4a61 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .search-icon,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .search-trigger,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .trigger-icon,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .search-icon,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .search-trigger,
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .trigger-icon,
@@ -231,6 +253,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-searchfield {
   background: transparent !important;
   background-image: none !important;
   color: #e8edf5 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct .chat-searchfield::placeholder,
+html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 .chat-searchfield::placeholder {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .smart-search-ct .search-icon:before,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .smart-search-ct-dsm7 .search-icon:before,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .smart-search-ct .search-trigger .trigger-icon,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .smart-search-ct-dsm7 .search-trigger .trigger-icon {
+  filter: invert(1) brightness(1.55) saturate(.35) opacity(.9) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-main,
@@ -272,6 +306,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item:hover {
   background: rgba(111, 164, 255, .08) !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-group.collapsible:hover {
+  background: rgba(111, 164, 255, .08) !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item.x-view-selected {
   background: rgba(88, 166, 255, .18) !important;
   color: #f4f8ff !important;
@@ -280,6 +318,19 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item.x-view-selec
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .name,
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .item-title {
   color: inherit !important;
+}
+
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-main .channel-list-group .channel-list-group-add-btn,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .public,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .private,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .encrypted,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .synobot,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .chatbot,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .hide-channel-btn,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status.online,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status.offline,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status[class*="online-number-"] {
+  filter: invert(1) brightness(1.55) saturate(.35) opacity(.86) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel,
@@ -3631,6 +3682,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .member-dialog .empty-hint-text
 
 html[data-scn-theme="modernDark"] body.syno-chat .member-dialog .empty-hint-img {
   filter: invert(1) brightness(1.3) saturate(.35) opacity(.5) !important;
+}
+
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.x-btn-over button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.x-btn-click button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.x-btn-menu-active button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.error button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.error.x-btn-over button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.error.x-btn-click button,
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-download-btn.downloading.error.x-btn-menu-active button {
+  filter: invert(1) brightness(1.55) saturate(.35) opacity(.9) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat input,
