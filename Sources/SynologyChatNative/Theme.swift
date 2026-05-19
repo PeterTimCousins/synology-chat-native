@@ -1631,6 +1631,136 @@ html[data-scn-theme="modernDark"] body.syno-chat .syno-d-package-window-header-t
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-window-header,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-window-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-panel-fbar,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-toolbar-right,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog form.x-form,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .contentwrapper {
+  background: #111a2a !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-window-header {
+  border-bottom: 1px solid #4fb76a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-field {
+  background: #121b27 !important;
+  border: 1px solid #2b3748 !important;
+  box-sizing: border-box !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .filename,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-desc,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .syno-ux-checkbox-label {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .filename {
+  font-weight: 600 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .preview,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap {
+  background-color: #182333 !important;
+  border: 1px solid #2b3748 !important;
+  box-sizing: border-box !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap:hover {
+  background-color: #1d2b3e !important;
+  border-color: #526174 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-desc {
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn {
+  filter: invert(1) brightness(1.35) saturate(.35) !important;
+  opacity: .9 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-contenteditable-field {
+  background: #0d131c !important;
+  border: 1px solid #2b3748 !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-contenteditable-field:empty:before {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap {
+  align-items: center !important;
+  background: transparent !important;
+  color: #d7e4f7 !important;
+  display: flex !important;
+  gap: 8px !important;
+  min-height: 24px !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
+  height: 18px !important;
+  left: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  top: 3px !important;
+  width: 18px !important;
+  z-index: 2 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap div.syno-ux-checkbox-icon {
+  background: #0d131c !important;
+  border: 1px solid #9fb0c7 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  flex: 0 0 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  position: relative !important;
+  width: 18px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap div.syno-ux-cb-disabled,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap .syno-ux-cb-disabled {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-item-disabled,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-item-disabled * {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog,
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-header,
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-bwrap,
