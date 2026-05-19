@@ -1078,8 +1078,30 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-stat
   color: #93a6c4 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-fieldset.x-fieldset,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header {
+  background: transparent !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-fieldset.x-fieldset {
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header {
+  border-bottom: 1px dashed #526174 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header .x-fieldset-header-text {
+  background: transparent !important;
+  color: #93a6c4 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-group,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-group .x-column-inner,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-group .x-column,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .theme-panel,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .theme-ct,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .wallpaper-panel,
@@ -1096,6 +1118,81 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog input[t
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-wrap {
   border-radius: 4px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap .syno-ux-checkbox-label,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-radio-wrap .syno-ux-checkbox-label {
+  color: #d7e4f7 !important;
+  display: block !important;
+  line-height: 30px !important;
+  min-height: 30px !important;
+  padding-left: 26px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap input.syno-ux-checkbox-icon,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap input.syno-ux-radio-icon {
+  cursor: pointer !important;
+  height: 18px !important;
+  left: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  top: 6px !important;
+  width: 18px !important;
+  z-index: 2 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon {
+  background: #0d131c !important;
+  background-image: none !important;
+  border: 1px solid #93a6c4 !important;
+  box-sizing: border-box !important;
+  filter: none !important;
+  height: 18px !important;
+  left: 0 !important;
+  margin: 0 !important;
+  position: absolute !important;
+  top: 6px !important;
+  width: 18px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon {
+  border-radius: 2px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon {
+  border-radius: 50% !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-hover,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-focus,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon.syno-ux-cb-hover,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon.syno-ux-cb-focus {
+  border-color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon.syno-ux-cb-checked {
+  background: #58c56f !important;
+  border-color: #58c56f !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath d='M4.2 8.8 7.3 12 13.8 5.3' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 18px 18px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-form-check-wrap div.syno-ux-radio-icon.syno-ux-cb-checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='4' fill='%23fff'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 18px 18px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .chat-grey-btn,
