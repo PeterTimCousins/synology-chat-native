@@ -228,7 +228,26 @@ final class ChatWindowController: NSWindowController {
 
     private func handleUnreadCount(payload: [String: Any]) {
         let count = payload["count"] as? Int ?? (payload["count"] as? NSNumber)?.intValue ?? 0
-        NSApp.dockTile.badgeLabel = count > 0 ? String(count) : nil
+        DispatchQueue.main.async {
+            self.updateDockBadge(count: count)
+        }
+    }
+
+    private func updateDockBadge(count: Int) {
+        if count > 0 {
+            let badgeView = DockBadgeView(
+                frame: NSRect(x: 0, y: 0, width: 128, height: 128),
+                icon: NSApp.applicationIconImage,
+                count: count
+            )
+            NSApp.dockTile.contentView = badgeView
+            NSApp.dockTile.badgeLabel = nil
+        } else {
+            NSApp.dockTile.contentView = nil
+            NSApp.dockTile.badgeLabel = nil
+        }
+
+        NSApp.dockTile.display()
     }
 
     private func playMessageSound(soft: Bool, muted: Bool) {
@@ -409,6 +428,7 @@ extension ChatWindowController: WKScriptMessageHandler {
         case "browserNotification":
             handleBrowserNotification(payload: payload)
         case "unreadCount":
+            guard message.frameInfo.isMainFrame else { return }
             handleUnreadCount(payload: payload)
         case "close":
             guard let id = payload["id"] as? String else { return }
@@ -465,6 +485,72 @@ extension ChatWindowController: UNUserNotificationCenterDelegate {
             )
         }
         completionHandler()
+    }
+}
+
+private final class DockBadgeView: NSView {
+    private let icon: NSImage?
+    private let count: Int
+
+    init(frame: NSRect, icon: NSImage?, count: Int) {
+        self.icon = icon
+        self.count = count
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        nil
+    }
+
+    override var isFlipped: Bool {
+        false
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+
+        if let icon {
+            icon.draw(in: bounds)
+        }
+
+        let label = count > 99 ? "99+" : String(count)
+        let fontSize: CGFloat = label.count > 2 ? 24 : 30
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: fontSize, weight: .bold),
+            .foregroundColor: NSColor.white
+        ]
+        let labelSize = label.size(withAttributes: attributes)
+        let badgeHeight: CGFloat = 42
+        let badgeWidth = max(badgeHeight, labelSize.width + 22)
+        let badgeRect = NSRect(
+            x: bounds.maxX - badgeWidth - 2,
+            y: bounds.maxY - badgeHeight - 2,
+            width: badgeWidth,
+            height: badgeHeight
+        )
+
+        NSGraphicsContext.saveGraphicsState()
+        let shadow = NSShadow()
+        shadow.shadowOffset = NSSize(width: 0, height: -2)
+        shadow.shadowBlurRadius = 4
+        shadow.shadowColor = NSColor.black.withAlphaComponent(0.35)
+        shadow.set()
+
+        NSColor.systemRed.setFill()
+        NSBezierPath(
+            roundedRect: badgeRect,
+            xRadius: badgeHeight / 2,
+            yRadius: badgeHeight / 2
+        ).fill()
+        NSGraphicsContext.restoreGraphicsState()
+
+        let labelRect = NSRect(
+            x: badgeRect.midX - labelSize.width / 2,
+            y: badgeRect.midY - labelSize.height / 2,
+            width: labelSize.width,
+            height: labelSize.height
+        )
+        label.draw(in: labelRect, withAttributes: attributes)
     }
 }
 

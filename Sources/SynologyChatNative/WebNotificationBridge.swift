@@ -19,6 +19,10 @@ enum WebNotificationBridge {
     static let userScript = WKUserScript(
         source: """
 (() => {
+  if (window.top !== window) {
+    return;
+  }
+
   if (window.__scnNativeNotificationInstalled || !window.webkit?.messageHandlers?.scnNotifications) {
     return;
   }
@@ -126,6 +130,10 @@ enum WebNotificationBridge {
     const unread = item.querySelector('.unread');
     if (!unread) return 0;
 
+    return unreadCountForBadge(unread);
+  };
+
+  const unreadCountForBadge = (unread) => {
     const classMatch = String(unread.className || '').match(/(?:^|\\s)number-(\\d+)(?:\\s|$)/);
     if (classMatch) return Number(classMatch[1]) || 0;
 
@@ -133,16 +141,102 @@ enum WebNotificationBridge {
     return textMatch ? Number(textMatch[0]) || 0 : 0;
   };
 
+  const isVisible = (element) => {
+    if (!element) return false;
+    const style = getComputedStyle(element);
+    if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
+    return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+  };
+
+  const isRedColor = (value) => {
+    if (!value || !String(value).startsWith('rgb')) return false;
+
+    const numbers = String(value).match(/\\d+/g)?.map(Number) || [];
+    const [red = 0, green = 0, blue = 0] = numbers;
+    return red > 180 && green < 140 && blue < 140;
+  };
+
+  const hasUnreadBadgeColor = (element) => {
+    let current = element;
+    let depth = 0;
+
+    while (current && depth < 3) {
+      const style = getComputedStyle(current);
+      if (isRedColor(style.backgroundColor) || isRedColor(getComputedStyle(current, '::before').backgroundColor)) {
+        return true;
+      }
+      if (isRedColor(getComputedStyle(current, '::after').backgroundColor)) {
+        return true;
+      }
+
+      current = current.parentElement;
+      depth += 1;
+    }
+
+    return false;
+  };
+
+  const isUnreadBadgeCandidate = (element) => {
+    if (!isVisible(element)) return false;
+
+    const text = (element.textContent || '').trim();
+    if (!/^\\d{1,4}$/.test(text)) return false;
+
+    const rect = element.getBoundingClientRect();
+    if (rect.width < 10 || rect.width > 44 || rect.height < 10 || rect.height > 28) return false;
+
+    return hasUnreadBadgeColor(element);
+  };
+
+  const unreadCountFromTitle = () => {
+    const match = String(document.title || '').match(/^\\((\\d+)\\)/);
+    return match ? Number(match[1]) || 0 : 0;
+  };
+
   const nameForUnreadItem = (item) => {
     const name = item.querySelector('.name');
     return (name?.textContent || name?.getAttribute?.('ext:qtip') || 'Chat').trim() || 'Chat';
   };
 
-  const publishUnreadTotal = () => {
-    let total = 0;
-    unreadCounts.forEach((count) => {
-      total += Number(count) || 0;
+  const visibleUnreadTotal = () => {
+    let fallbackTotal = 0;
+    const channelTotals = new Map();
+    const counted = new Set();
+
+    document.querySelectorAll('.channel-list-item').forEach((item) => {
+      const unread = item.querySelector('.unread');
+      if (!unread) return;
+
+      counted.add(unread);
+      const count = unreadCountForBadge(unread);
+      if (count <= 0) return;
+
+      const key = nameForUnreadItem(item);
+      channelTotals.set(key, Math.max(channelTotals.get(key) || 0, count));
     });
+
+    document.querySelectorAll('.unread').forEach((unread) => {
+      if (counted.has(unread) || !isVisible(unread)) return;
+      counted.add(unread);
+      fallbackTotal += unreadCountForBadge(unread);
+    });
+
+    document.querySelectorAll('.channel-list-main *, .syno-chat-app *, body *').forEach((element) => {
+      if (counted.has(element) || !isUnreadBadgeCandidate(element)) return;
+      counted.add(element);
+      fallbackTotal += unreadCountForBadge(element);
+    });
+
+    let total = fallbackTotal;
+    channelTotals.forEach((count) => {
+      total += count;
+    });
+
+    return Math.max(total, unreadCountFromTitle());
+  };
+
+  const publishUnreadTotal = () => {
+    const total = visibleUnreadTotal();
 
     if (total === lastUnreadTotal) return;
     lastUnreadTotal = total;
@@ -202,9 +296,14 @@ enum WebNotificationBridge {
     observer.observe(document.body, {
       subtree: true,
       childList: true,
+      characterData: true,
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ['class', 'style', 'title']
     });
+
+    window.__scnUnreadBadgeInterval = setInterval(() => {
+      scanUnreadBadges(true);
+    }, 2000);
 
     return true;
   };
