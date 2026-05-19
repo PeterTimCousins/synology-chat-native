@@ -1257,6 +1257,15 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-tri
   opacity: 1 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner {
+  background: #0d131c !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice input.x-form-text {
+  border-right: 0 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
