@@ -386,6 +386,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat
   border-bottom: 2px solid #58c56f !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active {
+  border-bottom: 2px solid #58c56f !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-text,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .sortby-btn button,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn button {
@@ -402,7 +406,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn button {
-  background: transparent !important;
+  background-color: transparent !important;
   border-color: transparent !important;
   box-shadow: none !important;
 }
@@ -433,7 +437,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu {
   background: #121b27 !important;
   border-color: #9aa8b9 !important;
+  box-sizing: border-box !important;
   color: #d7e4f7 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu:hover {
@@ -442,7 +449,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-additional-wrapper {
   background: transparent !important;
+  box-sizing: border-box !important;
   color: #93a6c4 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-count {
