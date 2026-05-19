@@ -920,6 +920,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-text a {
   color: #83b8ff !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .file-wrapper {
+  border-left-color: #38465a !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .date-splitter-line {
   background: transparent !important;
   border-top: 1px solid #253142 !important;
