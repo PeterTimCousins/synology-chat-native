@@ -146,6 +146,28 @@ html[data-scn-theme="modernDark"] body.syno-chat .fake-avatar {
   border-radius: 12px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar {
+  overflow: visible !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar {
+  border-radius: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar .img-avatar,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar .fake-avatar,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar .synobot-avatar {
+  border-radius: 50% !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-dsm7 .chat-account-btn .avatar .online-status {
+  border-color: #111822 !important;
+  bottom: -1px !important;
+  right: -1px !important;
+  z-index: 3 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 {
   background: #141d2a !important;
   border: 1px solid #2b3748 !important;
