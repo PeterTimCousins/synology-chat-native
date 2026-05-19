@@ -453,6 +453,27 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   background: #182333 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-image-wrapper {
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-title {
+  color: #7fb2ff !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-desc {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-wrap.allowDefCtxMenu .url-domain {
+  color: #c2cee0 !important;
+  opacity: 1 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .msg-additional-wrapper {
   background: transparent !important;
   box-sizing: border-box !important;
@@ -536,6 +557,16 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .msg-wrap:hover {
   background: #182333 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .msg-wrap:hover .msg-file-name {
+  color: #d7e4f7 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .msg-wrap:hover .msg-file-size {
+  color: #c2cee0 !important;
+  opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-wrapper,
