@@ -1023,7 +1023,9 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-text a {
   color: #83b8ff !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .file-wrapper {
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .file-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .url-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text .refmsg-wrapper {
   border-left-color: #38465a !important;
 }
 
