@@ -1718,6 +1718,98 @@ html[data-scn-theme="modernDark"] body.syno-chat .syno-d-package-window-header-t
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-tl,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-tr,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-tc,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-ml,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-mr,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-mc,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-bl,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-br,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-bc,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-window-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-panel-fbar,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .x-toolbar-right {
+  background: #111a2a !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .ext-mb-content,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .ext-mb-text,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .ext-mb-title,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-mb-progress-status,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-mb-progress-info {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey button {
+  background: #182333 !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey:hover em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-grey:hover button {
+  background: #223149 !important;
+  color: #f4f8ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue button {
+  background: #2f7df6 !important;
+  background-image: none !important;
+  border-color: #2f7df6 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue:hover em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-blue:hover button {
+  background: #4f91ff !important;
+  border-color: #4f91ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red button {
+  background: #d14d59 !important;
+  background-image: none !important;
+  border-color: #d14d59 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red:hover em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-window-dlg .syno-ux-button-red:hover button {
+  background: #e15f6a !important;
+  border-color: #e15f6a !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .forward-message-dialog,
 html[data-scn-theme="modernDark"] body.syno-chat .forward-message-dialog .x-window-header,
 html[data-scn-theme="modernDark"] body.syno-chat .forward-message-dialog .x-window-bwrap,
