@@ -4,6 +4,7 @@ import WebKit
 final class ChatWindowController: NSWindowController {
     private let webView: WKWebView
     private let progressIndicator = NSProgressIndicator()
+    private var activeDownloads: [ObjectIdentifier: WKDownload] = [:]
 
     init() {
         let configuration = WKWebViewConfiguration()
@@ -297,7 +298,38 @@ extension ChatWindowController: WKNavigationDelegate {
         decisionHandler(.allow)
     }
 
-    private func shouldOpenInBrowser(url: URL, navigationAction: WKNavigationAction) -> Bool {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationResponse: WKNavigationResponse,
+        decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void
+    ) {
+        guard navigationResponse.canShowMIMEType,
+              !navigationResponse.response.isAttachment
+        else {
+            decisionHandler(.download)
+            return
+        }
+
+        decisionHandler(.allow)
+    }
+
+    func webView(
+        _ webView: WKWebView,
+        navigationAction: WKNavigationAction,
+        didBecome download: WKDownload
+    ) {
+        track(download)
+    }
+
+    func webView(
+        _ webView: WKWebView,
+        navigationResponse: WKNavigationResponse,
+        didBecome download: WKDownload
+    ) {
+        track(download)
+    }
+
+    fileprivate func shouldOpenInBrowser(url: URL, navigationAction: WKNavigationAction) -> Bool {
         guard let host = url.host,
               let homeURL = URL(string: UserDefaults.standard.string(forKey: Defaults.chatURL) ?? ""),
               let homeHost = homeURL.host
@@ -311,9 +343,38 @@ extension ChatWindowController: WKNavigationDelegate {
 
         return false
     }
+
+    private func track(_ download: WKDownload) {
+        let id = ObjectIdentifier(download)
+        activeDownloads[id] = download
+        download.delegate = self
+    }
 }
 
 extension ChatWindowController: WKUIDelegate {
+    func webView(
+        _ webView: WKWebView,
+        runOpenPanelWith parameters: WKOpenPanelParameters,
+        initiatedByFrame frame: WKFrameInfo,
+        completionHandler: @escaping ([URL]?) -> Void
+    ) {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = parameters.allowsMultipleSelection
+        panel.canChooseFiles = true
+        panel.canChooseDirectories = parameters.allowsDirectories
+        panel.resolvesAliases = true
+
+        let handleResult = { (response: NSApplication.ModalResponse) in
+            completionHandler(response == .OK ? panel.urls : nil)
+        }
+
+        if let window {
+            panel.beginSheetModal(for: window, completionHandler: handleResult)
+        } else {
+            handleResult(panel.runModal())
+        }
+    }
+
     func webView(
         _ webView: WKWebView,
         createWebViewWith configuration: WKWebViewConfiguration,
@@ -321,8 +382,55 @@ extension ChatWindowController: WKUIDelegate {
         windowFeatures: WKWindowFeatures
     ) -> WKWebView? {
         if let url = navigationAction.request.url {
-            NSWorkspace.shared.open(url)
+            if shouldOpenInBrowser(url: url, navigationAction: navigationAction) {
+                NSWorkspace.shared.open(url)
+            } else {
+                webView.load(navigationAction.request)
+            }
         }
         return nil
+    }
+}
+
+extension ChatWindowController: WKDownloadDelegate {
+    func download(
+        _ download: WKDownload,
+        decideDestinationUsing response: URLResponse,
+        suggestedFilename: String,
+        completionHandler: @escaping (URL?) -> Void
+    ) {
+        let panel = NSSavePanel()
+        panel.nameFieldStringValue = suggestedFilename
+        panel.directoryURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+
+        let handleResult = { (response: NSApplication.ModalResponse) in
+            completionHandler(response == .OK ? panel.url : nil)
+        }
+
+        if let window {
+            panel.beginSheetModal(for: window, completionHandler: handleResult)
+        } else {
+            handleResult(panel.runModal())
+        }
+    }
+
+    func downloadDidFinish(_ download: WKDownload) {
+        activeDownloads[ObjectIdentifier(download)] = nil
+    }
+
+    func download(_ download: WKDownload, didFailWithError error: Error, resumeData: Data?) {
+        activeDownloads[ObjectIdentifier(download)] = nil
+    }
+}
+
+private extension URLResponse {
+    var isAttachment: Bool {
+        guard let response = self as? HTTPURLResponse,
+              let disposition = response.value(forHTTPHeaderField: "Content-Disposition")
+        else {
+            return false
+        }
+
+        return disposition.localizedCaseInsensitiveContains("attachment")
     }
 }
