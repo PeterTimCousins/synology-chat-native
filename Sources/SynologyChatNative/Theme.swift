@@ -2373,6 +2373,15 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .label-containe
   color: #93a6c4 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog div.x-form-composite.x-form-field,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog div.x-form-composite.x-form-field > .x-box-inner {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input.x-form-text,
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .chat-contenteditable-field.with-border {
   -webkit-appearance: none !important;
