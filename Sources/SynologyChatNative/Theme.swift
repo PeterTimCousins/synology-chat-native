@@ -1010,6 +1010,117 @@ html[data-scn-theme="modernDark"] body.syno-chat .syno-d-package-window-header-t
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-header,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-panel-fbar,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-toolbar-right,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .snippet-form,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .snippet-form .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .snippet-form .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog form.x-form {
+  background: #111a2a !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-window-header {
+  border-bottom: 1px solid #4fb76a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .label-container,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .label-container .x-box-inner,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .label-container .display-label {
+  background: transparent !important;
+  border: 0 !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input.x-form-text,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .chat-contenteditable-field.with-border {
+  background: #0d131c !important;
+  border: 1px solid #2b3748 !important;
+  color: #d7e4f7 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input.x-form-text:focus,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .chat-contenteditable-field.with-border:focus {
+  border-color: #4f8ef7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap input.x-form-text {
+  border-right: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-trigger {
+  background: #0d131c !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap input.x-form-text:focus + .x-form-trigger,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap input.x-form-focus + .x-form-trigger {
+  border-color: #4f8ef7 !important;
+  border-left: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .editor-container.ace_editor,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_scroller,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_content,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_layer {
+  background: #0d131c !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .editor-container.ace_editor {
+  border: 1px solid #2b3748 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_gutter,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_gutter-layer,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_gutter-cell {
+  background: #121b28 !important;
+  color: #93a6c4 !important;
+  border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_active-line,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_gutter-active-line {
+  background: #182333 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_cursor {
+  border-left-color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_print-margin {
+  background: #253142 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-header,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-bwrap,
