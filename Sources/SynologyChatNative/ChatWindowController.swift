@@ -5,6 +5,8 @@ import WebKit
 final class ChatWindowController: NSWindowController {
     private let webView: WKWebView
     private let progressIndicator = NSProgressIndicator()
+    private let normalMessageSound = NSSound(named: NSSound.Name("Glass"))
+    private let softMessageSound = NSSound(named: NSSound.Name("Tink"))
     private var activeDownloads: [ObjectIdentifier: WKDownload] = [:]
 
     init() {
@@ -33,6 +35,7 @@ final class ChatWindowController: NSWindowController {
 
         super.init(window: window)
 
+        window.delegate = self
         configuration.userContentController.add(
             WeakScriptMessageHandler(delegate: self),
             name: WebNotificationBridge.handlerName
@@ -43,6 +46,7 @@ final class ChatWindowController: NSWindowController {
         requestNotificationAuthorization()
         configureContentView()
         loadHome()
+        syncWindowActiveStateToWeb()
     }
 
     deinit {
@@ -187,6 +191,48 @@ final class ChatWindowController: NSWindowController {
     private func focusWindow() {
         NSApp.activate(ignoringOtherApps: true)
         window?.makeKeyAndOrderFront(nil)
+    }
+
+    private var isNativeWindowActive: Bool {
+        NSApp.isActive && window?.isKeyWindow == true && window?.isMiniaturized == false
+    }
+
+    private func handleChatEvent(payload: [String: Any]) {
+        guard let id = payload["id"] as? String else { return }
+
+        let muted = payload["muted"] as? Bool ?? false
+        let title = payload["title"] as? String ?? "Chat"
+        let body = payload["body"] as? String ?? ""
+        let isCurrentChannel = payload["isCurrentChannel"] as? Bool ?? false
+
+        if !isNativeWindowActive {
+            playMessageSound(soft: false, muted: muted)
+            showNativeNotification(id: id, title: title, body: body)
+            return
+        }
+
+        playMessageSound(soft: isCurrentChannel, muted: muted)
+    }
+
+    private func playMessageSound(soft: Bool, muted: Bool) {
+        guard !muted else { return }
+
+        let sound = soft ? softMessageSound : normalMessageSound
+        guard let sound else {
+            NSSound.beep()
+            return
+        }
+
+        sound.stop()
+        sound.volume = soft ? 0.35 : 0.85
+        sound.play()
+    }
+
+    private func syncWindowActiveStateToWeb() {
+        let active = isNativeWindowActive ? "true" : "false"
+        webView.evaluateJavaScript(
+            "window.__scnSetNativeWindowActive && window.__scnSetNativeWindowActive(\(active));"
+        )
     }
 }
 
@@ -341,6 +387,8 @@ extension ChatWindowController: WKScriptMessageHandler {
         switch kind {
         case "requestPermission":
             requestNotificationAuthorization()
+        case "chatEvent":
+            handleChatEvent(payload: payload)
         case "show":
             guard let id = payload["id"] as? String else { return }
             showNativeNotification(
@@ -354,6 +402,24 @@ extension ChatWindowController: WKScriptMessageHandler {
         default:
             break
         }
+    }
+}
+
+extension ChatWindowController: NSWindowDelegate {
+    func windowDidBecomeKey(_ notification: Notification) {
+        syncWindowActiveStateToWeb()
+    }
+
+    func windowDidResignKey(_ notification: Notification) {
+        syncWindowActiveStateToWeb()
+    }
+
+    func windowDidMiniaturize(_ notification: Notification) {
+        syncWindowActiveStateToWeb()
+    }
+
+    func windowDidDeminiaturize(_ notification: Notification) {
+        syncWindowActiveStateToWeb()
     }
 }
 
@@ -396,6 +462,7 @@ extension ChatWindowController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         progressIndicator.stopAnimation(nil)
         applyTheme()
+        syncWindowActiveStateToWeb()
         window?.title = webView.title?.isEmpty == false ? webView.title! : "Synology Chat"
     }
 
