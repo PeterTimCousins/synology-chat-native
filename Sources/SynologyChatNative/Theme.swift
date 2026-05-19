@@ -1288,7 +1288,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   background: transparent !important;
   color: #d7e4f7 !important;
   min-height: 30px !important;
-  position: relative !important;
+  padding: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap .syno-ux-checkbox-label {
@@ -1303,14 +1303,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
-  height: 18px !important;
-  left: 0 !important;
-  margin: 0 !important;
+  margin-top: 11px !important;
   opacity: 0 !important;
-  position: absolute !important;
-  top: 6px !important;
-  width: 18px !important;
-  z-index: 2 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon {
@@ -1320,9 +1314,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   box-shadow: none !important;
   box-sizing: border-box !important;
   height: 18px !important;
-  left: 0 !important;
-  position: absolute !important;
-  top: 6px !important;
+  margin: 6px 0 !important;
+  position: relative !important;
   width: 18px !important;
 }
 
