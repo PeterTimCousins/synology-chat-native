@@ -571,12 +571,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-wrap,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .bookmark-list-view .collapsed-msg-wrap {
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .star-list-view .collapsed-msg-wrap {
   position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .bookmark-list-view .collapsed-msg-more-btn {
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .star-list-view .collapsed-msg-more-btn {
   background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 34px, #121b27) !important;
   border: 0 !important;
   bottom: 0 !important;
@@ -594,7 +594,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn:hover,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .bookmark-list-view .collapsed-msg-more-btn:hover {
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .star-list-view .collapsed-msg-more-btn:hover {
   background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 34px, #121b27) !important;
   color: #9cc6ff !important;
 }
