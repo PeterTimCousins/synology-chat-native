@@ -278,8 +278,13 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .item-title 
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel > .x-panel-bwrap > .x-panel-body,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel > .x-panel-bwrap > .x-panel-body,
 html[data-scn-theme="modernDark"] body.syno-chat .msg-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .msg-panel > .x-panel-bwrap,
 html[data-scn-theme="modernDark"] body.syno-chat .msg-panel .x-panel-body,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview,
 html[data-scn-theme="modernDark"] body.syno-chat .msgs {
@@ -294,6 +299,101 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-panel > .x-panel-bwrap > .
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
   overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel > .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .msg-panel > .x-panel-bwrap > .x-panel-body {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel {
+  border-left: 14px solid #0b111b !important;
+  box-sizing: border-box !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-panel-header,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-panel-tbar,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-toolbar,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-toolbar-right,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .x-panel-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .post-list-view,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .scrollwrapper {
+  background: #121b27 !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip {
+  border-bottom: 1px solid #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active .x-tab-right,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active .x-tab-left,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active .x-tab-strip-inner {
+  border-bottom: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active .x-tab-strip-text {
+  border-bottom: 2px solid #58c56f !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-text,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .sortby-btn button,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn button {
+  filter: invert(1) brightness(1.45) saturate(.4) opacity(.82) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active .x-tab-strip-text {
+  filter: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .sortby-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .sortby-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .sortby-btn button,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .close-tab-panel-btn button {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .empty-hint {
+  background: transparent !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .empty-hint-text {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .empty-hint-img {
+  filter: invert(1) brightness(1.3) saturate(.35) opacity(.45) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-infinite-list-view .item-wrap {
+  border: 1px solid #2b3748 !important;
+  border-radius: 0 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-infinite-list-view .item-wrap:hover {
+  background: #182333 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .msg-title {
