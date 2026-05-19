@@ -1257,6 +1257,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-tri
   opacity: 1 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice.x-form-field,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner {
+  background: transparent !important;
+  border: 0 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
