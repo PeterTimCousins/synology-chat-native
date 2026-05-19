@@ -1669,6 +1669,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-field
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-field + .file-field {
+  margin-top: 10px !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .filename,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-desc,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .syno-ux-checkbox-label {
