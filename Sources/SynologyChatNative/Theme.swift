@@ -331,21 +331,14 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.coll
   box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed::after {
+  content: none !important;
+  display: none !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel {
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel::before {
-  background: #121b27 !important;
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: -14px !important;
-  width: 14px !important;
-  pointer-events: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel > .x-panel-bwrap,
