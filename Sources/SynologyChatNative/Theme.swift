@@ -1017,7 +1017,22 @@ html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn:hover 
   border-color: #3a4a60 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn.x-btn-pressed {
+  background: #182333 !important;
+  border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn.x-btn-pressed:hover {
+  background: #20304a !important;
+  border-color: #3a4a60 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn .x-btn-text {
+  background-color: transparent !important;
+  filter: invert(1) brightness(1.7) saturate(.35) opacity(.86) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .button_container .x-btn.x-btn-pressed .x-btn-text {
   background-color: transparent !important;
   filter: invert(1) brightness(1.7) saturate(.35) opacity(.86) !important;
 }
