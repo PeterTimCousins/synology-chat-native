@@ -44,5 +44,18 @@ enum MenuBuilder {
         let forwardItem = navigationMenu.addItem(withTitle: "Forward", action: #selector(AppDelegate.goForward(_:)), keyEquivalent: "]")
         let reloadItem = navigationMenu.addItem(withTitle: "Reload", action: #selector(AppDelegate.reload(_:)), keyEquivalent: "r")
         [homeItem, backItem, forwardItem, reloadItem].forEach { $0.target = delegate }
+
+        let developerItem = NSMenuItem()
+        mainMenu.addItem(developerItem)
+
+        let developerMenu = NSMenu(title: "Developer")
+        developerItem.submenu = developerMenu
+        let copyDOMItem = developerMenu.addItem(
+            withTitle: "Copy DOM Snapshot",
+            action: #selector(AppDelegate.copyDOMSnapshot(_:)),
+            keyEquivalent: "d"
+        )
+        copyDOMItem.keyEquivalentModifierMask = [.command, .shift]
+        copyDOMItem.target = delegate
     }
 }

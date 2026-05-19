@@ -13,6 +13,9 @@ final class ChatWindowController: NSWindowController {
 
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsBackForwardNavigationGestures = true
+        if #available(macOS 13.3, *) {
+            webView.isInspectable = true
+        }
 
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1180, height: 820),
@@ -70,6 +73,25 @@ final class ChatWindowController: NSWindowController {
         }
     }
 
+    func copyDOMSnapshotToPasteboard() {
+        webView.evaluateJavaScript(Self.domSnapshotScript) { result, error in
+            guard error == nil, let snapshot = result as? String else {
+                self.showSnapshotAlert(
+                    title: "Could Not Copy DOM Snapshot",
+                    message: error?.localizedDescription ?? "The page did not return a snapshot."
+                )
+                return
+            }
+
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(snapshot, forType: .string)
+            self.showSnapshotAlert(
+                title: "DOM Snapshot Copied",
+                message: "The live DOM and layout probe data are now on the clipboard."
+            )
+        }
+    }
+
     private func configureContentView() {
         guard let contentView = window?.contentView else { return }
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -99,6 +121,142 @@ final class ChatWindowController: NSWindowController {
         alert.alertStyle = .warning
         alert.runModal()
     }
+
+    private func showSnapshotAlert(title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.alertStyle = .informational
+        alert.runModal()
+    }
+}
+
+private extension ChatWindowController {
+    static let domSnapshotScript = """
+(() => {
+  const selectors = [
+    'html',
+    'body',
+    '.chat-content-panel',
+    '.channel-list-main',
+    '.chat-center-content-panel',
+    '.chat-center-content-panel.collapsed',
+    '.chat-center-content-panel.collapsed .msg-panel',
+    '.chat-center-content-panel.collapsed .chat-msgview',
+    '.chat-center-content-panel.collapsed .chat-msgview .scrollwrapper',
+    '.chat-center-content-panel.collapsed .chat-msgview .vscrollerbase',
+    '.chat-center-content-panel.collapsed .chat-msgview .vscrollerbar',
+    '.chat-right-content-panel',
+    '.chat-summary-tab-panel',
+    '.summary-item',
+    '.summary-item .post-list-view',
+    '.summary-item .item-wrap'
+  ];
+
+  const styleFields = [
+    'display',
+    'position',
+    'left',
+    'right',
+    'top',
+    'width',
+    'height',
+    'boxSizing',
+    'overflow',
+    'overflowX',
+    'overflowY',
+    'backgroundColor',
+    'backgroundImage',
+    'borderTopColor',
+    'borderRightColor',
+    'borderBottomColor',
+    'borderLeftColor',
+    'borderTopWidth',
+    'borderRightWidth',
+    'borderBottomWidth',
+    'borderLeftWidth',
+    'borderTopLeftRadius',
+    'borderTopRightRadius',
+    'borderBottomRightRadius',
+    'borderBottomLeftRadius',
+    'boxShadow',
+    'zIndex'
+  ];
+
+  const describe = (element) => {
+    if (!element) return null;
+    const rect = element.getBoundingClientRect();
+    const styles = getComputedStyle(element);
+    const computed = {};
+    for (const field of styleFields) computed[field] = styles[field];
+    return {
+      tag: element.tagName.toLowerCase(),
+      id: element.id || '',
+      className: String(element.className || ''),
+      inlineStyle: element.getAttribute('style') || '',
+      rect: {
+        x: Math.round(rect.x * 100) / 100,
+        y: Math.round(rect.y * 100) / 100,
+        width: Math.round(rect.width * 100) / 100,
+        height: Math.round(rect.height * 100) / 100,
+        right: Math.round(rect.right * 100) / 100,
+        bottom: Math.round(rect.bottom * 100) / 100
+      },
+      computed
+    };
+  };
+
+  const selectorSnapshots = selectors.map((selector) => ({
+    selector,
+    matches: Array.from(document.querySelectorAll(selector)).slice(0, 20).map(describe)
+  }));
+
+  const center = document.querySelector('.chat-center-content-panel.collapsed') || document.querySelector('.chat-center-content-panel');
+  const right = document.querySelector('.chat-right-content-panel');
+  const probeRects = [center, right].filter(Boolean).map(describe);
+  const edgeProbe = [];
+  if (center) {
+    const rect = center.getBoundingClientRect();
+    const yValues = [
+      rect.top + 12,
+      rect.top + 80,
+      rect.top + rect.height / 2,
+      rect.bottom - 120,
+      rect.bottom - 24
+    ].filter((y) => y >= 0 && y <= window.innerHeight);
+    const xValues = [rect.right - 6, rect.right - 2, rect.right + 2, rect.right + 6]
+      .filter((x) => x >= 0 && x <= window.innerWidth);
+    for (const y of yValues) {
+      for (const x of xValues) {
+        edgeProbe.push({
+          x: Math.round(x * 100) / 100,
+          y: Math.round(y * 100) / 100,
+          stack: document.elementsFromPoint(x, y).slice(0, 12).map(describe)
+        });
+      }
+    }
+  }
+
+  const payload = {
+    url: location.href,
+    title: document.title,
+    timestamp: new Date().toISOString(),
+    viewport: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      devicePixelRatio: window.devicePixelRatio
+    },
+    theme: document.documentElement.getAttribute('data-scn-theme'),
+    bodyClass: document.body.className,
+    probeRects,
+    selectorSnapshots,
+    edgeProbe,
+    html: document.documentElement.outerHTML
+  };
+
+  return JSON.stringify(payload, null, 2);
+})();
+"""
 }
 
 extension ChatWindowController: WKNavigationDelegate {

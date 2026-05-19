@@ -57,4 +57,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func reload(_ sender: Any?) {
         windowController?.reload()
     }
+
+    @IBAction func copyDOMSnapshot(_ sender: Any?) {
+        windowController?.copyDOMSnapshotToPasteboard()
+    }
 }
