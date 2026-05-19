@@ -1257,28 +1257,17 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-tri
   opacity: 1 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice,
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner {
-  background: #0d131c !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice input.x-form-text {
-  border-right: 0 !important;
-}
-
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
-  background: #0d131c !important;
+  background: transparent !important;
   background-image: none !important;
-  border-color: #2b3748 !important;
+  border: 0 !important;
   box-shadow: none !important;
   color: #c6d2e3 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn {
-  border: 1px solid #2b3748 !important;
-  border-left: 0 !important;
   box-sizing: border-box !important;
   height: 30px !important;
 }
