@@ -481,17 +481,43 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   opacity: .75 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .x-form-field-wrap {
   background: #0f1723 !important;
-  border-color: #2b3748 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box {
+  background: #0f1723 !important;
+  border: 1px solid #2b3748 !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
   color: #d7e4f7 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .syno-ux-combobox-trigger,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .x-form-arrow-trigger {
-  background-color: transparent !important;
-  filter: invert(1) brightness(1.45) saturate(.4) opacity(.82) !important;
+  background: #0f1723 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box:focus,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box.x-form-focus {
+  border-color: #4f8ef7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box:focus + .x-form-trigger,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-combo-box.x-form-focus + .x-form-trigger {
+  border-color: #4f8ef7 !important;
+  border-left: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .file-list-view,
