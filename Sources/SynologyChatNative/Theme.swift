@@ -168,6 +168,55 @@ html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-app .chat-win-topbar-
   z-index: 3 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window.light-theme,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .v-window-header-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .v-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .v-about-window-body-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .content-top,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .content-bottom {
+  background: #111a2a !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .v-about-window-header {
+  border-bottom: 1px solid #4fb76a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .content-row.name {
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .divider {
+  background: #2b3748 !important;
+  border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .links a {
+  color: #7fb2ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .copyright {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .window-header-tool-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .window-header-tool-wrapper.light,
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .window-tool-close {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .v-about-window .window-tool-close:hover {
+  color: #d7e4f7 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .smart-search-ct-dsm7 {
   background: #141d2a !important;
   border: 1px solid #2b3748 !important;
