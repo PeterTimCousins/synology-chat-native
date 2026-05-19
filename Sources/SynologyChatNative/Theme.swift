@@ -563,7 +563,6 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   bottom: 0 !important;
   box-shadow: none !important;
   color: #7fb2ff !important;
-  display: block !important;
   height: 20px !important;
   line-height: 20px !important;
   min-width: 72px !important;
