@@ -1271,12 +1271,28 @@ html[data-scn-theme="modernDark"] body.syno-chat .x-menu-item,
 html[data-scn-theme="modernDark"] body.syno-chat .x-menu-list-item,
 html[data-scn-theme="modernDark"] body.syno-chat .x-menu-item-text {
   background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   color: #d7e4f7 !important;
+  outline: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .x-menu-item-active,
 html[data-scn-theme="modernDark"] body.syno-chat .x-menu-list-item:hover {
   background: #1b2943 !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .hover-action-more-menu .x-menu-list-item.edit-message {
+  border-top: 1px solid #2b3748 !important;
+  margin-top: 4px !important;
+  padding-top: 4px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .jump-dialog,
