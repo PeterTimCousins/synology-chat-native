@@ -1823,6 +1823,25 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-che
   width: 18px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap input.syno-ux-checkbox-icon:checked + div.syno-ux-checkbox-icon {
+  background: #57bf6d !important;
+  border-color: #57bf6d !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked::after,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap input.syno-ux-checkbox-icon:checked + div.syno-ux-checkbox-icon::after {
+  border: solid #ffffff !important;
+  border-width: 0 2px 2px 0 !important;
+  content: "" !important;
+  height: 9px !important;
+  left: 5px !important;
+  position: absolute !important;
+  top: 1px !important;
+  transform: rotate(45deg) !important;
+  width: 5px !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap div.syno-ux-cb-disabled,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-check-wrap .syno-ux-cb-disabled {
   color: #93a6c4 !important;
