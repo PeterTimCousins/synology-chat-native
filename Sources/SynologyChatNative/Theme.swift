@@ -1167,18 +1167,25 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-ch
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset {
   border: 0 !important;
+  padding-top: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header {
   background: transparent !important;
   border-bottom: 1px dashed #526174 !important;
   color: #93a6c4 !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 5px !important;
+  width: 100% !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header .x-fieldset-header-text {
-  background: #111a2a !important;
+  background: transparent !important;
   color: #93a6c4 !important;
+  display: block !important;
   font-weight: 700 !important;
+  padding: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog input.x-form-text,
@@ -1272,8 +1279,8 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   color: #d7e4f7 !important;
   display: inline-block !important;
   line-height: 18px !important;
-  margin-left: 8px !important;
-  padding-left: 22px !important;
+  margin-left: 24px !important;
+  padding-left: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
