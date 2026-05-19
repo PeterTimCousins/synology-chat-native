@@ -510,20 +510,37 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   color: #d7e4f7 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn em,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn button {
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn {
   background: #243144 !important;
   border-color: #2b3748 !important;
   box-shadow: none !important;
+  box-sizing: border-box !important;
   color: #93a6c4 !important;
+  height: 24px !important;
+  line-height: 24px !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled em,
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled button {
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn button {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  padding: 0 12px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled {
   background: #243144 !important;
   color: #71819a !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled button {
+  background: transparent !important;
+  color: inherit !important;
   opacity: 1 !important;
 }
 
