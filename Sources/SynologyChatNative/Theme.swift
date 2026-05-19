@@ -502,6 +502,96 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   opacity: .75 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .scrollwrapper {
+  background: #121b27 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn button {
+  background: #243144 !important;
+  border-color: #2b3748 !important;
+  box-shadow: none !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled em,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-topbar .mark-all-read-btn.x-item-disabled button {
+  background: #243144 !important;
+  color: #71819a !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .file-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .inner-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .file-text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .file-desc,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .markdown {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-user-name {
+  color: #f4f8ff !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-post-time {
+  color: #9fb2d0 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-file-name {
+  color: #d7e4f7 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn {
+  background: #e8f0fb !important;
+  color: #2f7fe8 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-additional-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-comment-count {
+  background: transparent !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .comment-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .comment-row {
+  background: #182333 !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .comment-wrap .msg-user-name,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .comment-wrap .msg-post-time,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .comment-wrap .markdown {
+  color: #d7e4f7 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbase,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbasebeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbaseend {
+  background: #0f1723 !important;
+  border-color: #0f1723 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbar,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbarbeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .vscrollerbarend {
+  background: #38465a !important;
+  border-color: #38465a !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file-tab-panel .x-form-field-wrap {
   background: #0f1723 !important;
   border: 0 !important;
