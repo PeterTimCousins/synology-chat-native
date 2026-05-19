@@ -1,4 +1,5 @@
 import AppKit
+import UserNotifications
 import WebKit
 
 final class ChatWindowController: NSWindowController {
@@ -9,8 +10,10 @@ final class ChatWindowController: NSWindowController {
     init() {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .default()
+        configuration.mediaTypesRequiringUserActionForPlayback = []
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         configuration.userContentController.addUserScript(Theme.current.userScript)
+        configuration.userContentController.addUserScript(WebNotificationBridge.userScript)
 
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsBackForwardNavigationGestures = true
@@ -30,10 +33,22 @@ final class ChatWindowController: NSWindowController {
 
         super.init(window: window)
 
+        configuration.userContentController.add(
+            WeakScriptMessageHandler(delegate: self),
+            name: WebNotificationBridge.handlerName
+        )
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization()
         configureContentView()
         loadHome()
+    }
+
+    deinit {
+        webView.configuration.userContentController.removeScriptMessageHandler(
+            forName: WebNotificationBridge.handlerName
+        )
     }
 
     required init?(coder: NSCoder) {
@@ -130,9 +145,63 @@ final class ChatWindowController: NSWindowController {
         alert.alertStyle = .informational
         alert.runModal()
     }
+
+    private func requestNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { _, error in
+            if let error {
+                NSLog("Synology Chat notification permission error: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private func showNativeNotification(id: String, title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title.isEmpty ? "Synology Chat" : title
+        content.body = body
+        content.userInfo = ["scnNotificationID": id]
+
+        let request = UNNotificationRequest(
+            identifier: nativeNotificationIdentifier(for: id),
+            content: content,
+            trigger: nil
+        )
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error {
+                NSLog("Synology Chat notification delivery error: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private func closeNativeNotification(id: String) {
+        let identifier = nativeNotificationIdentifier(for: id)
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier])
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+
+    private func nativeNotificationIdentifier(for id: String) -> String {
+        "synology-chat-\(id)"
+    }
+
+    private func focusWindow() {
+        NSApp.activate(ignoringOtherApps: true)
+        window?.makeKeyAndOrderFront(nil)
+    }
 }
 
 private extension ChatWindowController {
+    static func javascriptStringLiteral(_ value: String) -> String {
+        guard
+            let data = try? JSONSerialization.data(withJSONObject: [value], options: []),
+            let encoded = String(data: data, encoding: .utf8)
+        else {
+            return "''"
+        }
+
+        return String(encoded.dropFirst().dropLast())
+    }
+
     static let domSnapshotScript = """
 (() => {
   const selectors = [
@@ -258,6 +327,65 @@ private extension ChatWindowController {
   return JSON.stringify(payload, null, 2);
 })();
 """
+}
+
+extension ChatWindowController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        guard message.name == WebNotificationBridge.handlerName,
+              let payload = message.body as? [String: Any],
+              let kind = payload["kind"] as? String
+        else {
+            return
+        }
+
+        switch kind {
+        case "requestPermission":
+            requestNotificationAuthorization()
+        case "show":
+            guard let id = payload["id"] as? String else { return }
+            showNativeNotification(
+                id: id,
+                title: payload["title"] as? String ?? "Synology Chat",
+                body: payload["body"] as? String ?? ""
+            )
+        case "close":
+            guard let id = payload["id"] as? String else { return }
+            closeNativeNotification(id: id)
+        default:
+            break
+        }
+    }
+}
+
+extension ChatWindowController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        completionHandler([.banner, .list])
+    }
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        DispatchQueue.main.async {
+            self.focusWindow()
+
+            guard let id = response.notification.request.content.userInfo["scnNotificationID"] as? String else {
+                return
+            }
+
+            self.webView.evaluateJavaScript(
+                """
+                window.__scnDispatchNativeNotificationClick && window.__scnDispatchNativeNotificationClick(\(Self.javascriptStringLiteral(id)));
+                """
+            )
+        }
+        completionHandler()
+    }
 }
 
 extension ChatWindowController: WKNavigationDelegate {
