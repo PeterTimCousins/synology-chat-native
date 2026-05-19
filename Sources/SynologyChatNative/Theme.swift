@@ -291,6 +291,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .channel-list-group-name {
   color: #778aaa !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .jump-to-button .jump-to-button-text-group .jump-to-button-img {
+  background-image: url("webman/3rdparty/Chat/images/dark/1x/c_bt_find_account.png?v=25b036b883f181de794ecf5b13951f81") !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item {
   border-radius: 10px !important;
   color: #93a6c4 !important;
