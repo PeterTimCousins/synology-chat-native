@@ -2426,12 +2426,19 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-trigger
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: 12px 12px !important;
-  border: 0 !important;
+  border-color: #2b3748 !important;
+  border-style: solid !important;
+  border-width: 1px 1px 1px 0 !important;
+  box-sizing: border-box !important;
   filter: none !important;
   opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap:focus-within {
+  border-color: #4f8ef7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap:focus-within .x-form-trigger {
   border-color: #4f8ef7 !important;
 }
 
