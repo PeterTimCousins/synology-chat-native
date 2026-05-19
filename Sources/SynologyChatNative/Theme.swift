@@ -331,10 +331,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc > div {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc::before {
-  background: #182333 !important;
-  background-image: none !important;
+  background: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='13' viewBox='0 0 9 13'%3E%3Cpath fill='%23182333' d='M9 0v13H0c4.9-1.1 8.2-5.9 9-13Z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-size: 9px 13px !important;
   border: 0 !important;
-  border-bottom-left-radius: 9px !important;
   box-shadow: none !important;
 }
 
