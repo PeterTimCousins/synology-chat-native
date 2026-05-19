@@ -1121,6 +1121,229 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_print-marg
   background: #253142 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-header,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-panel-fbar,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-toolbar-right,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .scrollbar-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-formpanel,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-formpanel .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog form.x-form,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-fieldset,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-fieldset-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-fieldset-body,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choices {
+  background: #111a2a !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-header {
+  border-bottom: 1px solid #4fb76a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-window-footer {
+  border-top: 1px solid #223149 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-item-label,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-checkbox-label {
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset {
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header {
+  background: transparent !important;
+  border-bottom: 1px dashed #526174 !important;
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-fieldset.x-fieldset .x-fieldset-header .x-fieldset-header-text {
+  background: #111a2a !important;
+  color: #93a6c4 !important;
+  font-weight: 700 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog input.x-form-text,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog textarea.x-form-textarea,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-field-wrap {
+  background: #0d131c !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog input.x-form-text,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog textarea.x-form-textarea {
+  border: 1px solid #2b3748 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog input.x-form-text:focus,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog textarea.x-form-textarea:focus {
+  border-color: #4f8ef7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-element,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-inner-element,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-element .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-element .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-element .scrollwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .syno-ux-form-fleXcroll-element .scrollgeneric {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .file-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .file-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .file-btn button,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .btn-add-option,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .btn-add-option em,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .btn-add-option button {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #d7e4f7 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .file-btn:hover button,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .btn-add-option:hover button {
+  color: #7fb2ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-field-trigger-wrap {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-field-trigger-wrap input.x-form-text {
+  border-right: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-trigger {
+  background: #0d131c !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-split-bar {
+  background: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-item-disabled,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-item-disabled * {
+  color: #71819a !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+  min-height: 18px !important;
+  position: relative !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap .syno-ux-checkbox-label {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+  display: inline-block !important;
+  line-height: 18px !important;
+  margin-left: 8px !important;
+  padding-left: 22px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
+  height: 18px !important;
+  left: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 18px !important;
+  z-index: 2 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon {
+  background: #0d131c !important;
+  border: 1px solid #9fb0c7 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  height: 18px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 18px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-hover,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-focus {
+  border-color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked {
+  background: #57bf6d !important;
+  border-color: #57bf6d !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap div.syno-ux-checkbox-icon.syno-ux-cb-checked::after {
+  border: solid #ffffff !important;
+  border-width: 0 2px 2px 0 !important;
+  content: "" !important;
+  height: 9px !important;
+  left: 5px !important;
+  position: absolute !important;
+  top: 1px !important;
+  transform: rotate(45deg) !important;
+  width: 5px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn button {
+  background: #182333 !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn {
+  border: 1px solid #2b3748 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn em,
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-btn button {
+  border: 0 !important;
+  border-radius: 999px !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-header,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-bwrap,
