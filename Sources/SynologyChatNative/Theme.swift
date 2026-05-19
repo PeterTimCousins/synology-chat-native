@@ -1266,42 +1266,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em,
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
-  background: transparent !important;
-  background-image: none !important;
+  background-color: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  color: #c6d2e3 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn {
-  box-sizing: border-box !important;
-  height: 30px !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em {
-  align-items: center !important;
-  display: flex !important;
-  height: 30px !important;
-  justify-content: center !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
-  height: 30px !important;
-  line-height: 30px !important;
+  line-height: 0 !important;
+  margin-right: 0 !important;
   padding: 0 !important;
-  position: relative !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button::before {
-  color: #c6d2e3 !important;
-  content: "×" !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  left: 50% !important;
-  position: absolute !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-split-bar {
