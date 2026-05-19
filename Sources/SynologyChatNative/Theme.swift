@@ -309,9 +309,26 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.coll
   border-bottom-right-radius: 0 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel {
-  border-left: 14px solid #0b111b !important;
-  box-sizing: border-box !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .scrollwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .scrollgeneric,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbase,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbasebeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbaseend,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbar,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbarbeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .vscrollerbarend {
+  background-color: #121b27 !important;
+  background-image: none !important;
+  border-color: #121b27 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .scrollwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel.collapsed .chat-msgview .scrollgeneric {
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel,
