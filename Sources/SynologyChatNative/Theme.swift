@@ -1241,6 +1241,12 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-fie
   border: 0 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-composite:has(input[name="on_date"]),
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-composite:has(input[name="on_date"]) .x-box-inner {
+  background: transparent !important;
+  border: 0 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-field-trigger-wrap input.x-form-text {
   border-right: 0 !important;
 }
@@ -1275,7 +1281,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-split-bar {
-  background: #2b3748 !important;
+  background: transparent !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-item-disabled,
