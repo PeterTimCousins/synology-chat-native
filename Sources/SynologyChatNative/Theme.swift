@@ -1287,18 +1287,19 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-item-dis
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap {
   background: transparent !important;
   color: #d7e4f7 !important;
-  min-height: 20px !important;
+  min-height: 30px !important;
   position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap .syno-ux-checkbox-label {
   background: transparent !important;
   color: #d7e4f7 !important;
-  display: inline-block !important;
-  line-height: 20px !important;
-  margin-left: 24px !important;
-  padding-left: 0 !important;
-  vertical-align: top !important;
+  display: block !important;
+  line-height: 30px !important;
+  margin-left: 0 !important;
+  min-height: 30px !important;
+  padding-left: 26px !important;
+  vertical-align: baseline !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-check-wrap input.syno-ux-checkbox-icon {
@@ -1307,7 +1308,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   margin: 0 !important;
   opacity: 0 !important;
   position: absolute !important;
-  top: 0 !important;
+  top: 6px !important;
   width: 18px !important;
   z-index: 2 !important;
 }
@@ -1321,7 +1322,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .x-form-che
   height: 18px !important;
   left: 0 !important;
   position: absolute !important;
-  top: 1px !important;
+  top: 6px !important;
   width: 18px !important;
 }
 
