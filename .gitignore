@@ -4,5 +4,6 @@ build/
 DerivedData/
 *.xcuserstate
 .DS_Store
+app-dump-*.json
 dump.html
 reference/synology-chat/cache/
