@@ -1054,6 +1054,22 @@ html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-u
   background: transparent !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .profile-panel-desc {
+  background: #0d131c !important;
+  border: 1px solid #2b3748 !important;
+  box-shadow: none !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-element .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-element .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-element .scrollwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .syno-ux-form-fleXcroll-element .scrollgeneric {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-footer {
   border-top: 1px solid #223149 !important;
 }
