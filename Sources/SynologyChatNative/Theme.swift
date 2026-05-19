@@ -1286,12 +1286,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
-  align-items: center !important;
-  display: flex !important;
   height: 30px !important;
-  justify-content: center !important;
   line-height: 30px !important;
   padding: 0 !important;
+  position: relative !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button::before {
@@ -1300,6 +1298,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-
   font-size: 18px !important;
   font-weight: 700 !important;
   line-height: 1 !important;
+  left: 50% !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-split-bar {
