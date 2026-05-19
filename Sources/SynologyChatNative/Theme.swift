@@ -1029,6 +1029,21 @@ html[data-scn-theme="modernDark"] body.syno-chat .msg-text .refmsg-wrapper {
   border-left-color: #38465a !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .url-wrapper .url-title {
+  color: #7fb2ff !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .url-wrapper .url-domain {
+  color: #c2cee0 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .msg-text > .url-wrapper .url-desc {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .msg-additional-btns {
   background: transparent !important;
 }
