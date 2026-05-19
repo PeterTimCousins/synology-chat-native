@@ -1380,6 +1380,113 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .chat-grey-
   border-radius: 999px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-header,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-footer,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-panel-fbar,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-toolbar-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-toolbar-left,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-toolbar-right,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .syno-ux-formpanel,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .syno-ux-formpanel .x-panel-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog form.x-form {
+  background: #111a2a !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-header {
+  border-bottom: 1px solid #4fb76a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-window-footer {
+  border-top: 1px solid #223149 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-item-label {
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .desc-schedule-send {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog input.x-form-text,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .chat-contenteditable-field.with-border,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-field-wrap {
+  background: #0d131c !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog input.x-form-text,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .chat-contenteditable-field.with-border {
+  border: 1px solid #2b3748 !important;
+  box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog input.x-form-text:focus,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .chat-contenteditable-field.with-border:focus {
+  border-color: #4f8ef7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-field-trigger-wrap {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-composite:has(input[name="on_date"]),
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-composite:has(input[name="on_date"]) .x-box-inner {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-field-trigger-wrap input.x-form-text {
+  border-right: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-trigger {
+  background-color: #0d131c !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid #2b3748 !important;
+  border-left: 0 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .x-form-arrow-trigger,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .syno-ux-combobox-trigger,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .syno-ux-timefield-trigger {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-size: 12px 12px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .syno-ux-datefield-trigger {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Crect x='2.25' y='3.25' width='10.5' height='9.5' rx='1.2' fill='none' stroke='%2393a6c4' stroke-width='1.3'/%3E%3Cpath d='M4.5 1.8v3M10.5 1.8v3M2.7 6.1h9.6' stroke='%2393a6c4' stroke-width='1.3' stroke-linecap='round'/%3E%3Ccircle cx='5' cy='8.5' r='.65' fill='%2393a6c4'/%3E%3Ccircle cx='7.5' cy='8.5' r='.65' fill='%2393a6c4'/%3E%3Ccircle cx='10' cy='8.5' r='.65' fill='%2393a6c4'/%3E%3Ccircle cx='5' cy='10.8' r='.65' fill='%2393a6c4'/%3E%3Ccircle cx='7.5' cy='10.8' r='.65' fill='%2393a6c4'/%3E%3C/svg%3E") !important;
+  background-size: 15px 15px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .chat-split-bar {
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .create-schedule-emoji-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .create-schedule-message-dialog .create-schedule-emoji-btn button {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-header,
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-window-bwrap,
