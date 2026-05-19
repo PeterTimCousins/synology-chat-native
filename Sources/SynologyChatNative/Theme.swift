@@ -132,6 +132,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-logo {
   filter: saturate(1.08) brightness(1.05);
 }
 
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .chat-logo {
+  background-image: url("images/dark/1x/logo.png?v=609000589724afc4747b24f8d816252b") !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn,
 html[data-scn-theme="modernDark"] body.syno-chat .topbar-btn .x-btn-text,
 html[data-scn-theme="modernDark"] body.syno-chat .chat-account-btn {
@@ -326,11 +330,37 @@ html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-ch
 html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .encrypted,
 html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .synobot,
 html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .chatbot,
-html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .hide-channel-btn,
-html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status.online,
-html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status.offline,
-html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .online-status[class*="online-number-"] {
+html[data-scn-theme="modernDark"]:has(link[href*="Chat/light.css"]) body.syno-chat .channel-list-item .hide-channel-btn {
   filter: invert(1) brightness(1.55) saturate(.35) opacity(.86) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .online-status.online {
+  background: #58b96e !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  filter: none !important;
+  height: 12px !important;
+  opacity: .92 !important;
+  width: 12px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item.x-view-selected .online-status.online {
+  background: #f4f8ff !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .channel-list-item .online-status.offline {
+  background: transparent !important;
+  background-image: none !important;
+  border: 2px solid #4c596c !important;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+  filter: none !important;
+  height: 12px !important;
+  opacity: .9 !important;
+  width: 12px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-center-content-panel,
