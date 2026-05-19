@@ -120,20 +120,28 @@ enum WebNotificationBridge {
     return false;
   };
 
+  const extractRawPost = (event) => {
+    if (!event) return null;
+    if (event.data?.post_id) return event.data;
+    if (event.post?.post_id) return event.post;
+    if (event.post_id) return event;
+    return null;
+  };
+
   const routeChatPost = (event) => {
     const chat = getChat();
-    const rawPost = event?.data || event?.post;
+    const rawPost = extractRawPost(event);
     if (!chat?.Record?.Msg || !rawPost) return;
 
     let message;
     try {
       message = new chat.Record.Msg(rawPost);
-      message.channel_id = event.channel_id ?? rawPost.channel_id ?? message.channel_id;
+      message.channel_id = event?.channel_id ?? rawPost.channel_id ?? message.channel_id;
     } catch (_) {
       return;
     }
 
-    if (message.creator_id === getCurrentUserId()) return;
+    if (normalizeId(message.creator_id) === normalizeId(getCurrentUserId())) return;
     if (message.isSystemMessage?.()) return;
 
     const body = getMessageBody(message);
