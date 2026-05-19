@@ -372,7 +372,13 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip {
-  border-bottom: 1px solid #2b3748 !important;
+  border-bottom: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-spacer {
+  background: transparent !important;
+  border: 0 !important;
+  height: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .chat-summary-tab-panel .x-tab-strip-active,
