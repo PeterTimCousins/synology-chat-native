@@ -1983,12 +1983,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-green-btn {
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .x-btn.syno-ux-button-grey {
-  background: #e8eef8 !important;
-  border-color: #c8d3e3 !important;
+  background: #182333 !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .x-btn.syno-ux-button-grey em,
+html[data-scn-theme="modernDark"] body.syno-chat .x-btn.syno-ux-button-grey button,
 html[data-scn-theme="modernDark"] body.syno-chat .x-btn.syno-ux-button-grey .x-btn-text {
-  color: #253142 !important;
+  background: transparent !important;
+  background-image: none !important;
+  color: #d7e4f7 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .user-preference-dialog .x-btn.syno-ux-button-grey.chat-grey-btn,
