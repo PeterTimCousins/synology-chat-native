@@ -2039,6 +2039,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .x-form-field-wrap
   box-shadow: none !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .x-form-field-wrap:focus-within {
+  border-color: #4f8ef7 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .x-form-text,
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-combobox,
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-datefield,
@@ -2053,7 +2057,15 @@ html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-timefield
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-combobox-trigger,
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-datefield-trigger,
 html[data-scn-theme="modernDark"] body.syno-chat .remider-dlg .syno-ux-timefield-trigger {
-  filter: invert(1) brightness(1.7) saturate(.5) opacity(.85) !important;
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px 12px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .forward-message-dialog .chat-split-bar,
