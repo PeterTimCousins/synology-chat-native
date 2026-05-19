@@ -580,6 +580,86 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .file
   border-color: #38465a !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .scrollwrapper {
+  background: #121b27 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .msg-wrap {
+  background: transparent !important;
+  border: 1px solid #9aa8b9 !important;
+  box-sizing: border-box !important;
+  color: #d7e4f7 !important;
+  margin: 0 0 6px 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .msg-wrap:hover {
+  background: #182333 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-image-wrapper {
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-title {
+  color: #7fb2ff !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-desc {
+  color: #93a6c4 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-domain {
+  color: #c2cee0 !important;
+  opacity: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-image-wrapper {
+  border-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .url-image {
+  background-color: #0f1723 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .action-buttons {
+  background: transparent !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .msg-jump-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .msg-more-btn {
+  background-color: transparent !important;
+  filter: invert(1) brightness(1.6) saturate(.35) opacity(.9) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .button-divider {
+  background: #526174 !important;
+  opacity: .75 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbase,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbasebeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbaseend {
+  background: #0f1723 !important;
+  border-color: #0f1723 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbar,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbarbeg,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .url-list-view .vscrollerbarend {
+  background: #38465a !important;
+  border-color: #38465a !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .msg-title {
   color: #7fb2ff !important;
 }
