@@ -1711,15 +1711,29 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-desc 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn {
   background: transparent !important;
   background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
   filter: none !important;
   height: 42px !important;
   left: 50% !important;
   margin: 0 !important;
   opacity: 1 !important;
+  outline: 0 !important;
   position: absolute !important;
   top: 30px !important;
   transform: translateX(-50%) !important;
   width: 42px !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap:hover .plus-btn,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn:focus,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn:active {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .plus-btn::before,
