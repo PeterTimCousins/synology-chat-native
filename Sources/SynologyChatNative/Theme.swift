@@ -481,6 +481,86 @@ html[data-scn-theme="modernDark"] body.syno-chat .bot-welcome-wrapper .arrow {
   filter: invert(1) brightness(1.4) saturate(.4) opacity(.85) !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .x-window-bwrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .x-window-body,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .x-border-layout-ct,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .x-border-panel,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .mcontentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .contentwrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .chat-msgview,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msgs {
+  background: #121b27 !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog {
+  border: 1px solid #2b3748 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.42) !important;
+  overflow: hidden !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .item-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap {
+  background: transparent !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .item-wrap.x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .item-wrap:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap.x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap.active {
+  background: rgba(111, 164, 255, .08) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap.thread-header,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap.thread-header.x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-wrap.thread-header .msg-additional-wrapper {
+  background: #182333 !important;
+  border-color: #2b3748 !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-user-name,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-user-name *,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-text,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .markdown {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-post-time,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-count {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .thread-subscribe-btn {
+  background: #111a2a !important;
+  border-color: #526174 !important;
+  color: #c6d2e3 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .thread-subscribe-btn:hover {
+  background: #223149 !important;
+  border-color: #7fb2ff !important;
+  color: #f4f8ff !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-comment-divider {
+  background: #526174 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .chat-input-aria-main-v2,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-thread-dialog .msg-inputarea-buttons {
+  background: #121b27 !important;
+  border-color: #253142 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .extra-date-splitter-wrapper {
   background: #121b27 !important;
   box-sizing: border-box !important;
