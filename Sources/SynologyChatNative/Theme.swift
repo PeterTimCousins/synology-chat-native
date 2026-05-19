@@ -851,6 +851,24 @@ html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover .markdown {
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-wrap.active),
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-action-container.active),
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-add-action-btn.active) {
+  background: rgba(111, 164, 255, .08) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .msg-wrap.active,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .msg-wrap.active .msg-text,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .msg-wrap.active .text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .msg-wrap.active .markdown,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-action-container.active) .msg-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-action-container.active) .msg-text,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-action-container.active) .text-wrapper,
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-action-container.active) .markdown {
+  background: transparent !important;
+  color: #d7e4f7 !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap,
 html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap {
   background: transparent !important;
