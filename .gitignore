@@ -5,3 +5,4 @@ DerivedData/
 *.xcuserstate
 .DS_Store
 dump.html
+reference/synology-chat/cache/
