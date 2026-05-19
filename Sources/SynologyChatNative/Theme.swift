@@ -554,10 +554,23 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn {
-  background: #243144 !important;
-  border: 1px solid #2b3748 !important;
+  background: #121b27 !important;
+  border: 0 !important;
   box-shadow: none !important;
   color: #7fb2ff !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn::before {
+  background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 75%) !important;
+  bottom: 0 !important;
+  content: "" !important;
+  left: -34px !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 34px !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-additional-wrapper,
