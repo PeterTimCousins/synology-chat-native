@@ -2375,10 +2375,19 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .label-containe
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input.x-form-text,
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .chat-contenteditable-field.with-border {
+  -webkit-appearance: none !important;
   background: #0d131c !important;
+  background-color: #0d131c !important;
+  background-image: none !important;
   border: 1px solid #2b3748 !important;
   color: #d7e4f7 !important;
   box-shadow: none !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input[name="title"].syno-ux-textfield,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap input.syno-ux-combobox {
+  background-color: #0d131c !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog input.x-form-text:focus,
@@ -2388,18 +2397,22 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .chat-contented
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap {
   background: #0d131c !important;
+  background-color: #0d131c !important;
+  background-image: none !important;
   border: 1px solid #2b3748 !important;
   box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap input.x-form-text {
   background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
   border: 0 !important;
   box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-trigger {
-  background-color: transparent !important;
+  background-color: #0d131c !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
