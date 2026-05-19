@@ -27,6 +27,7 @@ enum WebNotificationBridge {
   const notifications = new Map();
   const notificationActions = new Map();
   const routedPostKeys = new Map();
+  const unreadCounts = new Map();
   const nativeWindowState = { active: true };
 
   const post = (payload) => {
@@ -118,6 +119,90 @@ enum WebNotificationBridge {
     if (previous && now - previous < 5000) return true;
     routedPostKeys.set(key, now);
     return false;
+  };
+
+  const unreadCountForItem = (item) => {
+    const unread = item.querySelector('.unread');
+    if (!unread) return 0;
+
+    const classMatch = String(unread.className || '').match(/(?:^|\\s)number-(\\d+)(?:\\s|$)/);
+    if (classMatch) return Number(classMatch[1]) || 0;
+
+    const textMatch = (unread.textContent || '').match(/\\d+/);
+    return textMatch ? Number(textMatch[0]) || 0 : 0;
+  };
+
+  const nameForUnreadItem = (item) => {
+    const name = item.querySelector('.name');
+    return (name?.textContent || name?.getAttribute?.('ext:qtip') || 'Chat').trim() || 'Chat';
+  };
+
+  const scanUnreadBadges = (notify) => {
+    document.querySelectorAll('.channel-list-item').forEach((item, index) => {
+      const name = nameForUnreadItem(item);
+      const key = item.getAttribute('data-scn-unread-key') || `${name}:${index}`;
+      item.setAttribute('data-scn-unread-key', key);
+
+      const count = unreadCountForItem(item);
+      const previous = unreadCounts.get(key);
+      unreadCounts.set(key, count);
+
+      if (!notify || previous === undefined || count <= previous) return;
+      if (!nativeWindowState.active || item.classList.contains('x-view-selected')) return;
+      if (didRouteRecently(`unread:${key}:${count}`)) return;
+
+      const id = `unread-${key}-${count}-${Date.now()}`;
+      notificationActions.set(id, () => {
+        try {
+          getChat()?.AppUtils?.Controller?.Electron?.focusWindow?.();
+          window.focus();
+          item.click();
+        } catch (_) {}
+      });
+
+      post({
+        kind: 'chatEvent',
+        id,
+        title: name,
+        body: `New message in ${name}`,
+        channelId: key,
+        currentChannelId: normalizeId(getCurrentChannelId()),
+        isCurrentChannel: false,
+        muted: getNotificationMuted(),
+        nativeWindowActive: nativeWindowState.active
+      });
+    });
+  };
+
+  const installUnreadObserver = () => {
+    if (window.__scnUnreadObserverInstalled) return true;
+    if (!document.body) return false;
+
+    window.__scnUnreadObserverInstalled = true;
+    scanUnreadBadges(false);
+
+    const observer = new MutationObserver(() => {
+      scanUnreadBadges(true);
+    });
+
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return true;
+  };
+
+  const scheduleUnreadObserverInstall = () => {
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts += 1;
+      if (installUnreadObserver() || attempts > 10000) {
+        clearInterval(timer);
+      }
+    }, 500);
   };
 
   const extractRawPost = (event) => {
@@ -323,6 +408,7 @@ enum WebNotificationBridge {
   };
 
   window.Notification = NativeNotification;
+  scheduleUnreadObserverInstall();
   scheduleChatHookInstall();
 })();
 """,
