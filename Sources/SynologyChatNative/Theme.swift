@@ -843,6 +843,11 @@ html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover {
   background: rgba(111, 164, 255, .08) !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-wrap.editing-msg),
+html[data-scn-theme="modernDark"] body.syno-chat .chat-msgview .item-wrap:has(.msg-wrap.editing-msg):hover {
+  background: transparent !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover .msg-wrap,
 html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover .msg-text,
 html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover .text-wrapper,
