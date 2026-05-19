@@ -254,6 +254,51 @@ html[data-scn-theme="modernDark"] body.syno-chat .item-wrap:hover .markdown {
   color: #d7e4f7 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap {
+  background: transparent !important;
+  border-bottom: 1px solid #2b3748 !important;
+  border-radius: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap .title-wrapper .title,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap .title-wrapper .title {
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap .desc,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap .desc {
+  color: #93a6c4 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap:hover,
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap.x-view-selected,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap:hover,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap.x-view-selected {
+  background: #182333 !important;
+  border-bottom-color: #2b3748 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap .title-wrapper .disabled-label,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap .title-wrapper .disabled-label,
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap:hover .title-wrapper .disabled-label,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap:hover .title-wrapper .disabled-label {
+  background: #111a2a !important;
+  color: #71819a !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap .title-wrapper .disabled-label::before,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap .title-wrapper .disabled-label::before {
+  background: linear-gradient(to right, rgba(17,26,42,0), #111a2a) !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .integration-dialog .integration-list .item-wrap:hover .title-wrapper .disabled-label::before,
+html[data-scn-theme="modernDark"] body.syno-chat.syno-chat-admin .integration-listview .item-wrap:hover .title-wrapper .disabled-label::before {
+  background: linear-gradient(to right, rgba(24,35,51,0), #182333) !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .msg-wrap {
   color: #d7e4f7 !important;
 }
