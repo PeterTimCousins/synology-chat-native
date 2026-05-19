@@ -553,24 +553,31 @@ html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summ
   opacity: 1 !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-wrap {
+  position: relative !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn {
-  background: #121b27 !important;
+  background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 34px, #121b27) !important;
   border: 0 !important;
+  bottom: 0 !important;
   box-shadow: none !important;
   color: #7fb2ff !important;
-  position: relative !important;
+  display: block !important;
+  height: 20px !important;
+  line-height: 20px !important;
+  min-width: 72px !important;
+  padding: 0 0 0 34px !important;
+  position: absolute !important;
+  right: 0 !important;
+  text-align: right !important;
+  top: auto !important;
   z-index: 1 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn::before {
-  background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 75%) !important;
-  bottom: 0 !important;
-  content: "" !important;
-  left: -34px !important;
-  pointer-events: none !important;
-  position: absolute !important;
-  top: 0 !important;
-  width: 34px !important;
+html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .collapsed-msg-more-btn:hover {
+  background: linear-gradient(to right, rgba(18, 27, 39, 0), #121b27 34px, #121b27) !important;
+  color: #9cc6ff !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .chat-right-content-panel .summary-item .subscribe-list-view .msg-additional-wrapper,
