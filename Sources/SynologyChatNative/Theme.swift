@@ -314,13 +314,28 @@ html[data-scn-theme="modernDark"] body.syno-chat .welcome-hello {
   opacity: 1 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc,
-html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc > div {
+html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc {
   background: #182333 !important;
+  background-image: none !important;
   border: 1px solid #2b3748 !important;
   border-radius: 8px !important;
   box-shadow: none !important;
   color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc > div {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: #d7e4f7 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc::before,
+html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc::after {
+  background: #182333 !important;
+  background-image: none !important;
+  border-color: #2b3748 !important;
+  box-shadow: none !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .welcome-desc b {
