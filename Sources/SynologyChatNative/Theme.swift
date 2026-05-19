@@ -1278,12 +1278,19 @@ html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-
   height: 30px !important;
 }
 
+html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn em {
+  align-items: center !important;
+  display: flex !important;
+  height: 30px !important;
+  justify-content: center !important;
+}
+
 html[data-scn-theme="modernDark"] body.syno-chat .create-vote-dialog .choice .x-box-inner > .x-btn button {
   align-items: center !important;
   display: flex !important;
-  height: 28px !important;
+  height: 30px !important;
   justify-content: center !important;
-  line-height: 28px !important;
+  line-height: 30px !important;
   padding: 0 !important;
 }
 
