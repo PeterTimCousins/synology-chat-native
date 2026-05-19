@@ -1674,6 +1674,10 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .file-desc,
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .syno-ux-checkbox-label {
   background: transparent !important;
   color: #d7e4f7 !important;
+  display: inline-block !important;
+  line-height: 18px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .filename {
@@ -1748,11 +1752,18 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .chat-conte
   color: #93a6c4 !important;
 }
 
-html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-field .x-form-element {
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-field .x-form-item.x-hide-label > .x-form-item-label {
+  display: none !important;
+  width: 0 !important;
+}
+
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-field .x-form-element,
+html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .all-desc-field .x-form-item.x-hide-label .x-form-element {
   padding-left: 0 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .add-wrap {
+  left: 10px !important;
   position: relative !important;
 }
 
@@ -1761,7 +1772,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .upload-file-dialog .x-form-che
   background: transparent !important;
   color: #d7e4f7 !important;
   display: flex !important;
-  gap: 8px !important;
+  gap: 6px !important;
   min-height: 24px !important;
   padding: 0 !important;
   position: relative !important;
