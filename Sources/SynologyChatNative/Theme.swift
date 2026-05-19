@@ -2423,24 +2423,17 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-t
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-trigger {
-  background-color: #0d131c !important;
+  background-color: transparent !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%2393a6c4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: 12px 12px !important;
-  border-color: #2b3748 !important;
-  border-style: solid !important;
-  border-width: 1px 1px 1px 0 !important;
-  box-sizing: border-box !important;
+  border: 0 !important;
   filter: none !important;
   opacity: 1 !important;
 }
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap:focus-within {
-  border-color: #4f8ef7 !important;
-}
-
-html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .x-form-field-trigger-wrap:focus-within .x-form-trigger {
   border-color: #4f8ef7 !important;
 }
 
@@ -2454,6 +2447,7 @@ html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .ace_layer {
 
 html[data-scn-theme="modernDark"] body.syno-chat .snippet-dialog .editor-container.ace_editor {
   border: 1px solid #2b3748 !important;
+  box-sizing: border-box !important;
   box-shadow: none !important;
 }
 
