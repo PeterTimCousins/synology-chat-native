@@ -214,6 +214,22 @@ final class ChatWindowController: NSWindowController {
         playMessageSound(soft: isCurrentChannel, muted: muted)
     }
 
+    private func handleBrowserNotification(payload: [String: Any]) {
+        guard let id = payload["id"] as? String else { return }
+
+        let muted = payload["muted"] as? Bool ?? false
+        let title = payload["title"] as? String ?? "Chat"
+        let body = payload["body"] as? String ?? ""
+
+        if !isNativeWindowActive {
+            playMessageSound(soft: false, muted: muted)
+            showNativeNotification(id: id, title: title, body: body)
+            return
+        }
+
+        playMessageSound(soft: false, muted: muted)
+    }
+
     private func playMessageSound(soft: Bool, muted: Bool) {
         guard !muted else { return }
 
@@ -389,13 +405,8 @@ extension ChatWindowController: WKScriptMessageHandler {
             requestNotificationAuthorization()
         case "chatEvent":
             handleChatEvent(payload: payload)
-        case "show":
-            guard let id = payload["id"] as? String else { return }
-            showNativeNotification(
-                id: id,
-                title: payload["title"] as? String ?? "Synology Chat",
-                body: payload["body"] as? String ?? ""
-            )
+        case "browserNotification":
+            handleBrowserNotification(payload: payload)
         case "close":
             guard let id = payload["id"] as? String else { return }
             closeNativeNotification(id: id)

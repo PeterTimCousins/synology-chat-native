@@ -163,14 +163,30 @@ enum WebNotificationBridge {
 
   const installChatHooks = () => {
     const chat = getChat();
+    const socket = chat?.Socket;
     const socketController = chat?.AppUtils?.Controller?.Socket;
     const notification = chat?.App?.Utils?.Notification;
-    if (!socketController || !notification || socketController.__scnNativeNotificationHooked) {
-      return !!socketController?.__scnNativeNotificationHooked;
+
+    if (notification && !notification.__scnNativeNotificationHooked) {
+      notification.__scnNativeNotificationHooked = true;
+      notification.showNotification = routeChatPost;
+      notification.notificationSound = () => {};
+
+      if (notification.Sound) {
+        notification.Sound.play = () => {};
+      }
+    }
+
+    if (socket && !socket.__scnNativeNotificationHooked) {
+      socket.__scnNativeNotificationHooked = true;
+      socket.on?.('clientpostcreate', routeChatPost);
+    }
+
+    if (!socketController || socketController.__scnNativeNotificationHooked) {
+      return !!socket?.__scnNativeNotificationHooked && !!notification?.__scnNativeNotificationHooked;
     }
 
     socketController.__scnNativeNotificationHooked = true;
-
     const originalPostCreate = socketController.onPostCreate;
     if (typeof originalPostCreate === 'function') {
       socketController.onPostCreate = function(event) {
@@ -180,18 +196,17 @@ enum WebNotificationBridge {
       };
     }
 
-    notification.showNotification = routeChatPost;
-    return true;
+    return !!socket?.__scnNativeNotificationHooked && !!notification?.__scnNativeNotificationHooked;
   };
 
   const scheduleChatHookInstall = () => {
     let attempts = 0;
     const timer = setInterval(() => {
       attempts += 1;
-      if (installChatHooks() || attempts > 240) {
+      if (installChatHooks() || attempts > 10000) {
         clearInterval(timer);
       }
-    }, 250);
+    }, 500);
   };
 
   function NativeNotification(title, options = {}) {
@@ -237,13 +252,15 @@ enum WebNotificationBridge {
 
     notifications.set(id, this);
     post({
-      kind: 'show',
+      kind: 'browserNotification',
       id,
       title: this.title,
       body: this.body,
       icon: this.icon,
       tag: this.tag,
-      url: location.href
+      url: location.href,
+      muted: getNotificationMuted(),
+      nativeWindowActive: nativeWindowState.active
     });
   }
 
