@@ -226,6 +226,11 @@ final class ChatWindowController: NSWindowController {
         showNativeNotification(id: id, title: title, body: body)
     }
 
+    private func handleUnreadCount(payload: [String: Any]) {
+        let count = payload["count"] as? Int ?? (payload["count"] as? NSNumber)?.intValue ?? 0
+        NSApp.dockTile.badgeLabel = count > 0 ? String(count) : nil
+    }
+
     private func playMessageSound(soft: Bool, muted: Bool) {
         guard !muted else { return }
 
@@ -403,6 +408,8 @@ extension ChatWindowController: WKScriptMessageHandler {
             handleChatEvent(payload: payload)
         case "browserNotification":
             handleBrowserNotification(payload: payload)
+        case "unreadCount":
+            handleUnreadCount(payload: payload)
         case "close":
             guard let id = payload["id"] as? String else { return }
             closeNativeNotification(id: id)

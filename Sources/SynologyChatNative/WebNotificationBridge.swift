@@ -28,6 +28,7 @@ enum WebNotificationBridge {
   const notificationActions = new Map();
   const routedPostKeys = new Map();
   const unreadCounts = new Map();
+  let lastUnreadTotal = null;
   const nativeWindowState = { active: true };
 
   const post = (payload) => {
@@ -137,6 +138,17 @@ enum WebNotificationBridge {
     return (name?.textContent || name?.getAttribute?.('ext:qtip') || 'Chat').trim() || 'Chat';
   };
 
+  const publishUnreadTotal = () => {
+    let total = 0;
+    unreadCounts.forEach((count) => {
+      total += Number(count) || 0;
+    });
+
+    if (total === lastUnreadTotal) return;
+    lastUnreadTotal = total;
+    post({ kind: 'unreadCount', count: total });
+  };
+
   const scanUnreadBadges = (notify) => {
     document.querySelectorAll('.channel-list-item').forEach((item, index) => {
       const name = nameForUnreadItem(item);
@@ -172,6 +184,8 @@ enum WebNotificationBridge {
         nativeWindowActive: nativeWindowState.active
       });
     });
+
+    publishUnreadTotal();
   };
 
   const installUnreadObserver = () => {
