@@ -8,6 +8,10 @@ final class ChatWindowController: NSWindowController {
     private let normalMessageSound = NSSound(named: NSSound.Name("Glass"))
     private let softMessageSound = NSSound(named: NSSound.Name("Tink"))
     private var activeDownloads: [ObjectIdentifier: WKDownload] = [:]
+    private var lastInactiveAt: Date?
+    private var lastConnectionRecoveryAt: Date?
+    private let connectionRecoveryInactiveThreshold: TimeInterval = 60
+    private let connectionRecoveryThrottle: TimeInterval = 20
 
     init() {
         let configuration = WKWebViewConfiguration()
@@ -46,11 +50,14 @@ final class ChatWindowController: NSWindowController {
         UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization()
         configureContentView()
+        configureConnectionRecoveryObservers()
         loadHome()
         syncWindowActiveStateToWeb()
     }
 
     deinit {
+        NotificationCenter.default.removeObserver(self)
+        NSWorkspace.shared.notificationCenter.removeObserver(self)
         webView.configuration.userContentController.removeScriptMessageHandler(
             forName: WebNotificationBridge.handlerName
         )
@@ -133,6 +140,48 @@ final class ChatWindowController: NSWindowController {
             progressIndicator.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14),
             progressIndicator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
+    }
+
+    private func configureConnectionRecoveryObservers() {
+        let appCenter = NotificationCenter.default
+        appCenter.addObserver(
+            self,
+            selector: #selector(applicationDidResignActive),
+            name: NSApplication.didResignActiveNotification,
+            object: nil
+        )
+        appCenter.addObserver(
+            self,
+            selector: #selector(applicationDidBecomeActive),
+            name: NSApplication.didBecomeActiveNotification,
+            object: nil
+        )
+
+        let workspaceCenter = NSWorkspace.shared.notificationCenter
+        workspaceCenter.addObserver(
+            self,
+            selector: #selector(systemDidWake),
+            name: NSWorkspace.didWakeNotification,
+            object: nil
+        )
+        workspaceCenter.addObserver(
+            self,
+            selector: #selector(screenDidWake),
+            name: NSWorkspace.screensDidWakeNotification,
+            object: nil
+        )
+        workspaceCenter.addObserver(
+            self,
+            selector: #selector(sessionDidResignActive),
+            name: NSWorkspace.sessionDidResignActiveNotification,
+            object: nil
+        )
+        workspaceCenter.addObserver(
+            self,
+            selector: #selector(sessionDidBecomeActive),
+            name: NSWorkspace.sessionDidBecomeActiveNotification,
+            object: nil
+        )
     }
 
     private func showInvalidURLAlert() {
@@ -269,6 +318,59 @@ final class ChatWindowController: NSWindowController {
         webView.evaluateJavaScript(
             "window.__scnSetNativeWindowActive && window.__scnSetNativeWindowActive(\(active));"
         )
+    }
+
+    @objc private func applicationDidResignActive(_ notification: Notification) {
+        lastInactiveAt = Date()
+        syncWindowActiveStateToWeb()
+    }
+
+    @objc private func applicationDidBecomeActive(_ notification: Notification) {
+        syncWindowActiveStateToWeb()
+        recoverConnectionAfterLifecycleResume(reason: "application became active", requireLongInactivePeriod: true)
+    }
+
+    @objc private func sessionDidResignActive(_ notification: Notification) {
+        lastInactiveAt = Date()
+        syncWindowActiveStateToWeb()
+    }
+
+    @objc private func sessionDidBecomeActive(_ notification: Notification) {
+        recoverConnectionAfterLifecycleResume(reason: "session unlocked", requireLongInactivePeriod: false)
+    }
+
+    @objc private func systemDidWake(_ notification: Notification) {
+        recoverConnectionAfterLifecycleResume(reason: "system woke", requireLongInactivePeriod: false)
+    }
+
+    @objc private func screenDidWake(_ notification: Notification) {
+        recoverConnectionAfterLifecycleResume(reason: "screen woke", requireLongInactivePeriod: false)
+    }
+
+    private func recoverConnectionAfterLifecycleResume(reason: String, requireLongInactivePeriod: Bool) {
+        if requireLongInactivePeriod {
+            guard let lastInactiveAt,
+                  Date().timeIntervalSince(lastInactiveAt) >= connectionRecoveryInactiveThreshold
+            else {
+                return
+            }
+        }
+
+        if let lastConnectionRecoveryAt,
+           Date().timeIntervalSince(lastConnectionRecoveryAt) < connectionRecoveryThrottle {
+            return
+        }
+
+        lastConnectionRecoveryAt = Date()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self else { return }
+            NSLog("Synology Chat refreshing after %@", reason)
+            if self.webView.url == nil {
+                self.loadHome()
+            } else {
+                self.webView.reload()
+            }
+        }
     }
 }
 
