@@ -8,10 +8,25 @@ final class ChatWindowController: NSWindowController {
     private let normalMessageSound = NSSound(named: NSSound.Name("Glass"))
     private let softMessageSound = NSSound(named: NSSound.Name("Tink"))
     private var activeDownloads: [ObjectIdentifier: WKDownload] = [:]
-    private var lastInactiveAt: Date?
-    private var lastConnectionRecoveryAt: Date?
-    private let connectionRecoveryInactiveThreshold: TimeInterval = 60
-    private let connectionRecoveryThrottle: TimeInterval = 20
+    private var lastConnectionNoticeReconnectAt: Date?
+    private var lastConnectionHealthLogAt: Date?
+    private var connectionActivity: NSObjectProtocol?
+    private var connectionHealthTimer: Timer?
+    private let connectionNoticeReconnectThrottle: TimeInterval = 10
+    private let connectionHealthInterval: TimeInterval = 60
+    private let connectionHealthLogInterval: TimeInterval = 15 * 60
+    private lazy var diagnosticLogURL: URL = {
+        let logsDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("Logs", isDirectory: true)
+            .appendingPathComponent("Synology Chat Native", isDirectory: true)
+
+        try? FileManager.default.createDirectory(
+            at: logsDirectory,
+            withIntermediateDirectories: true
+        )
+
+        return logsDirectory.appendingPathComponent("diagnostics.log")
+    }()
 
     init() {
         let configuration = WKWebViewConfiguration()
@@ -51,11 +66,18 @@ final class ChatWindowController: NSWindowController {
         requestNotificationAuthorization()
         configureContentView()
         configureConnectionRecoveryObservers()
+        beginConnectionActivity()
         loadHome()
         syncWindowActiveStateToWeb()
+        startConnectionHealthTimer()
     }
 
     deinit {
+        if let connectionActivity {
+            ProcessInfo.processInfo.endActivity(connectionActivity)
+        }
+
+        connectionHealthTimer?.invalidate()
         NotificationCenter.default.removeObserver(self)
         NSWorkspace.shared.notificationCenter.removeObserver(self)
         webView.configuration.userContentController.removeScriptMessageHandler(
@@ -88,7 +110,7 @@ final class ChatWindowController: NSWindowController {
     }
 
     func reload() {
-        webView.reload()
+        reloadWebView(reason: "manual reload")
     }
 
     func applyTheme() {
@@ -184,6 +206,26 @@ final class ChatWindowController: NSWindowController {
         )
     }
 
+    private func beginConnectionActivity() {
+        guard connectionActivity == nil else { return }
+
+        connectionActivity = ProcessInfo.processInfo.beginActivity(
+            options: [.userInitiatedAllowingIdleSystemSleep, .automaticTerminationDisabled],
+            reason: "Keep Synology Chat connection responsive while the app is open"
+        )
+        logDiagnostic("connection activity assertion started")
+    }
+
+    private func startConnectionHealthTimer() {
+        guard connectionHealthTimer == nil else { return }
+
+        let timer = Timer(timeInterval: connectionHealthInterval, repeats: true) { [weak self] _ in
+            self?.runConnectionHealthCheck(reason: "background heartbeat")
+        }
+        connectionHealthTimer = timer
+        RunLoop.main.add(timer, forMode: .common)
+    }
+
     private func showInvalidURLAlert() {
         let alert = NSAlert()
         alert.messageText = "Invalid Synology Chat URL"
@@ -255,6 +297,8 @@ final class ChatWindowController: NSWindowController {
         let body = payload["body"] as? String ?? ""
         let isCurrentChannel = payload["isCurrentChannel"] as? Bool ?? false
 
+        logDiagnostic("native chat event: id=\(id) currentChannel=\(isCurrentChannel) muted=\(muted)")
+
         if isNativeWindowActive && isCurrentChannel {
             playMessageSound(soft: true, muted: muted)
             return
@@ -270,6 +314,8 @@ final class ChatWindowController: NSWindowController {
         let muted = payload["muted"] as? Bool ?? false
         let title = payload["title"] as? String ?? "Chat"
         let body = payload["body"] as? String ?? ""
+
+        logDiagnostic("native browser notification: id=\(id) muted=\(muted)")
 
         playMessageSound(soft: false, muted: muted)
         showNativeNotification(id: id, title: title, body: body)
@@ -320,61 +366,172 @@ final class ChatWindowController: NSWindowController {
         )
     }
 
+    private func reloadWebView(reason: String, allowWhenEditing: Bool = true) {
+        guard !allowWhenEditing else {
+            performReloadWebView(reason: reason)
+            return
+        }
+
+        webView.evaluateJavaScript(Self.hasActiveDraftScript) { [weak self] result, error in
+            guard let self else { return }
+
+            if let error {
+                self.logDiagnostic("active draft check failed before reload: \(error.localizedDescription)")
+                self.performReloadWebView(reason: reason)
+                return
+            }
+
+            if result as? Bool == true {
+                self.logDiagnostic("native reload skipped: reason=\(reason) active draft detected")
+                return
+            }
+
+            self.performReloadWebView(reason: reason)
+        }
+    }
+
+    private func performReloadWebView(reason: String) {
+        logDiagnostic(
+            "native reload requested: reason=\(reason) url=\(webView.url?.absoluteString ?? "<none>")"
+        )
+
+        if webView.url == nil {
+            loadHome()
+        } else {
+            webView.reload()
+        }
+    }
+
     @objc private func applicationDidResignActive(_ notification: Notification) {
-        lastInactiveAt = Date()
         syncWindowActiveStateToWeb()
+        runConnectionHealthCheck(reason: "application resigned active", forceLog: true)
     }
 
     @objc private func applicationDidBecomeActive(_ notification: Notification) {
         syncWindowActiveStateToWeb()
-        recoverConnectionAfterLifecycleResume(reason: "application became active", requireLongInactivePeriod: true)
+        logDiagnostic("application became active")
+        runConnectionHealthCheck(reason: "application became active", forceLog: true)
     }
 
     @objc private func sessionDidResignActive(_ notification: Notification) {
-        lastInactiveAt = Date()
         syncWindowActiveStateToWeb()
+        runConnectionHealthCheck(reason: "session resigned active", forceLog: true)
     }
 
     @objc private func sessionDidBecomeActive(_ notification: Notification) {
-        recoverConnectionAfterLifecycleResume(reason: "session unlocked", requireLongInactivePeriod: false)
+        runConnectionHealthCheck(reason: "session unlocked", forceLog: true)
     }
 
     @objc private func systemDidWake(_ notification: Notification) {
-        recoverConnectionAfterLifecycleResume(reason: "system woke", requireLongInactivePeriod: false)
+        logDiagnostic("system woke")
+        runConnectionHealthCheck(reason: "system woke", forceLog: true)
     }
 
     @objc private func screenDidWake(_ notification: Notification) {
-        recoverConnectionAfterLifecycleResume(reason: "screen woke", requireLongInactivePeriod: false)
+        logDiagnostic("screen woke")
+        runConnectionHealthCheck(reason: "screen woke", forceLog: true)
     }
 
-    private func recoverConnectionAfterLifecycleResume(reason: String, requireLongInactivePeriod: Bool) {
-        if requireLongInactivePeriod {
-            guard let lastInactiveAt,
-                  Date().timeIntervalSince(lastInactiveAt) >= connectionRecoveryInactiveThreshold
-            else {
-                return
+    private func handleDiagnostic(payload: [String: Any]) {
+        guard let event = payload["event"] as? String else { return }
+
+        var details: [String] = []
+        for key in ["text", "url", "visibilityState", "online", "readyState"] {
+            if let value = payload[key] {
+                details.append("\(key)=\(value)")
             }
         }
 
-        if let lastConnectionRecoveryAt,
-           Date().timeIntervalSince(lastConnectionRecoveryAt) < connectionRecoveryThrottle {
+        logDiagnostic("web diagnostic: \(event) \(details.joined(separator: " "))")
+
+        if event == "connection-notice-visible" {
+            reconnectFromConnectionNotice()
+        }
+    }
+
+    private func runConnectionHealthCheck(reason: String, forceLog: Bool = false) {
+        let active = isNativeWindowActive ? "true" : "false"
+        let script = """
+        window.__scnConnectionHealthCheck && window.__scnConnectionHealthCheck({
+          active: \(active),
+          reason: \(Self.javascriptStringLiteral(reason))
+        });
+        """
+
+        webView.evaluateJavaScript(script) { [weak self] result, error in
+            guard let self else { return }
+
+            if let error {
+                self.logDiagnostic("connection health check failed: reason=\(reason) error=\(error.localizedDescription)")
+                return
+            }
+
+            let summary = (result as? String) ?? String(describing: result ?? "<nil>")
+            self.logConnectionHealthSummary(summary, reason: reason, forceLog: forceLog)
+        }
+    }
+
+    private func logConnectionHealthSummary(_ summary: String, reason: String, forceLog: Bool) {
+        let shouldLog = forceLog
+            || summary.contains("\"action\":\"clicked\"")
+            || (summary.contains("\"explicitReconnect\":\"")
+                && !summary.contains("\"explicitReconnect\":\"not-needed\""))
+            || lastConnectionHealthLogAt == nil
+            || Date().timeIntervalSince(lastConnectionHealthLogAt ?? .distantPast) >= connectionHealthLogInterval
+
+        guard shouldLog else { return }
+
+        lastConnectionHealthLogAt = Date()
+        logDiagnostic("connection health check: reason=\(reason) result=\(summary)")
+    }
+
+    private func reconnectFromConnectionNotice() {
+        if let lastConnectionNoticeReconnectAt,
+           Date().timeIntervalSince(lastConnectionNoticeReconnectAt) < connectionNoticeReconnectThrottle {
             return
         }
 
-        lastConnectionRecoveryAt = Date()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        lastConnectionNoticeReconnectAt = Date()
+        logDiagnostic("connection notice reconnect requested")
+
+        webView.evaluateJavaScript(Self.clickConnectionNoticeReconnectScript) { [weak self] result, error in
             guard let self else { return }
-            NSLog("Synology Chat refreshing after %@", reason)
-            if self.webView.url == nil {
-                self.loadHome()
-            } else {
-                self.webView.reload()
+
+            if let error {
+                self.logDiagnostic("connection notice reconnect script failed: \(error.localizedDescription)")
+                return
             }
+
+            self.logDiagnostic("connection notice reconnect result: \(result ?? "<nil>")")
+        }
+    }
+
+    private func logDiagnostic(_ message: String) {
+        let line = "\(Self.diagnosticTimestamp()) \(message)\n"
+        NSLog("Synology Chat Native %@", message)
+
+        guard let data = line.data(using: .utf8) else { return }
+
+        if !FileManager.default.fileExists(atPath: diagnosticLogURL.path) {
+            FileManager.default.createFile(atPath: diagnosticLogURL.path, contents: nil)
+        }
+
+        do {
+            let handle = try FileHandle(forWritingTo: diagnosticLogURL)
+            try handle.seekToEnd()
+            try handle.write(contentsOf: data)
+            try handle.close()
+        } catch {
+            NSLog("Synology Chat Native diagnostic log write failed: \(error.localizedDescription)")
         }
     }
 }
 
 private extension ChatWindowController {
+    static func diagnosticTimestamp() -> String {
+        ISO8601DateFormatter().string(from: Date())
+    }
+
     static func javascriptStringLiteral(_ value: String) -> String {
         guard
             let data = try? JSONSerialization.data(withJSONObject: [value], options: []),
@@ -511,6 +668,67 @@ private extension ChatWindowController {
   return JSON.stringify(payload, null, 2);
 })();
 """
+
+    static let hasActiveDraftScript = """
+(() => {
+  const active = document.activeElement;
+  if (!active) return false;
+
+  const editable = active.closest?.('[contenteditable="true"]')
+    || (active.isContentEditable ? active : null)
+    || (/^(textarea|input)$/i.test(active.tagName || '') ? active : null);
+  if (!editable) return false;
+
+  const value = 'value' in editable ? editable.value : editable.innerText || editable.textContent || '';
+  return String(value || '').trim().length > 0;
+})();
+"""
+
+    static let clickConnectionNoticeReconnectScript = """
+(() => {
+  const isVisible = (element) => {
+    if (!element) return false;
+    const style = getComputedStyle(element);
+    if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
+    return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+  };
+
+  const isConnectionNotice = (element) => {
+    if (!isVisible(element)) return false;
+
+    const text = (element.innerText || element.textContent || '').replace(/\\s+/g, ' ').trim();
+    if (!/No Internet connection/i.test(text) || !/Synology Chat/i.test(text)) return false;
+
+    const rect = element.getBoundingClientRect();
+    if (rect.top > 180 || rect.height < 12 || rect.height > 120) return false;
+
+    const style = getComputedStyle(element);
+    const role = (element.getAttribute('role') || '').toLowerCase();
+    const zIndex = Number.parseInt(style.zIndex, 10);
+    return ['alert', 'status', 'dialog'].includes(role)
+      || style.position === 'fixed'
+      || style.position === 'sticky'
+      || Number.isFinite(zIndex) && zIndex >= 100;
+  };
+
+  const notices = Array.from(document.querySelectorAll('body *')).filter(isConnectionNotice);
+  for (const notice of notices) {
+    const controls = Array.from(notice.querySelectorAll('a, button, [role="button"], .x-btn, .x-btn-text'));
+    const reconnect = controls.find((control) => {
+      const label = (control.innerText || control.textContent || control.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim();
+      return /^Reconnect$/i.test(label);
+    });
+
+    if (reconnect) {
+      reconnect.click();
+      return 'clicked';
+    }
+  }
+
+  return notices.length ? 'notice-without-reconnect-control' : 'notice-not-found';
+})();
+"""
+
 }
 
 extension ChatWindowController: WKScriptMessageHandler {
@@ -532,6 +750,9 @@ extension ChatWindowController: WKScriptMessageHandler {
         case "unreadCount":
             guard message.frameInfo.isMainFrame else { return }
             handleUnreadCount(payload: payload)
+        case "diagnostic":
+            guard message.frameInfo.isMainFrame else { return }
+            handleDiagnostic(payload: payload)
         case "close":
             guard let id = payload["id"] as? String else { return }
             closeNativeNotification(id: id)
@@ -659,6 +880,11 @@ private final class DockBadgeView: NSView {
 extension ChatWindowController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         progressIndicator.startAnimation(nil)
+        logDiagnostic("navigation started: url=\(webView.url?.absoluteString ?? "<pending>")")
+    }
+
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        logDiagnostic("navigation committed: url=\(webView.url?.absoluteString ?? "<pending>")")
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -666,14 +892,19 @@ extension ChatWindowController: WKNavigationDelegate {
         applyTheme()
         syncWindowActiveStateToWeb()
         window?.title = webView.title?.isEmpty == false ? webView.title! : "Synology Chat"
+        logDiagnostic(
+            "navigation finished: title=\(webView.title ?? "<none>") url=\(webView.url?.absoluteString ?? "<none>")"
+        )
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         progressIndicator.stopAnimation(nil)
+        logDiagnostic("navigation failed: \(error.localizedDescription)")
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         progressIndicator.stopAnimation(nil)
+        logDiagnostic("provisional navigation failed: \(error.localizedDescription)")
     }
 
     func webView(
@@ -685,6 +916,10 @@ extension ChatWindowController: WKNavigationDelegate {
             decisionHandler(.allow)
             return
         }
+
+        logDiagnostic(
+            "navigation action: type=\(Self.navigationTypeDescription(navigationAction.navigationType)) target=\(url.absoluteString) mainFrame=\(navigationAction.targetFrame?.isMainFrame == true ? "true" : "false")"
+        )
 
         if shouldOpenInBrowser(url: url, navigationAction: navigationAction) {
             NSWorkspace.shared.open(url)
@@ -745,6 +980,27 @@ extension ChatWindowController: WKNavigationDelegate {
         let id = ObjectIdentifier(download)
         activeDownloads[id] = download
         download.delegate = self
+    }
+}
+
+private extension ChatWindowController {
+    static func navigationTypeDescription(_ navigationType: WKNavigationType) -> String {
+        switch navigationType {
+        case .linkActivated:
+            return "linkActivated"
+        case .formSubmitted:
+            return "formSubmitted"
+        case .backForward:
+            return "backForward"
+        case .reload:
+            return "reload"
+        case .formResubmitted:
+            return "formResubmitted"
+        case .other:
+            return "other"
+        @unknown default:
+            return "unknown"
+        }
     }
 }
 

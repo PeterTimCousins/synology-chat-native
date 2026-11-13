@@ -1,0 +1,616 @@
+Extracted terminal suite/assertion lines only. Source SHA256: 7a19b5b8813b9ade3aabc14e89df78bb477ad29cbb5a52c30f4714c3cd33458f
+Test Suite 'All tests' started at 2026-11-13 8:58:25.624 am.
+Test Suite 'SynologyChatNativeTests.xctest' started at 2026-11-13 8:58:25.625 am.
+Test Suite 'ChannelSettingsUIFixtureTests' started at 2026-11-13 8:58:25.625 am.
+Test Suite 'ChannelSettingsUIFixtureTests' passed at 2026-11-13 8:58:25.702 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.077 (0.077) seconds
+Test Suite 'ChatAPIErrorLocalizationTests' started at 2026-11-13 8:58:25.702 am.
+Test Suite 'ChatAPIErrorLocalizationTests' passed at 2026-11-13 8:58:25.711 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'ChatAPITests' started at 2026-11-13 8:58:25.711 am.
+Test Suite 'ChatAPITests' passed at 2026-11-13 8:58:25.719 am.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'ChatAccountActionLeaseTests' started at 2026-11-13 8:58:25.719 am.
+Test Suite 'ChatAccountActionLeaseTests' passed at 2026-11-13 8:58:25.724 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'ChatAdministratorStatusTests' started at 2026-11-13 8:58:25.724 am.
+Test Suite 'ChatAdministratorStatusTests' passed at 2026-11-13 8:58:25.727 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'ChatAppearanceRoundTripTests' started at 2026-11-13 8:58:25.727 am.
+Test Suite 'ChatAppearanceRoundTripTests' passed at 2026-11-13 8:58:25.729 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatAppearanceSettingsTests' started at 2026-11-13 8:58:25.729 am.
+Test Suite 'ChatAppearanceSettingsTests' passed at 2026-11-13 8:58:25.734 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ChatApplicationLauncherTests' started at 2026-11-13 8:58:25.734 am.
+Test Suite 'ChatApplicationLauncherTests' passed at 2026-11-13 8:58:25.749 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.015 (0.015) seconds
+Test Suite 'ChatArchiveAttachmentTests' started at 2026-11-13 8:58:25.749 am.
+Test Suite 'ChatArchiveAttachmentTests' passed at 2026-11-13 8:58:25.764 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.014 (0.015) seconds
+Test Suite 'ChatArchiveDeletionTests' started at 2026-11-13 8:58:25.764 am.
+Test Suite 'ChatArchiveDeletionTests' passed at 2026-11-13 8:58:25.775 am.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'ChatArchivePeriodPresentationTests' started at 2026-11-13 8:58:25.775 am.
+Test Suite 'ChatArchivePeriodPresentationTests' passed at 2026-11-13 8:58:25.782 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'ChatArchiveTests' started at 2026-11-13 8:58:25.782 am.
+Test Suite 'ChatArchiveTests' passed at 2026-11-13 8:58:25.802 am.
+	 Executed 28 tests, with 0 failures (0 unexpected) in 0.019 (0.020) seconds
+Test Suite 'ChatAttachmentTests' started at 2026-11-13 8:58:25.802 am.
+Test Suite 'ChatAttachmentTests' passed at 2026-11-13 8:58:25.950 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.148 (0.148) seconds
+Test Suite 'ChatAuthenticationTests' started at 2026-11-13 8:58:25.950 am.
+Test Suite 'ChatAuthenticationTests' passed at 2026-11-13 8:58:25.952 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatBookmarkTests' started at 2026-11-13 8:58:25.952 am.
+Test Suite 'ChatBookmarkTests' passed at 2026-11-13 8:58:25.957 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ChatBotActionJournalTests' started at 2026-11-13 8:58:25.957 am.
+Test Suite 'ChatBotActionJournalTests' passed at 2026-11-13 8:58:25.964 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'ChatBotAttachmentTests' started at 2026-11-13 8:58:25.964 am.
+Test Suite 'ChatBotAttachmentTests' passed at 2026-11-13 8:58:25.997 am.
+	 Executed 18 tests, with 0 failures (0 unexpected) in 0.032 (0.033) seconds
+Test Suite 'ChatBotSubscriptionTests' started at 2026-11-13 8:58:25.997 am.
+Test Suite 'ChatBotSubscriptionTests' passed at 2026-11-13 8:58:26.077 am.
+	 Executed 22 tests, with 0 failures (0 unexpected) in 0.078 (0.079) seconds
+Test Suite 'ChatBoundedPreviewTransferTests' started at 2026-11-13 8:58:26.077 am.
+Test Suite 'ChatBoundedPreviewTransferTests' passed at 2026-11-13 8:58:26.078 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatCalendarTests' started at 2026-11-13 8:58:26.078 am.
+Test Suite 'ChatCalendarTests' passed at 2026-11-13 8:58:26.112 am.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'ChatChannelActionJournalTests' started at 2026-11-13 8:58:26.112 am.
+Test Suite 'ChatChannelActionJournalTests' passed at 2026-11-13 8:58:26.120 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'ChatChannelAlertsTests' started at 2026-11-13 8:58:26.120 am.
+Test Suite 'ChatChannelAlertsTests' passed at 2026-11-13 8:58:26.155 am.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.034 (0.035) seconds
+Test Suite 'ChatChannelCloseTests' started at 2026-11-13 8:58:26.155 am.
+Test Suite 'ChatChannelCloseTests' passed at 2026-11-13 8:58:26.191 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.035 (0.036) seconds
+Test Suite 'ChatChannelDetailsTests' started at 2026-11-13 8:58:26.191 am.
+Test Suite 'ChatChannelDetailsTests' passed at 2026-11-13 8:58:26.238 am.
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.046 (0.047) seconds
+Test Suite 'ChatChannelDiscoveryTests' started at 2026-11-13 8:58:26.238 am.
+Test Suite 'ChatChannelDiscoveryTests' passed at 2026-11-13 8:58:26.327 am.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 0.087 (0.088) seconds
+Test Suite 'ChatChannelGuestsTests' started at 2026-11-13 8:58:26.327 am.
+Test Suite 'ChatChannelGuestsTests' passed at 2026-11-13 8:58:26.340 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.013 (0.013) seconds
+Test Suite 'ChatChannelInvitationIntegrationTests' started at 2026-11-13 8:58:26.340 am.
+Test Suite 'ChatChannelInvitationIntegrationTests' passed at 2026-11-13 8:58:26.432 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.092 (0.092) seconds
+Test Suite 'ChatChannelManagementTests' started at 2026-11-13 8:58:26.432 am.
+Test Suite 'ChatChannelManagementTests' passed at 2026-11-13 8:58:26.439 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.006 (0.007) seconds
+Test Suite 'ChatChannelPromotionJournalTests' started at 2026-11-13 8:58:26.439 am.
+Test Suite 'ChatChannelPromotionJournalTests' passed at 2026-11-13 8:58:26.442 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'ChatChannelPromotionTests' started at 2026-11-13 8:58:26.442 am.
+Test Suite 'ChatChannelPromotionTests' passed at 2026-11-13 8:58:26.498 am.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.055 (0.056) seconds
+Test Suite 'ChatComposerFormattingTests' started at 2026-11-13 8:58:26.498 am.
+Test Suite 'ChatComposerFormattingTests' passed at 2026-11-13 8:58:26.508 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'ChatComposerMentionTests' started at 2026-11-13 8:58:26.508 am.
+Test Suite 'ChatComposerMentionTests' passed at 2026-11-13 8:58:26.546 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.038 (0.038) seconds
+Test Suite 'ChatConnectionAccountTests' started at 2026-11-13 8:58:26.546 am.
+Test Suite 'ChatConnectionAccountTests' passed at 2026-11-13 8:58:26.546 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'ChatContentCryptoTests' started at 2026-11-13 8:58:26.546 am.
+Test Suite 'ChatContentCryptoTests' passed at 2026-11-13 8:58:26.548 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatConversationOrganizationTests' started at 2026-11-13 8:58:26.548 am.
+Test Suite 'ChatConversationOrganizationTests' passed at 2026-11-13 8:58:26.569 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.021 (0.021) seconds
+Test Suite 'ChatDownloadHistoryTests' started at 2026-11-13 8:58:26.569 am.
+Test Suite 'ChatDownloadHistoryTests' passed at 2026-11-13 8:58:26.708 am.
+	 Executed 29 tests, with 0 failures (0 unexpected) in 0.137 (0.139) seconds
+Test Suite 'ChatDriveFilesTests' started at 2026-11-13 8:58:26.708 am.
+Test Suite 'ChatDriveFilesTests' passed at 2026-11-13 8:58:26.783 am.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 0.074 (0.075) seconds
+Test Suite 'ChatEmojiPreferencesTests' started at 2026-11-13 8:58:26.783 am.
+Test Suite 'ChatEmojiPreferencesTests' passed at 2026-11-13 8:58:26.787 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'ChatEmojiRecentSyncTests' started at 2026-11-13 8:58:26.787 am.
+Test Suite 'ChatEmojiRecentSyncTests' passed at 2026-11-13 8:58:26.791 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'ChatEncryptedChannelCreationTests' started at 2026-11-13 8:58:26.791 am.
+Test Suite 'ChatEncryptedChannelCreationTests' passed at 2026-11-13 8:58:26.808 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.016 (0.017) seconds
+Test Suite 'ChatEncryptedChannelInvitationTests' started at 2026-11-13 8:58:26.808 am.
+Test Suite 'ChatEncryptedChannelInvitationTests' passed at 2026-11-13 8:58:26.812 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'ChatEncryptedConversationIntegrationTests' started at 2026-11-13 8:58:26.812 am.
+Test Suite 'ChatEncryptedConversationIntegrationTests' passed at 2026-11-13 8:58:26.938 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.125 (0.126) seconds
+Test Suite 'ChatEncryptedConversationIntentTests' started at 2026-11-13 8:58:26.938 am.
+Test Suite 'ChatEncryptedConversationIntentTests' passed at 2026-11-13 8:58:26.946 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'ChatEncryptedConversationStartTests' started at 2026-11-13 8:58:26.946 am.
+Test Suite 'ChatEncryptedConversationStartTests' passed at 2026-11-13 8:58:26.957 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'ChatEncryptedCreationIntegrationTests' started at 2026-11-13 8:58:26.957 am.
+Test Suite 'ChatEncryptedCreationIntegrationTests' passed at 2026-11-13 8:58:27.167 am.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.209 (0.210) seconds
+Test Suite 'ChatEncryptedUploadTests' started at 2026-11-13 8:58:27.167 am.
+Test Suite 'ChatEncryptedUploadTests' passed at 2026-11-13 8:58:27.175 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'ChatEncryptionChangeCoordinatorTests' started at 2026-11-13 8:58:27.175 am.
+Test Suite 'ChatEncryptionChangeCoordinatorTests' passed at 2026-11-13 8:58:27.187 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'ChatEncryptionConsumerTests' started at 2026-11-13 8:58:27.187 am.
+Test Suite 'ChatEncryptionConsumerTests' passed at 2026-11-13 8:58:27.204 am.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 0.016 (0.017) seconds
+Test Suite 'ChatEncryptionManagementTests' started at 2026-11-13 8:58:27.204 am.
+Test Suite 'ChatEncryptionManagementTests' passed at 2026-11-13 8:58:27.207 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'ChatEncryptionOwnerStateTests' started at 2026-11-13 8:58:27.207 am.
+Test Suite 'ChatEncryptionOwnerStateTests' passed at 2026-11-13 8:58:27.214 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'ChatForwardTests' started at 2026-11-13 8:58:27.214 am.
+Test Suite 'ChatForwardTests' passed at 2026-11-13 8:58:27.309 am.
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.094 (0.095) seconds
+Test Suite 'ChatGuestAuthenticationTests' started at 2026-11-13 8:58:27.309 am.
+Test Suite 'ChatGuestAuthenticationTests' passed at 2026-11-13 8:58:27.314 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ChatGuestManagementTests' started at 2026-11-13 8:58:27.314 am.
+Test Suite 'ChatGuestManagementTests' passed at 2026-11-13 8:58:27.324 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'ChatHashtagCompletionTests' started at 2026-11-13 8:58:27.324 am.
+Test Suite 'ChatHashtagCompletionTests' passed at 2026-11-13 8:58:27.326 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatHashtagTests' started at 2026-11-13 8:58:27.326 am.
+Test Suite 'ChatHashtagTests' passed at 2026-11-13 8:58:27.329 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'ChatHistoryArchiveActionTests' started at 2026-11-13 8:58:27.329 am.
+Test Suite 'ChatHistoryArchiveActionTests' passed at 2026-11-13 8:58:27.354 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.025 (0.025) seconds
+Test Suite 'ChatImageHistoryTests' started at 2026-11-13 8:58:27.354 am.
+Test Suite 'ChatImageHistoryTests' passed at 2026-11-13 8:58:27.388 am.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'ChatImageViewerTests' started at 2026-11-13 8:58:27.388 am.
+Test Suite 'ChatImageViewerTests' passed at 2026-11-13 8:58:27.428 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.039 (0.040) seconds
+Test Suite 'ChatLinkLibraryPagingTests' started at 2026-11-13 8:58:27.428 am.
+Test Suite 'ChatLinkLibraryPagingTests' passed at 2026-11-13 8:58:27.430 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatLinkLibraryTests' started at 2026-11-13 8:58:27.430 am.
+Test Suite 'ChatLinkLibraryTests' passed at 2026-11-13 8:58:27.431 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatLinkPreviewTests' started at 2026-11-13 8:58:27.431 am.
+Test Suite 'ChatLinkPreviewTests' passed at 2026-11-13 8:58:27.504 am.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 0.071 (0.072) seconds
+Test Suite 'ChatMainHistoryRefreshTests' started at 2026-11-13 8:58:27.504 am.
+Test Suite 'ChatMainHistoryRefreshTests' passed at 2026-11-13 8:58:27.537 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'ChatMainReconnectHistoryTests' started at 2026-11-13 8:58:27.537 am.
+Test Suite 'ChatMainReconnectHistoryTests' passed at 2026-11-13 8:58:27.560 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.022 (0.023) seconds
+Test Suite 'ChatManualPresenceTests' started at 2026-11-13 8:58:27.560 am.
+Test Suite 'ChatManualPresenceTests' passed at 2026-11-13 8:58:27.576 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.016 (0.016) seconds
+Test Suite 'ChatMediaRangeProbeTests' started at 2026-11-13 8:58:27.576 am.
+Test Suite 'ChatMediaRangeProbeTests' passed at 2026-11-13 8:58:27.577 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatMediaRangeReadTests' started at 2026-11-13 8:58:27.577 am.
+Test Suite 'ChatMediaRangeReadTests' passed at 2026-11-13 8:58:27.585 am.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'ChatMentionCompletionTests' started at 2026-11-13 8:58:27.585 am.
+Test Suite 'ChatMentionCompletionTests' passed at 2026-11-13 8:58:27.586 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatMessageApplicationLinkTests' started at 2026-11-13 8:58:27.586 am.
+Test Suite 'ChatMessageApplicationLinkTests' passed at 2026-11-13 8:58:27.590 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'ChatMessageEditBaselineTests' started at 2026-11-13 8:58:27.590 am.
+Test Suite 'ChatMessageEditBaselineTests' passed at 2026-11-13 8:58:27.591 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatMessageEditConflictTests' started at 2026-11-13 8:58:27.591 am.
+Test Suite 'ChatMessageEditConflictTests' passed at 2026-11-13 8:58:27.628 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.036 (0.037) seconds
+Test Suite 'ChatMessageFormattingTests' started at 2026-11-13 8:58:27.628 am.
+Test Suite 'ChatMessageFormattingTests' passed at 2026-11-13 8:58:27.632 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'ChatMessageWebsiteTests' started at 2026-11-13 8:58:27.632 am.
+Test Suite 'ChatMessageWebsiteTests' passed at 2026-11-13 8:58:27.715 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.082 (0.083) seconds
+Test Suite 'ChatNASFilesTests' started at 2026-11-13 8:58:27.715 am.
+Test Suite 'ChatNASFilesTests' passed at 2026-11-13 8:58:27.737 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.021 (0.022) seconds
+Test Suite 'ChatNameFormatLocalizationTests' started at 2026-11-13 8:58:27.737 am.
+Test Suite 'ChatNameFormatLocalizationTests' passed at 2026-11-13 8:58:27.746 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.009 (0.009) seconds
+Test Suite 'ChatNameFormatTests' started at 2026-11-13 8:58:27.746 am.
+Test Suite 'ChatNameFormatTests' passed at 2026-11-13 8:58:27.777 am.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.031 (0.032) seconds
+Test Suite 'ChatNotificationSessionTests' started at 2026-11-13 8:58:27.777 am.
+Test Suite 'ChatNotificationSessionTests' passed at 2026-11-13 8:58:27.779 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatNotificationSettingsTests' started at 2026-11-13 8:58:27.779 am.
+Test Suite 'ChatNotificationSettingsTests' passed at 2026-11-13 8:58:27.795 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.015 (0.016) seconds
+Test Suite 'ChatNotificationTests' started at 2026-11-13 8:58:27.795 am.
+Test Suite 'ChatNotificationTests' passed at 2026-11-13 8:58:27.801 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.006 (0.007) seconds
+Test Suite 'ChatOwnEditProbeBoundaryTests' started at 2026-11-13 8:58:27.801 am.
+Test Suite 'ChatOwnEditProbeBoundaryTests' passed at 2026-11-13 8:58:27.803 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatOwnEditProbePolicyTests' started at 2026-11-13 8:58:27.803 am.
+Test Suite 'ChatOwnEditProbePolicyTests' passed at 2026-11-13 8:58:27.814 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.010 (0.011) seconds
+Test Suite 'ChatPairedDevicesTests' started at 2026-11-13 8:58:27.814 am.
+Test Suite 'ChatPairedDevicesTests' passed at 2026-11-13 8:58:27.829 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.015 (0.016) seconds
+Test Suite 'ChatPeterProbeTargetTests' started at 2026-11-13 8:58:27.829 am.
+Test Suite 'ChatPeterProbeTargetTests' passed at 2026-11-13 8:58:27.830 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ChatPinnedMessagesTests' started at 2026-11-13 8:58:27.830 am.
+Test Suite 'ChatPinnedMessagesTests' passed at 2026-11-13 8:58:27.842 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'ChatPollAttachmentTests' started at 2026-11-13 8:58:27.842 am.
+Test Suite 'ChatPollAttachmentTests' passed at 2026-11-13 8:58:27.882 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.040 (0.040) seconds
+Test Suite 'ChatPollTests' started at 2026-11-13 8:58:27.882 am.
+Test Suite 'ChatPollTests' passed at 2026-11-13 8:58:27.904 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.021 (0.022) seconds
+Test Suite 'ChatPostReadStatusTests' started at 2026-11-13 8:58:27.904 am.
+Test Suite 'ChatPostReadStatusTests' passed at 2026-11-13 8:58:27.914 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.010 (0.010) seconds
+Test Suite 'ChatProfileEditingTests' started at 2026-11-13 8:58:27.914 am.
+Test Suite 'ChatProfileEditingTests' passed at 2026-11-13 8:58:27.972 am.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.057 (0.058) seconds
+Test Suite 'ChatQuickConnectTests' started at 2026-11-13 8:58:27.972 am.
+Test Suite 'ChatQuickConnectTests' passed at 2026-11-13 8:58:27.979 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'ChatQuickSwitcherTests' started at 2026-11-13 8:58:27.979 am.
+Test Suite 'ChatQuickSwitcherTests' passed at 2026-11-13 8:58:28.194 am.
+	 Executed 34 tests, with 0 failures (0 unexpected) in 0.214 (0.215) seconds
+Test Suite 'ChatReactionCatalogTests' started at 2026-11-13 8:58:28.194 am.
+Test Suite 'ChatReactionCatalogTests' passed at 2026-11-13 8:58:28.211 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.018 (0.018) seconds
+Test Suite 'ChatReactionDetailsTests' started at 2026-11-13 8:58:28.211 am.
+Test Suite 'ChatReactionDetailsTests' passed at 2026-11-13 8:58:28.212 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ChatReadReceiptRetryTests' started at 2026-11-13 8:58:28.212 am.
+Test Suite 'ChatReadReceiptRetryTests' passed at 2026-11-13 8:58:30.876 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 2.662 (2.664) seconds
+Test Suite 'ChatReadStateTests' started at 2026-11-13 8:58:30.876 am.
+Test Suite 'ChatReadStateTests' passed at 2026-11-13 8:58:30.910 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'ChatReconnectTests' started at 2026-11-13 8:58:30.910 am.
+Test Suite 'ChatReconnectTests' passed at 2026-11-13 8:58:31.159 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.246 (0.249) seconds
+Test Suite 'ChatRegionalSettingsTests' started at 2026-11-13 8:58:31.159 am.
+Test Suite 'ChatRegionalSettingsTests' passed at 2026-11-13 8:58:31.211 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.051 (0.051) seconds
+Test Suite 'ChatReminderDeliveryTests' started at 2026-11-13 8:58:31.211 am.
+Test Suite 'ChatReminderDeliveryTests' passed at 2026-11-13 8:58:31.213 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatReminderTests' started at 2026-11-13 8:58:31.213 am.
+Test Suite 'ChatReminderTests' passed at 2026-11-13 8:58:31.226 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.012 (0.013) seconds
+Test Suite 'ChatSavedFileOpeningTests' started at 2026-11-13 8:58:31.226 am.
+Test Suite 'ChatSavedFileOpeningTests' passed at 2026-11-13 8:58:31.236 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.010 (0.010) seconds
+Test Suite 'ChatSavedSessionTests' started at 2026-11-13 8:58:31.236 am.
+Test Suite 'ChatSavedSessionTests' passed at 2026-11-13 8:58:31.238 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ChatScheduleTests' started at 2026-11-13 8:58:31.238 am.
+Test Suite 'ChatScheduleTests' passed at 2026-11-13 8:58:31.504 am.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.265 (0.266) seconds
+Test Suite 'ChatScheduledCreationIntentTests' started at 2026-11-13 8:58:31.504 am.
+Test Suite 'ChatScheduledCreationIntentTests' passed at 2026-11-13 8:58:31.516 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.012 (0.012) seconds
+Test Suite 'ChatSearchCompletionTests' started at 2026-11-13 8:58:31.516 am.
+Test Suite 'ChatSearchCompletionTests' passed at 2026-11-13 8:58:31.518 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatSearchFilterTests' started at 2026-11-13 8:58:31.518 am.
+Test Suite 'ChatSearchFilterTests' passed at 2026-11-13 8:58:31.518 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ChatSearchQueryTests' started at 2026-11-13 8:58:31.518 am.
+Test Suite 'ChatSearchQueryTests' passed at 2026-11-13 8:58:31.522 am.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'ChatSearchSuggestionParityTests' started at 2026-11-13 8:58:31.522 am.
+Test Suite 'ChatSearchSuggestionParityTests' passed at 2026-11-13 8:58:31.525 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'ChatSessionBoundaryTests' started at 2026-11-13 8:58:31.525 am.
+Test Suite 'ChatSessionBoundaryTests' passed at 2026-11-13 8:58:31.640 am.
+	 Executed 55 tests, with 0 failures (0 unexpected) in 0.112 (0.115) seconds
+Test Suite 'ChatSidebarLocalizationTests' started at 2026-11-13 8:58:31.640 am.
+Test Suite 'ChatSidebarLocalizationTests' passed at 2026-11-13 8:58:31.649 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.009 (0.009) seconds
+Test Suite 'ChatSidebarTests' started at 2026-11-13 8:58:31.649 am.
+Test Suite 'ChatSidebarTests' passed at 2026-11-13 8:58:31.657 am.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'ChatSlashActionJournalTests' started at 2026-11-13 8:58:31.657 am.
+Test Suite 'ChatSlashActionJournalTests' passed at 2026-11-13 8:58:31.659 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatSlashCommandTests' started at 2026-11-13 8:58:31.659 am.
+Test Suite 'ChatSlashCommandTests' passed at 2026-11-13 8:58:31.698 am.
+	 Executed 18 tests, with 0 failures (0 unexpected) in 0.038 (0.039) seconds
+Test Suite 'ChatSocketTests' started at 2026-11-13 8:58:31.698 am.
+Test Suite 'ChatSocketTests' passed at 2026-11-13 8:58:31.699 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatStickerTests' started at 2026-11-13 8:58:31.699 am.
+Test Suite 'ChatStickerTests' passed at 2026-11-13 8:58:31.706 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'ChatSystemEventTests' started at 2026-11-13 8:58:31.706 am.
+Test Suite 'ChatSystemEventTests' passed at 2026-11-13 8:58:31.715 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.009 (0.009) seconds
+Test Suite 'ChatTLSIdentityTests' started at 2026-11-13 8:58:31.715 am.
+Test Suite 'ChatTLSIdentityTests' passed at 2026-11-13 8:58:31.720 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ChatThreadCollectionTests' started at 2026-11-13 8:58:31.720 am.
+Test Suite 'ChatThreadCollectionTests' passed at 2026-11-13 8:58:31.726 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'ChatThreadHistoryTests' started at 2026-11-13 8:58:31.726 am.
+Test Suite 'ChatThreadHistoryTests' passed at 2026-11-13 8:58:32.509 am.
+	 Executed 28 tests, with 0 failures (0 unexpected) in 0.780 (0.784) seconds
+Test Suite 'ChatThreadReadStateTests' started at 2026-11-13 8:58:32.509 am.
+Test Suite 'ChatThreadReadStateTests' passed at 2026-11-13 8:58:33.247 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.736 (0.737) seconds
+Test Suite 'ChatThreadWindowAPITests' started at 2026-11-13 8:58:33.247 am.
+Test Suite 'ChatThreadWindowAPITests' passed at 2026-11-13 8:58:33.262 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.015 (0.015) seconds
+Test Suite 'ChatTimelineHistoryTests' started at 2026-11-13 8:58:33.263 am.
+Test Suite 'ChatTimelineHistoryTests' passed at 2026-11-13 8:58:33.286 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.023 (0.024) seconds
+Test Suite 'ChatUploadCancellationTests' started at 2026-11-13 8:58:33.286 am.
+Test Suite 'ChatUploadCancellationTests' passed at 2026-11-13 8:58:33.289 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatUploadProgressTests' started at 2026-11-13 8:58:33.289 am.
+Test Suite 'ChatUploadProgressTests' passed at 2026-11-13 8:58:33.290 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ChatUploadResponseTests' started at 2026-11-13 8:58:33.290 am.
+Test Suite 'ChatUploadResponseTests' passed at 2026-11-13 8:58:33.554 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.264 (0.264) seconds
+Test Suite 'ChatUserProfileTests' started at 2026-11-13 8:58:33.554 am.
+Test Suite 'ChatUserProfileTests' passed at 2026-11-13 8:58:33.618 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.063 (0.064) seconds
+Test Suite 'ChatWebhookActionJournalTests' started at 2026-11-13 8:58:33.618 am.
+Test Suite 'ChatWebhookActionJournalTests' passed at 2026-11-13 8:58:33.626 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'ChatWebhookTests' started at 2026-11-13 8:58:33.626 am.
+Test Suite 'ChatWebhookTests' passed at 2026-11-13 8:58:33.727 am.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.100 (0.101) seconds
+Test Suite 'ChatWindowLifecycleTests' started at 2026-11-13 8:58:33.727 am.
+Test Suite 'ChatWindowLifecycleTests' passed at 2026-11-13 8:58:33.731 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'ChatYouTubeVideoTests' started at 2026-11-13 8:58:33.731 am.
+Test Suite 'ChatYouTubeVideoTests' passed at 2026-11-13 8:58:33.732 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'CollectionReconciliationTests' started at 2026-11-13 8:58:33.732 am.
+Test Suite 'CollectionReconciliationTests' passed at 2026-11-13 8:58:36.129 am.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 2.392 (2.397) seconds
+Test Suite 'ConversationLibraryTests' started at 2026-11-13 8:58:36.129 am.
+Test Suite 'ConversationLibraryTests' passed at 2026-11-13 8:58:36.139 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'ConversionRecoveryFixtureTests' started at 2026-11-13 8:58:36.139 am.
+Test Suite 'ConversionRecoveryFixtureTests' passed at 2026-11-13 8:58:36.151 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.012 (0.012) seconds
+Test Suite 'EncryptedArchiveTests' started at 2026-11-13 8:58:36.151 am.
+Test Suite 'EncryptedArchiveTests' passed at 2026-11-13 8:58:36.167 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.015 (0.016) seconds
+Test Suite 'EncryptedArchiveUIFixtureTests' started at 2026-11-13 8:58:36.167 am.
+Test Suite 'EncryptedArchiveUIFixtureTests' passed at 2026-11-13 8:58:36.191 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.024 (0.024) seconds
+Test Suite 'ForwardRecoveryFixtureTests' started at 2026-11-13 8:58:36.191 am.
+Test Suite 'ForwardRecoveryFixtureTests' passed at 2026-11-13 8:58:36.206 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.015 (0.015) seconds
+Test Suite 'LibraryFileOptionsTests' started at 2026-11-13 8:58:36.206 am.
+Test Suite 'LibraryFileOptionsTests' passed at 2026-11-13 8:58:36.210 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'NativeAppearanceSettingsTests' started at 2026-11-13 8:58:36.210 am.
+Test Suite 'NativeAppearanceSettingsTests' passed at 2026-11-13 8:58:36.235 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.024 (0.025) seconds
+Test Suite 'NativeAttachmentBatchTests' started at 2026-11-13 8:58:36.235 am.
+Test Suite 'NativeAttachmentBatchTests' passed at 2026-11-13 8:58:36.237 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'NativeAttachmentImagePreviewTests' started at 2026-11-13 8:58:36.237 am.
+Test Suite 'NativeAttachmentImagePreviewTests' passed at 2026-11-13 8:58:36.243 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'NativeAttachmentSelectionTests' started at 2026-11-13 8:58:36.243 am.
+Test Suite 'NativeAttachmentSelectionTests' passed at 2026-11-13 8:58:36.286 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.042 (0.043) seconds
+Test Suite 'NativeChatAppConfigurationTests' started at 2026-11-13 8:58:36.286 am.
+Test Suite 'NativeChatAppConfigurationTests' passed at 2026-11-13 8:58:36.287 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'NativeCodeEditorTextTests' started at 2026-11-13 8:58:36.287 am.
+Test Suite 'NativeCodeEditorTextTests' passed at 2026-11-13 8:58:37.979 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 1.692 (1.693) seconds
+Test Suite 'NativeCollectionPreviewOwnershipTests' started at 2026-11-13 8:58:37.980 am.
+Test Suite 'NativeCollectionPreviewOwnershipTests' passed at 2026-11-13 8:58:38.806 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.826 (0.827) seconds
+Test Suite 'NativeComposerAttachmentTests' started at 2026-11-13 8:58:38.806 am.
+Test Suite 'NativeComposerAttachmentTests' passed at 2026-11-13 8:58:38.894 am.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.086 (0.088) seconds
+Test Suite 'NativeComposerSizingTests' started at 2026-11-13 8:58:38.894 am.
+Test Suite 'NativeComposerSizingTests' passed at 2026-11-13 8:58:38.922 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.028 (0.028) seconds
+Test Suite 'NativeConversationBootstrapTests' started at 2026-11-13 8:58:38.922 am.
+Test Suite 'NativeConversationBootstrapTests' passed at 2026-11-13 8:58:38.923 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'NativeConversationFileDropTests' started at 2026-11-13 8:58:38.923 am.
+Test Suite 'NativeConversationFileDropTests' passed at 2026-11-13 8:58:39.134 am.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.209 (0.210) seconds
+Test Suite 'NativeConversationRasterDropTests' started at 2026-11-13 8:58:39.134 am.
+Test Suite 'NativeConversationRasterDropTests' passed at 2026-11-13 8:58:39.281 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.147 (0.147) seconds
+Test Suite 'NativeConversationRasterModelTests' started at 2026-11-13 8:58:39.281 am.
+Test Suite 'NativeConversationRasterModelTests' passed at 2026-11-13 8:58:39.286 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'NativeDesktopPreferencesTests' started at 2026-11-13 8:58:39.286 am.
+Test Suite 'NativeDesktopPreferencesTests' passed at 2026-11-13 8:58:39.291 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'NativeDocumentPreviewTests' started at 2026-11-13 8:58:39.291 am.
+Test Suite 'NativeDocumentPreviewTests' passed at 2026-11-13 8:58:40.188 am.
+	 Executed 33 tests, with 0 failures (0 unexpected) in 0.895 (0.897) seconds
+Test Suite 'NativeDraftStoreTests' started at 2026-11-13 8:58:40.188 am.
+Test Suite 'NativeDraftStoreTests' passed at 2026-11-13 8:58:40.218 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.029 (0.030) seconds
+Test Suite 'NativeDroppedRasterBudgetTests' started at 2026-11-13 8:58:40.218 am.
+Test Suite 'NativeDroppedRasterBudgetTests' passed at 2026-11-13 8:58:40.253 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.035 (0.035) seconds
+Test Suite 'NativeEditConflictRetentionTests' started at 2026-11-13 8:58:40.253 am.
+Test Suite 'NativeEditConflictRetentionTests' passed at 2026-11-13 8:58:42.928 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.675 (2.675) seconds
+Test Suite 'NativeEmojiPickerNavigationTests' started at 2026-11-13 8:58:42.928 am.
+Test Suite 'NativeEmojiPickerNavigationTests' passed at 2026-11-13 8:58:42.928 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'NativeEmojiPickerSearchFieldTests' started at 2026-11-13 8:58:42.928 am.
+Test Suite 'NativeEmojiPickerSearchFieldTests' passed at 2026-11-13 8:58:42.934 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'NativeEncryptedConversationCheckerTests' started at 2026-11-13 8:58:42.934 am.
+Test Suite 'NativeEncryptedConversationCheckerTests' passed at 2026-11-13 8:58:42.946 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.012 (0.012) seconds
+Test Suite 'NativeEncryptionManagementTests' started at 2026-11-13 8:58:42.946 am.
+Test Suite 'NativeEncryptionManagementTests' passed at 2026-11-13 8:58:42.962 am.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.016 (0.016) seconds
+Test Suite 'NativeFileAttachmentPresentationTests' started at 2026-11-13 8:58:42.962 am.
+Test Suite 'NativeFileAttachmentPresentationTests' passed at 2026-11-13 8:58:42.963 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'NativeImageViewerKeysTests' started at 2026-11-13 8:58:42.963 am.
+Test Suite 'NativeImageViewerKeysTests' passed at 2026-11-13 8:58:42.965 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'NativeImageViewerZoomTests' started at 2026-11-13 8:58:42.965 am.
+Test Suite 'NativeImageViewerZoomTests' passed at 2026-11-13 8:58:42.966 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'NativeInlineImagePreviewTests' started at 2026-11-13 8:58:42.966 am.
+Test Suite 'NativeInlineImagePreviewTests' passed at 2026-11-13 8:58:43.027 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.061 (0.061) seconds
+Test Suite 'NativeInterfaceLanguageTests' started at 2026-11-13 8:58:43.027 am.
+Test Suite 'NativeInterfaceLanguageTests' passed at 2026-11-13 8:58:43.034 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'NativeInterfaceZoomTests' started at 2026-11-13 8:58:43.034 am.
+Test Suite 'NativeInterfaceZoomTests' passed at 2026-11-13 8:58:43.039 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'NativeLibraryYouTubeTests' started at 2026-11-13 8:58:43.039 am.
+Test Suite 'NativeLibraryYouTubeTests' passed at 2026-11-13 8:58:43.044 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'NativeLinkPreviewAdmissionTests' started at 2026-11-13 8:58:43.044 am.
+Test Suite 'NativeLinkPreviewAdmissionTests' passed at 2026-11-13 8:58:43.057 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.012 (0.012) seconds
+Test Suite 'NativeLinkPreviewImageLayoutTests' started at 2026-11-13 8:58:43.057 am.
+Test Suite 'NativeLinkPreviewImageLayoutTests' passed at 2026-11-13 8:58:43.058 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'NativeLocalizedStringsTests' started at 2026-11-13 8:58:43.058 am.
+Test Suite 'NativeLocalizedStringsTests' passed at 2026-11-13 8:58:43.091 am.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.032 (0.033) seconds
+Test Suite 'NativeLongMessageSnippetRecoveryTests' started at 2026-11-13 8:58:43.091 am.
+Test Suite 'NativeLongMessageSnippetRecoveryTests' passed at 2026-11-13 8:58:43.104 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.013 (0.014) seconds
+Test Suite 'NativeMediaResourceLoaderTests' started at 2026-11-13 8:58:43.104 am.
+Test Suite 'NativeMediaResourceLoaderTests' passed at 2026-11-13 8:58:43.284 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.179 (0.179) seconds
+Test Suite 'NativeMentionCompletionKeyTests' started at 2026-11-13 8:58:43.284 am.
+Test Suite 'NativeMentionCompletionKeyTests' passed at 2026-11-13 8:58:43.285 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'NativeNotificationDeliveryTests' started at 2026-11-13 8:58:43.286 am.
+Test Suite 'NativeNotificationDeliveryTests' passed at 2026-11-13 8:58:43.438 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.152 (0.153) seconds
+Test Suite 'NativeNotificationDiagnosticTests' started at 2026-11-13 8:58:43.438 am.
+Test Suite 'NativeNotificationDiagnosticTests' passed at 2026-11-13 8:58:43.445 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'NativeOfficePreviewTests' started at 2026-11-13 8:58:43.445 am.
+Test Suite 'NativeOfficePreviewTests' passed at 2026-11-13 8:58:43.450 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'NativeProductionEnvironmentTests' started at 2026-11-13 8:58:43.450 am.
+Test Suite 'NativeProductionEnvironmentTests' passed at 2026-11-13 8:58:45.265 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 1.815 (1.815) seconds
+Test Suite 'NativeProductionRichViewportTests' started at 2026-11-13 8:58:45.265 am.
+Test Suite 'NativeProductionRichViewportTests' passed at 2026-11-13 8:58:49.901 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 4.636 (4.636) seconds
+Test Suite 'NativeProductionViewportTests' started at 2026-11-13 8:58:49.902 am.
+Test Suite 'NativeProductionViewportTests' passed at 2026-11-13 8:58:56.527 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 6.625 (6.625) seconds
+Test Suite 'NativeProfilePhotoTests' started at 2026-11-13 8:58:56.527 am.
+Test Suite 'NativeProfilePhotoTests' passed at 2026-11-13 8:58:56.534 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'NativeReactionDetailsStoreTests' started at 2026-11-13 8:58:56.534 am.
+Test Suite 'NativeReactionDetailsStoreTests' passed at 2026-11-13 8:58:56.536 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'NativeReconnectEditorRetentionTests' started at 2026-11-13 8:58:56.536 am.
+Test Suite 'NativeReconnectEditorRetentionTests' passed at 2026-11-13 8:59:01.948 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 5.411 (5.411) seconds
+Test Suite 'NativeRestoreTrustTests' started at 2026-11-13 8:59:01.948 am.
+Test Suite 'NativeRestoreTrustTests' passed at 2026-11-13 8:59:01.950 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'NativeScrollVisibilityTests' started at 2026-11-13 8:59:01.950 am.
+Test Suite 'NativeScrollVisibilityTests' passed at 2026-11-13 8:59:01.964 am.
+	 Executed 28 tests, with 0 failures (0 unexpected) in 0.012 (0.013) seconds
+Test Suite 'NativeSearchFieldKeyTests' started at 2026-11-13 8:59:01.964 am.
+Test Suite 'NativeSearchFieldKeyTests' passed at 2026-11-13 8:59:01.965 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'NativeSearchPreviewSessionTests' started at 2026-11-13 8:59:01.965 am.
+Test Suite 'NativeSearchPreviewSessionTests' passed at 2026-11-13 8:59:02.344 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.379 (0.379) seconds
+Test Suite 'NativeSnippetImportTests' started at 2026-11-13 8:59:02.344 am.
+Test Suite 'NativeSnippetImportTests' passed at 2026-11-13 8:59:02.518 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.173 (0.173) seconds
+Test Suite 'NativeSnippetTests' started at 2026-11-13 8:59:02.518 am.
+Test Suite 'NativeSnippetTests' passed at 2026-11-13 8:59:02.894 am.
+	 Executed 25 tests, with 0 failures (0 unexpected) in 0.375 (0.376) seconds
+Test Suite 'NativeTableTimelineLifecycleTests' started at 2026-11-13 8:59:02.894 am.
+Test Suite 'NativeTableTimelineLifecycleTests' passed at 2026-11-13 8:59:04.931 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 2.037 (2.037) seconds
+Test Suite 'NativeTableTimelineStateTests' started at 2026-11-13 8:59:04.931 am.
+Test Suite 'NativeTableTimelineStateTests' passed at 2026-11-13 8:59:04.933 am.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'NativeTextDocumentLayoutTests' started at 2026-11-13 8:59:04.933 am.
+Test Suite 'NativeTextDocumentLayoutTests' passed at 2026-11-13 8:59:04.935 am.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'NativeThreadReconnectViewportTests' started at 2026-11-13 8:59:04.935 am.
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:137: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqual failed: ("Optional(139)") is not equal to ("Optional(140)") - Geometry: ["baseline_id": 140, "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "phase": "100ms", "virtual": false, "baseline_offset": 0.0, "actual_id": 139, "clip": "{{0, 3100}, {619, 362}}", "document": "{{0, 0}, {619, 6590}}", "actual_offset": -225.0]
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:138: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqualWithAccuracy failed: ("-225.0") is not equal to ("0.0") +/- ("1.0") - Geometry: ["baseline_id": 140, "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "phase": "100ms", "virtual": false, "baseline_offset": 0.0, "actual_id": 139, "clip": "{{0, 3100}, {619, 362}}", "document": "{{0, 0}, {619, 6590}}", "actual_offset": -225.0]
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:137: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqual failed: ("Optional(139)") is not equal to ("Optional(140)") - Geometry: ["baseline_offset": 0.0, "phase": "200ms", "clip": "{{0, 3100}, {619, 362}}", "baseline_id": 140, "document": "{{0, 0}, {619, 6590}}", "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "virtual": false, "actual_offset": -225.0, "actual_id": 139]
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:138: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqualWithAccuracy failed: ("-225.0") is not equal to ("0.0") +/- ("1.0") - Geometry: ["baseline_offset": 0.0, "phase": "200ms", "clip": "{{0, 3100}, {619, 362}}", "baseline_id": 140, "document": "{{0, 0}, {619, 6590}}", "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "virtual": false, "actual_offset": -225.0, "actual_id": 139]
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:137: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqual failed: ("Optional(139)") is not equal to ("Optional(140)") - Geometry: ["phase": "1sec", "virtual": false, "document": "{{0, 0}, {619, 6590}}", "baseline_id": 140, "clip": "{{0, 3100}, {619, 362}}", "actual_offset": -225.0, "actual_id": 139, "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "baseline_offset": 0.0]
+/Users/petercousins/Developer/synology-chat-native/Tests/SynologyChatNativeTests/NativeThreadReconnectViewportTests.swift:138: error: -[SynologyChatNativeTests.NativeThreadReconnectViewportTests testStandardReconnectRetainsRealOlderReplyPixelAndReconcilesCanonicalWindow] : XCTAssertEqualWithAccuracy failed: ("-225.0") is not equal to ("0.0") +/- ("1.0") - Geometry: ["phase": "1sec", "virtual": false, "document": "{{0, 0}, {619, 6590}}", "baseline_id": 140, "clip": "{{0, 3100}, {619, 362}}", "actual_offset": -225.0, "actual_id": 139, "token": "24CC1974-7FE7-46C0-BC67-E511F9431B93", "baseline_offset": 0.0]
+Test Suite 'NativeThreadReconnectViewportTests' failed at 2026-11-13 8:59:16.194 am.
+	 Executed 6 tests, with 6 failures (0 unexpected) in 11.258 (11.259) seconds
+Test Suite 'NativeTimelineGroupingTests' started at 2026-11-13 8:59:16.194 am.
+Test Suite 'NativeTimelineGroupingTests' passed at 2026-11-13 8:59:16.197 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'NativeTimelineViewportTests' started at 2026-11-13 8:59:16.197 am.
+Test Suite 'NativeTimelineViewportTests' passed at 2026-11-13 8:59:16.216 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.019 (0.019) seconds
+Test Suite 'NativeUserActivityDeadlineTests' started at 2026-11-13 8:59:16.216 am.
+Test Suite 'NativeUserActivityDeadlineTests' passed at 2026-11-13 8:59:16.217 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'NativeVirtualEditorOffscreenTests' started at 2026-11-13 8:59:16.217 am.
+Test Suite 'NativeVirtualEditorOffscreenTests' passed at 2026-11-13 8:59:31.814 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 15.596 (15.597) seconds
+Test Suite 'NativeVirtualThreadEditorTests' started at 2026-11-13 8:59:31.814 am.
+Test Suite 'NativeVirtualThreadEditorTests' passed at 2026-11-13 8:59:38.410 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 6.595 (6.595) seconds
+Test Suite 'NativeVirtualThreadTimelineTests' started at 2026-11-13 8:59:38.410 am.
+Test Suite 'NativeVirtualThreadTimelineTests' passed at 2026-11-13 8:59:41.504 am.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 3.093 (3.094) seconds
+Test Suite 'NativeVirtualTimelineEditorTests' started at 2026-11-13 8:59:41.504 am.
+Test Suite 'NativeVirtualTimelineEditorTests' passed at 2026-11-13 8:59:48.049 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 6.544 (6.545) seconds
+Test Suite 'NativeVirtualTimelineLifecycleTests' started at 2026-11-13 8:59:48.049 am.
+Test Suite 'NativeVirtualTimelineLifecycleTests' passed at 2026-11-13 8:59:49.417 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 1.368 (1.369) seconds
+Test Suite 'NativeWindowActivityObserverTests' started at 2026-11-13 8:59:49.417 am.
+Test Suite 'NativeWindowActivityObserverTests' passed at 2026-11-13 8:59:49.423 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'NativeYouTubePlayerPolicyTests' started at 2026-11-13 8:59:49.423 am.
+Test Suite 'NativeYouTubePlayerPolicyTests' passed at 2026-11-13 8:59:49.426 am.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'OfficialChatSessionTests' started at 2026-11-13 8:59:49.426 am.
+Test Suite 'OfficialChatSessionTests' passed at 2026-11-13 8:59:49.431 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'ServerAddressTests' started at 2026-11-13 8:59:49.431 am.
+Test Suite 'ServerAddressTests' passed at 2026-11-13 8:59:49.432 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'SlashRecoveryFixtureTests' started at 2026-11-13 8:59:49.432 am.
+Test Suite 'SlashRecoveryFixtureTests' passed at 2026-11-13 8:59:49.441 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.009 (0.009) seconds
+Test Suite 'SynologyChatNativeTests.xctest' failed at 2026-11-13 8:59:49.441 am.
+	 Executed 1854 tests, with 6 failures (0 unexpected) in 83.702 (83.816) seconds
+Test Suite 'All tests' failed at 2026-11-13 8:59:49.441 am.
+	 Executed 1854 tests, with 6 failures (0 unexpected) in 83.702 (83.817) seconds

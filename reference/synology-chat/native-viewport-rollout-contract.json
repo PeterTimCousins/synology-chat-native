@@ -1,0 +1,57 @@
+{
+  "time": "2026-11-13T09:12:01.086856+00:00",
+  "status": "All-build candidate opt-in implemented; ordinary launches retain standard readers; not adopted or promoted",
+  "objective_scope": "Full84 official feature parity plus substantially better native modern UI remains active",
+  "historical_contract": "reference/synology-chat/evidence/2026-11-13/native-virtual-timeline-prototype-contract.json",
+  "selector": {
+    "flag": "--native-message-viewport",
+    "requires_native_client_scope": true,
+    "normal_default": false,
+    "wrapper_flag_alone": false,
+    "persistent_setting_added": false,
+    "main_thread_alignment": "Same selector routes both; explicit internal usingNativeMessageViewport() available to all-build component tests"
+  },
+  "core": [
+    "NativeVirtualTimeline geometry engine and NativeVirtualThreadRowContent now compile in optimized builds",
+    "NativeTimelineScrollView extracted without behavioral changes; DEBUG table retains typealias for existing controls/tests",
+    "NativeTableTimelineState scalar tickets/geometry available all-build",
+    "Contained per-row action lane available all-build; false default preserves standard composition",
+    "Native thread target and explicit lifecycle assignments available all-build"
+  ],
+  "development_isolation": [
+    "Fixture editor injection/forced actions remain DEBUG only",
+    "Native action markers, table experiment, trace/census diagnostics and full synthetic renderers remain DEBUG only",
+    "Optimized runtime tests use no injection, API client, credentials, live account or visible window"
+  ],
+  "verification": {
+    "optimized_test_mode": "env NATIVE_PRODUCTION_VIEWPORT_CHECKS=1 swift test -c release ...",
+    "scope": "Eight explicit optimized files: production reader/rich/environment/config, main refresh API/model, edit baseline/model; normal full target remains allfiles, no product compiler settings changed",
+    "normal_full_mode": "env -u NATIVE_PRODUCTION_VIEWPORT_CHECKS -u NATIVE_PRODUCTION_VIEWPORT_EVIDENCE swift test ...",
+    "results": "Optimized50/0; normal full1854tests with6assertions in one retained default standard reflow case. Separate current DEBUG model live own-Peter edit/conflict proof; not optimized or physical acceptance.",
+    "current_review": "reference/synology-chat/evidence/2026-11-13/own-edit-live-review.json"
+  },
+  "remaining_before_adoption": [
+    "Current isolated physical Save/menu/keyboard/pending-input/IME; optimized native auth/packaged live checks, applicable thread/format/caption/encrypted wire and quit recovery. One DEBUG main normal-message Unicode/LF edit+zero-attempt conflict verified; no serverCAS claim.",
+    "Physical hover/menu/reaction/image/file/link/keyboard/drop and VoiceOver behavior in isolated app",
+    "Current optimized packaged app and own-account/socket reconnect/notification/send/receipt checks",
+    "Rich content and real attachment behavior against installed official client",
+    "Remaining settings/locales/full84 modernUI/whole-app acceptance and safe app preflight"
+  ],
+  "not_claimed": [
+    "Opt-in source availability is not a rollout or full feature acceptance",
+    "The existing standard LazyVStack reflow failure remains open and visible in the normal suite",
+    "Optimized component-test execution is not packaged app/physical/live/official proof",
+    "Growing composers remain development opt-in, not enabled by the production reader switch"
+  ],
+  "preservation": "Signed-in normal app, photo/thread, saved authentication, wrapper and staged/rollback builds unchanged",
+  "thread_context_forward_paging": {
+    "review": "reference/synology-chat/evidence/2026-11-13/thread-forward-paging-review.json",
+    "scope": "Bounded later-reply paging in both reader paths; context retained, no automatic end jump; current live/physical acceptance open"
+  },
+  "rich_component_review": "reference/synology-chat/evidence/2026-11-13/production-rich-viewport-review.json",
+  "native_editor_offscreen_review": "reference/synology-chat/evidence/2026-11-13/native-editor-offscreen-review.json",
+  "main_reconnect_editor_review": "reference/synology-chat/evidence/2026-11-13/main-reconnect-editor-review.json",
+  "native_edit_conflict_review": "reference/synology-chat/evidence/2026-11-13/native-edit-conflict-review.json",
+  "own_edit_live_review": "reference/synology-chat/evidence/2026-11-13/own-edit-live-review.json",
+  "settings_current_build_ui_review": "reference/synology-chat/evidence/2026-11-13/settings-current-build-ui-review.json"
+}

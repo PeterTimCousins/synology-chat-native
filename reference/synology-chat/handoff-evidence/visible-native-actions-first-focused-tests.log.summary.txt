@@ -1,0 +1,22 @@
+Extracted terminal suite/assertion lines only. Source SHA256: de3c3ef477d889c7d674fc7ac895e473e6b5cf2ecf41b1eae8f24dfaeaab8ab5
+Test Suite 'Selected tests' started at 2026-11-13 9:49:39.611 am.
+Test Suite 'SynologyChatNativeTests.xctest' started at 2026-11-13 9:49:39.612 am.
+Test Suite 'NativeProductionRichViewportTests' started at 2026-11-13 9:49:39.612 am.
+Test Suite 'NativeProductionRichViewportTests' passed at 2026-11-13 9:49:44.773 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 5.160 (5.161) seconds
+Test Suite 'NativeProductionViewportTests' started at 2026-11-13 9:49:44.773 am.
+Test Suite 'NativeProductionViewportTests' passed at 2026-11-13 9:49:51.775 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 7.002 (7.002) seconds
+Test Suite 'NativeTimelineActionFixtureTests' started at 2026-11-13 9:49:51.775 am.
+Test Suite 'NativeTimelineActionFixtureTests' passed at 2026-11-13 9:49:51.864 am.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.088 (0.089) seconds
+Test Suite 'NativeVirtualThreadEditorTests' started at 2026-11-13 9:49:51.864 am.
+Test Suite 'NativeVirtualThreadEditorTests' passed at 2026-11-13 9:49:59.120 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 7.255 (7.256) seconds
+Test Suite 'NativeVirtualTimelineEditorTests' started at 2026-11-13 9:49:59.120 am.
+Test Suite 'NativeVirtualTimelineEditorTests' passed at 2026-11-13 9:50:06.318 am.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 7.197 (7.198) seconds
+Test Suite 'SynologyChatNativeTests.xctest' passed at 2026-11-13 9:50:06.318 am.
+	 Executed 22 tests, with 0 failures (0 unexpected) in 26.702 (26.706) seconds
+Test Suite 'Selected tests' passed at 2026-11-13 9:50:06.318 am.
+	 Executed 22 tests, with 0 failures (0 unexpected) in 26.702 (26.707) seconds

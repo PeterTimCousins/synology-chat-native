@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-16",
+  "purpose": "Determine whether a native macOS Synology Chat client can communicate directly with the server while retaining the existing dark visual design.",
+  "status": "Historical initial investigation snapshot. Current native implementation and release status are maintained in the roadmap and release audit; the initial read-only/unfinished statements below are historical.",
+  "tool": {
+    "name": "REA",
+    "version": "6.5.0",
+    "repository": "https://github.com/morluto/rea",
+    "source_commit": "781d5751ad18b25a1fe1ffa8c6035388be8c3283",
+    "installation": "Project-local ignored cache; npm dependencies installed with lifecycle scripts disabled; no global MCP configuration modified.",
+    "cli": "/Users/petercousins/Developer/synology-chat-native/reference/synology-chat/cache/reverse-engineering-2026-10-16/rea-runtime/node_modules/rea-agents/scripts/rea.mjs"
+  },
+  "targets": [
+    {
+      "kind": "installed",
+      "path": "/Applications/Synology Chat.app",
+      "version": "1.2.3-232",
+      "architecture": [
+        "x86_64"
+      ],
+      "framework": "Electron",
+      "background_js_sha256": "b8098d2c949db80e2853f3ffd66851875300c7c775c6a60700fb56f1144fd03b"
+    },
+    {
+      "kind": "downloaded-comparison",
+      "version": "1.2.4-235",
+      "release_label": "1.2.4-0235",
+      "architecture": [
+        "x86_64",
+        "arm64"
+      ],
+      "framework": "Electron",
+      "download_url": "https://global.synologydownload.com/download/Utility/ChatClient/1.2.4-0235/Mac/Installer/Synology%20Chat%20Client-1.2.4-0235.dmg",
+      "image_sha256": "a040f79c5b65fad84b271f21be5fdc4805afc46d391ebca790e9f906fc710f89",
+      "installed": false
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Both desktop versions embed the server-delivered Chat web application in an Electron webview.",
+      "basis": "Recovered webpack source maps contain src/App.vue with a webview; source SHA256 is identical across both releases: cf21680191ef1b380e8800f7214b4f13c450d839ec5268dddfb12c32619a09da. The session module builds ?launchApp=SYNO.SDS.Chat.Application."
+    },
+    {
+      "claim": "The desktop bundle provides discovery, authentication, session validation and native integration code, but this does not recover the full messaging protocol.",
+      "basis": "background.js API calls and preload.js bridge to SYNO.SDS.Chat.Application; message UI is loaded from the server."
+    }
+  ],
+  "observed_api_contracts": [
+    {
+      "api": "SYNO.API.Info",
+      "method": "query",
+      "version": 1,
+      "parameters": {
+        "query": "all"
+      },
+      "path_template": "/{basePath}/webapi/query.cgi/SYNO.API.Info",
+      "purpose": "Discover API endpoint paths and supported versions."
+    },
+    {
+      "api": "SYNO.API.Encryption",
+      "method": "getinfo",
+      "version": 1,
+      "purpose": "Obtain parameters for the sendEnc authentication envelope; exact cryptographic implementation still needs documenting."
+    },
+    {
+      "api": "SYNO.API.Auth",
+      "method": "login",
+      "version": 6,
+      "parameters": [
+        "account",
+        "passwd",
+        "format=sid",
+        "session=chat",
+        "enable_syno_token=yes",
+        "otp_code (optional)",
+        "enable_device_token (optional)",
+        "device_name (optional)",
+        "device_id (optional)"
+      ],
+      "transport": "Called through sendEnc",
+      "returns_used": [
+        "sid",
+        "synotoken",
+        "did"
+      ]
+    },
+    {
+      "api": "SYNO.Chat.User",
+      "method": "polling",
+      "version": 1,
+      "parameters": {},
+      "purpose": "Desktop session validation before loading the web application. Does not establish the live-message transport."
+    },
+    {
+      "api": "SYNO.Core.OTP.Mail",
+      "method": "send",
+      "version": 1,
+      "parameters": [
+        "username"
+      ],
+      "purpose": "Lost-device login flow."
+    }
+  ],
+  "request_routing": {
+    "path_template": "/{basePath}/webapi/{discovered_api.path}/{api}",
+    "session_query_parameters": [
+      "_sid",
+      "SynoToken"
+    ],
+    "encoding": "Form POST; individual values JSON encoded when the API metadata requests JSON.",
+    "verification": "Statically observed; not tested against the user server."
+  },
+  "remaining_unknowns": [
+    "Standalone login/OTP and secure credential lifecycle",
+    "Socket.IO handshake and event handling",
+    "Sending and safe retry/deduplication",
+    "Attachments and downloads",
+    "Replies, reactions, editing, deletions and unread-state behavior",
+    "Encrypted conversations",
+    "QuickConnect resolution",
+    "Native UI refinement and broader compatibility tests"
+  ],
+  "next_vertical_slice": [
+    "Inspect server-delivered JavaScript and observe authorised network traffic",
+    "Validate discovery and login/session handling",
+    "Prove list conversations, load history, send and receive",
+    "Implement native AppKit or SwiftUI views using the existing dark theme as the visual reference"
+  ],
+  "evidence": {
+    "directory": "/Users/petercousins/Developer/synology-chat-native/reference/synology-chat/cache/reverse-engineering-2026-10-16",
+    "installed_REA": "installed-rea-evidence.json",
+    "installed_summary": "installed-rea-summary.json",
+    "update_REA": "update-rea-evidence.json",
+    "update_REA_scope": [
+      "package.json",
+      "preload.js",
+      "js/chunk-common.18d366f9.js"
+    ],
+    "source_maps": "installed-extracted/js/*.js.map and update-extracted/js/*.js.map"
+  },
+  "preserved": [
+    "Installed Synology app",
+    "Existing dark theme",
+    "Pre-existing changes to ChatWindowController.swift and WebNotificationBridge.swift"
+  ],
+  "native_progress": {
+    "validated_read_only_calls": [
+      {
+        "api": "SYNO.API.Info",
+        "method": "query",
+        "version": 1,
+        "parameters": {
+          "query": "all"
+        },
+        "result": "1189 APIs discovered, including 36 Chat APIs"
+      },
+      {
+        "api": "SYNO.Chat.User",
+        "method": "list",
+        "version": 2,
+        "result": "22 users; bot records can omit username"
+      },
+      {
+        "api": "SYNO.Chat.Channel",
+        "method": "list",
+        "version": 5,
+        "parameters": {
+          "is_joined": true
+        },
+        "result": "15 joined channels, zero encrypted channels at observation time"
+      },
+      {
+        "api": "SYNO.Chat.Channel.Member",
+        "method": "get",
+        "version": 1,
+        "parameters": [
+          "channel_id"
+        ],
+        "result": "Membership resolved without calling enter or marking messages read"
+      },
+      {
+        "api": "SYNO.Chat.Post",
+        "method": "list",
+        "version": 5,
+        "parameters": {
+          "channel_id": "selected unencrypted channel",
+          "prev_count": 30,
+          "next_count": 0
+        },
+        "result": "History decoded by native Swift client; first probe read 9 posts"
+      }
+    ],
+    "wire_contract": {
+      "routing": "/webapi/{discovered path}/{API name}?_sid=...&SynoToken=...",
+      "body": "Form encoding with JSON-encoded typed parameters for requestFormat=JSON; api, method and version remain plain fields",
+      "dates": "create_at is epoch milliseconds",
+      "identifiers": "Int64, never Double",
+      "default_channel_names": {
+        "1": "General",
+        "2": "Random",
+        "type=synobot": "My Space"
+      }
+    },
+    "preview": {
+      "framework": "SwiftUI with AppKit window; no WKWebView",
+      "launch": "scripts/package-native-preview.sh then open build/Synology Chat API Preview.app",
+      "menu": "Developer > Open Native Chat Preview",
+      "scope": "List conversations, resolve member names, read recent history, request earlier history and refresh manually",
+      "session": "Explicit button imports the user-established official desktop session into memory. Temporary development bridge; production sign-in still required.",
+      "storage": "Ephemeral URLSession, no API response disk cache, no token logging; default HTTPS validation retained; all redirects refused."
+    },
+    "live_transport_static": {
+      "library": "Socket.IO",
+      "path": "{Chat base URL}sc/socket.io",
+      "query_keys": [
+        "SynoToken",
+        "client=browser",
+        "version_ui"
+      ],
+      "events": [
+        "init",
+        "post.create",
+        "post.update",
+        "post.delete",
+        "channel.join",
+        "channel.disjoin",
+        "channel.typing_v2",
+        "broadcast"
+      ],
+      "limits": "Connection, handshake, session connection ID, reconnection, replay and event processing not yet runtime validated."
+    },
+    "source_bundles": [
+      {
+        "file": "server-synochat-common.js",
+        "sha256": "f6a209632b1e2fb37f4c237c70bf693aa3e3616789bc2bf4c059623dc88b901c"
+      },
+      {
+        "file": "server-synochat-app.js",
+        "sha256": "d7cc39ab599187ab70f3e4fe811553c5dae34010708f740a9c2a70bdbe63ffee"
+      }
+    ],
+    "static_operation_index": "reference/synology-chat/api-operations.json",
+    "REA_server_evidence": "reference/synology-chat/cache/server-bundles-rea-evidence.json",
+    "remaining": [
+      "Standalone login/OTP and secure credential lifecycle",
+      "Socket.IO handshake and event handling",
+      "Sending and safe retry/deduplication",
+      "Attachments and downloads",
+      "Replies, reactions, editing, deletions and unread-state behavior",
+      "Encrypted conversations",
+      "QuickConnect resolution",
+      "Native UI refinement and broader compatibility tests"
+    ],
+    "validation": {
+      "swift_test": "15 tests passed, including URL encoding, session-error responses, unsupported versions, bot records, built-in names and millisecond timestamps",
+      "live_swift_probe": "Passed discovery, user decoding, channel decoding, post history and member lookup; 15 channels, 22 users, 9 posts in initial unencrypted-channel probe",
+      "native_UI": "Observed actual server data in the separate dark SwiftUI window; verified conversation selection, corrected timestamps, latest-message scroll and loading earlier history",
+      "mutations": "No messages sent, channels entered, or read-state mutations issued.",
+      "scope": "Local development build; no release or feature-parity claim."
+    }
+  },
+  "initial_static_limitations": [
+    "Static analysis only; no target app code executed.",
+    "REA graph coverage is partial and static references do not establish runtime behavior.",
+    "The update REA run deliberately selected three source files; additional bundle comparison used direct inert source inspection.",
+    "Downloaded proprietary reference files remain in the ignored cache and should not be redistributed."
+  ],
+  "limitations": [
+    "The native preview is read-only and uses a temporary official-session import bridge.",
+    "Live Socket.IO behavior, writes, attachment rendering and encrypted conversations are not implemented or validated.",
+    "The operation index is static evidence; only the named read-only calls have been exercised.",
+    "Vendor code and raw REA evidence are kept in the ignored reference cache, not redistributed in the app."
+  ],
+  "compatibility_incident_2026_10_16": {
+    "wrong_type": "text",
+    "correct_type": "normal",
+    "impact": "Backend accepted text but created malformed system records; official web client failed while reading them.",
+    "resolution": "Four malformed own synthetic roots soft-deleted; web UI reload verified. Prior send/action claims require revalidation with official client."
+  },
+  "latest_native_validation": {
+    "date": "2026-10-16",
+    "message_type": "normal is the only supported text-create kind; malformed success responses rejected; corrected live text interoperability remains unverified.",
+    "socket_recovery": "A stream wrapper finishes immediately on local cancel; forced transport loss and automatic reconnect passed against the server.",
+    "notification_preferences": "SYNO.Chat.User.Preference/get/v4 -> data.preferences; notification_showmessage, notification_browser_active, notification_mute are Boolean.",
+    "notification_events": "Only normalized client.notification.create payload.post is eligible. Native UI reads fresh privacy preferences and requires explicit OS opt-in.",
+    "message_context": "SYNO.Chat.Post/list/v5 with post_id, prev_count15,next_count15 opened an existing search hit in the native timeline.",
+    "ui_download": "NSSavePanel followed by native download produced exact synthetic attachment bytes."
+  },
+  "historical_record": true,
+  "current_status_source": "reference/synology-chat/native-client-roadmap.json and reference/synology-chat/release-audit.md"
+}

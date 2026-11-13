@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "source": "reference/synology-chat/cache/server-synochat-common.js",
+  "sha256": "f6a209632b1e2fb37f4c237c70bf693aa3e3616789bc2bf4c059623dc88b901c",
+  "character_offset": 35661,
+  "cases": [
+    {
+      "text": "Peter Cousins",
+      "query": "pc",
+      "caseSensitive": false,
+      "score": -6.5
+    },
+    {
+      "text": "peter",
+      "query": "pe",
+      "caseSensitive": false,
+      "score": -1.5
+    },
+    {
+      "text": "Other Peter",
+      "query": "pe",
+      "caseSensitive": false,
+      "score": -1.875
+    },
+    {
+      "text": "pepper",
+      "query": "per",
+      "caseSensitive": false,
+      "score": -5.5
+    },
+    {
+      "text": "blue",
+      "query": "pe",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "",
+      "query": "",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "name",
+      "query": "",
+      "caseSensitive": false,
+      "score": -1
+    },
+    {
+      "text": "",
+      "query": "x",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "123",
+      "query": "13",
+      "caseSensitive": false,
+      "score": -2.5
+    },
+    {
+      "text": "Alpha",
+      "query": "AA",
+      "caseSensitive": false,
+      "score": -4.5
+    },
+    {
+      "text": "Alpha",
+      "query": "AA",
+      "caseSensitive": true,
+      "score": 0
+    },
+    {
+      "text": "Alpha",
+      "query": "A",
+      "caseSensitive": true,
+      "score": -0.5
+    },
+    {
+      "text": "Alpha",
+      "query": "a",
+      "caseSensitive": true,
+      "score": -0.8333333333333334
+    },
+    {
+      "text": "😀 Peter",
+      "query": "pe",
+      "caseSensitive": false,
+      "score": -1.8
+    },
+    {
+      "text": "🟢Blue",
+      "query": "blue",
+      "caseSensitive": false,
+      "score": -3.75
+    },
+    {
+      "text": "😀",
+      "query": "😀",
+      "caseSensitive": false,
+      "score": -1.5
+    },
+    {
+      "text": "😀",
+      "query": "😁",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "CAFÉ",
+      "query": "café",
+      "caseSensitive": false,
+      "score": -3.5
+    },
+    {
+      "text": "é",
+      "query": "é",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "é",
+      "query": "é",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "İstanbul",
+      "query": "ist",
+      "caseSensitive": false,
+      "score": -3.5
+    },
+    {
+      "text": "I",
+      "query": "ı",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "Kelvin",
+      "query": "kel",
+      "caseSensitive": false,
+      "score": -2.5
+    },
+    {
+      "text": "Straße",
+      "query": "strasse",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "Straße",
+      "query": "sße",
+      "caseSensitive": false,
+      "score": -5.5
+    },
+    {
+      "text": "𝔄Alpha",
+      "query": "al",
+      "caseSensitive": false,
+      "score": -1.75
+    },
+    {
+      "text": "A𐐀",
+      "query": "a𐐨",
+      "caseSensitive": false,
+      "score": -2.5
+    },
+    {
+      "text": "ΟΣ",
+      "query": "ος",
+      "caseSensitive": false,
+      "score": -1.5
+    },
+    {
+      "text": "ΟΣ",
+      "query": "οσ",
+      "caseSensitive": false,
+      "score": 0
+    },
+    {
+      "text": "中文chat",
+      "query": "中c",
+      "caseSensitive": false,
+      "score": -2.5
+    },
+    {
+      "text": "from:",
+      "query": "fo",
+      "caseSensitive": false,
+      "score": -2.5
+    },
+    {
+      "text": "bookmark",
+      "query": "bm",
+      "caseSensitive": false,
+      "score": -4.5
+    }
+  ]
+}

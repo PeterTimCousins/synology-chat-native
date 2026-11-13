@@ -32,6 +32,7 @@ enum WebNotificationBridge {
   const notificationActions = new Map();
   const routedPostKeys = new Map();
   const unreadCounts = new Map();
+  const diagnosticEvents = new Map();
   let lastUnreadTotal = null;
   const nativeWindowState = { active: true };
 
@@ -39,6 +40,24 @@ enum WebNotificationBridge {
     try {
       window.webkit.messageHandlers.scnNotifications.postMessage(payload);
     } catch (_) {}
+  };
+
+  const postDiagnostic = (event, details = {}, throttleMs = 5000) => {
+    const now = Date.now();
+    const key = `${event}:${details.text || details.visibilityState || details.url || ''}`;
+    const previous = diagnosticEvents.get(key) || 0;
+    if (now - previous < throttleMs) return;
+    diagnosticEvents.set(key, now);
+
+    post({
+      kind: 'diagnostic',
+      event,
+      url: location.href,
+      visibilityState: document.visibilityState,
+      online: navigator.onLine,
+      readyState: document.readyState,
+      ...details
+    });
   };
 
   const normalizePermission = (permission) => {
@@ -308,11 +327,237 @@ enum WebNotificationBridge {
     return true;
   };
 
+  const isVisibleConnectionNotice = (element) => {
+    if (!isVisible(element)) return false;
+
+    const text = (element.innerText || element.textContent || '').replace(/\\s+/g, ' ').trim();
+    if (!text || text.length > 220) {
+      return false;
+    }
+
+    const mentionsSynologyChat = /Synology Chat/i.test(text);
+    const isKnownOfflineNotice = /No Internet connection/i.test(text) && mentionsSynologyChat;
+    const isSynologyReconnectNotice = mentionsSynologyChat && /\\b(refresh|reload|reconnect|connection lost|disconnected|offline|timeout)\\b/i.test(text);
+    if (!isKnownOfflineNotice && !isSynologyReconnectNotice) {
+      return false;
+    }
+
+    const rect = element.getBoundingClientRect();
+    if (rect.width < Math.min(window.innerWidth * 0.45, 360)) return false;
+    if (rect.height < 12 || rect.height > 120) return false;
+    if (rect.top > 180) return false;
+
+    const style = getComputedStyle(element);
+    const role = (element.getAttribute('role') || '').toLowerCase();
+    const zIndex = Number.parseInt(style.zIndex, 10);
+    const looksLikeSystemNotice = ['alert', 'status', 'dialog'].includes(role)
+      || style.position === 'fixed'
+      || style.position === 'sticky'
+      || Number.isFinite(zIndex) && zIndex >= 100;
+
+    return looksLikeSystemNotice && rect.top <= 180;
+  };
+
+  const scanConnectionNotices = () => {
+    const notice = findConnectionNotice();
+    if (!notice) return;
+
+    const text = (notice.innerText || notice.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 240);
+    postDiagnostic('connection-notice-visible', { text }, 10000);
+  };
+
+  const findConnectionNotice = () => {
+    return Array.from(document.querySelectorAll('body *')).find(isVisibleConnectionNotice) || null;
+  };
+
+  const clickConnectionNoticeReconnect = () => {
+    const notice = findConnectionNotice();
+    if (!notice) return 'notice-not-found';
+
+    const controls = Array.from(notice.querySelectorAll('a, button, [role="button"], .x-btn, .x-btn-text'));
+    const reconnect = controls.find((control) => {
+      const label = (control.innerText || control.textContent || control.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim();
+      return /^Reconnect$/i.test(label);
+    });
+
+    if (!reconnect) return 'notice-without-reconnect-control';
+
+    reconnect.click();
+    return 'clicked';
+  };
+
+  const socketConnectionSummary = () => {
+    const chat = getChat();
+    const socket = chat?.Socket;
+    const controller = chat?.AppUtils?.Controller?.Socket;
+    const candidates = [
+      ['chat.Socket', socket],
+      ['chat.Socket.socket', socket?.socket],
+      ['chat.Socket.io', socket?.io],
+      ['chat.Socket.client', socket?.client],
+      ['Controller.Socket', controller],
+      ['Controller.Socket.socket', controller?.socket],
+      ['Controller.Socket.io', controller?.io],
+      ['Controller.Socket.client', controller?.client]
+    ];
+    const fields = ['connected', 'disconnected', 'connecting', 'readyState', 'status', 'state'];
+    const values = [];
+
+    for (const [name, candidate] of candidates) {
+      if (!candidate || typeof candidate !== 'object') continue;
+      const present = {};
+      for (const field of fields) {
+        try {
+          if (field in candidate) present[field] = candidate[field];
+        } catch (_) {}
+      }
+      if (Object.keys(present).length > 0) values.push({ name, ...present });
+    }
+
+    const looksDisconnected = values.some((item) => {
+      const state = String(item.readyState ?? item.status ?? item.state ?? '').toLowerCase();
+      return item.connected === false
+        || item.disconnected === true
+        || state === 'closed'
+        || state === 'closing'
+        || state === 'disconnected'
+        || state === 'offline'
+        || state === '3';
+    });
+
+    return {
+      hasChat: !!chat,
+      values,
+      looksDisconnected
+    };
+  };
+
+  const attemptExplicitSocketReconnect = () => {
+    const chat = getChat();
+    const socket = chat?.Socket;
+    const controller = chat?.AppUtils?.Controller?.Socket;
+    const candidates = [
+      ['Controller.Socket', controller],
+      ['chat.Socket', socket],
+      ['chat.Socket.socket', socket?.socket],
+      ['chat.Socket.io', socket?.io],
+      ['chat.Socket.client', socket?.client],
+      ['Controller.Socket.socket', controller?.socket],
+      ['Controller.Socket.io', controller?.io],
+      ['Controller.Socket.client', controller?.client]
+    ];
+
+    for (const [name, candidate] of candidates) {
+      if (!candidate) continue;
+      for (const method of ['reconnect', 'connect']) {
+        if (typeof candidate[method] !== 'function') continue;
+        try {
+          candidate[method]();
+          return `${name}.${method}`;
+        } catch (error) {
+          return `${name}.${method}:error:${error?.message || error}`;
+        }
+      }
+    }
+
+    return 'no-method';
+  };
+
+  const applyNativeWindowState = (active) => {
+    nativeWindowState.active = !!active;
+    try {
+      const detector = getChat()?.AppUtils?.ActiveDetector;
+      detector?.[nativeWindowState.active ? 'setBrowserActivate' : 'setBrowserDeactivate']?.();
+    } catch (_) {}
+  };
+
+  const connectionHealthCheck = (details = {}) => {
+    if (typeof details.active === 'boolean') {
+      applyNativeWindowState(details.active);
+    }
+
+    const action = clickConnectionNoticeReconnect();
+    const socket = socketConnectionSummary();
+    const explicitReconnect = action === 'clicked' || !socket.looksDisconnected
+      ? 'not-needed'
+      : attemptExplicitSocketReconnect();
+
+    return JSON.stringify({
+      reason: details.reason || '',
+      url: location.href,
+      visibilityState: document.visibilityState,
+      online: navigator.onLine,
+      readyState: document.readyState,
+      nativeWindowActive: nativeWindowState.active,
+      action,
+      explicitReconnect,
+      socket
+    });
+  };
+
+  const installDiagnostics = () => {
+    if (window.__scnDiagnosticsInstalled) return true;
+    if (!document.body) return false;
+
+    window.__scnDiagnosticsInstalled = true;
+    postDiagnostic('document-ready', {}, 60000);
+
+    document.addEventListener('visibilitychange', () => {
+      postDiagnostic('visibility-change', { visibilityState: document.visibilityState }, 1000);
+    });
+
+    window.addEventListener('pagehide', () => {
+      postDiagnostic('pagehide', {}, 1000);
+    });
+
+    window.addEventListener('pageshow', (event) => {
+      postDiagnostic('pageshow', { persisted: !!event.persisted }, 1000);
+    });
+
+    window.addEventListener('beforeunload', () => {
+      postDiagnostic('beforeunload', {}, 1000);
+    });
+
+    window.addEventListener('online', () => {
+      postDiagnostic('network-online', {}, 1000);
+    });
+
+    window.addEventListener('offline', () => {
+      postDiagnostic('network-offline', {}, 1000);
+    });
+
+    const observer = new MutationObserver(() => {
+      scanConnectionNotices();
+    });
+
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    });
+
+    window.__scnConnectionNoticeInterval = setInterval(scanConnectionNotices, 2000);
+    scanConnectionNotices();
+    return true;
+  };
+
   const scheduleUnreadObserverInstall = () => {
     let attempts = 0;
     const timer = setInterval(() => {
       attempts += 1;
       if (installUnreadObserver() || attempts > 10000) {
+        clearInterval(timer);
+      }
+    }, 500);
+  };
+
+  const scheduleDiagnosticsInstall = () => {
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts += 1;
+      if (installDiagnostics() || attempts > 10000) {
         clearInterval(timer);
       }
     }, 500);
@@ -512,16 +757,12 @@ enum WebNotificationBridge {
     notificationActions.delete(id);
   };
 
-  window.__scnSetNativeWindowActive = (active) => {
-    nativeWindowState.active = !!active;
-    try {
-      const detector = getChat()?.AppUtils?.ActiveDetector;
-      detector?.[nativeWindowState.active ? 'setBrowserActivate' : 'setBrowserDeactivate']?.();
-    } catch (_) {}
-  };
+  window.__scnSetNativeWindowActive = applyNativeWindowState;
+  window.__scnConnectionHealthCheck = connectionHealthCheck;
 
   window.Notification = NativeNotification;
   scheduleUnreadObserverInstall();
+  scheduleDiagnosticsInstall();
   scheduleChatHookInstall();
 })();
 """,

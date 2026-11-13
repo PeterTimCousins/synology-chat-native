@@ -8,3 +8,8 @@ app-dump-*.json
 dom.json
 dump.html
 reference/synology-chat/cache/
+
+# Local account evidence and generated interpreter caches stay on their owning Mac.
+reference/synology-chat/evidence/
+__pycache__/
+*.pyc

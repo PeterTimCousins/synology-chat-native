@@ -1,0 +1,31 @@
+Extracted terminal suite/assertion lines only. Source SHA256: a5052fd748694c22cc799a9099a53e248f3da974c444e9fa8b3292e2d5e8b6a1
+Test Suite 'All tests' started at 2026-11-13 9:05:39.125 am.
+Test Suite 'SynologyChatNativeTests.xctest' started at 2026-11-13 9:05:39.127 am.
+Test Suite 'ChatMainHistoryRefreshTests' started at 2026-11-13 9:05:39.127 am.
+Test Suite 'ChatMainHistoryRefreshTests' passed at 2026-11-13 9:05:39.168 am.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.041 (0.042) seconds
+Test Suite 'ChatMainReconnectHistoryTests' started at 2026-11-13 9:05:39.168 am.
+Test Suite 'ChatMainReconnectHistoryTests' passed at 2026-11-13 9:05:39.201 am.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.032 (0.033) seconds
+Test Suite 'ChatMessageEditBaselineTests' started at 2026-11-13 9:05:39.201 am.
+Test Suite 'ChatMessageEditBaselineTests' passed at 2026-11-13 9:05:39.203 am.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'ChatMessageEditConflictTests' started at 2026-11-13 9:05:39.203 am.
+Test Suite 'ChatMessageEditConflictTests' passed at 2026-11-13 9:05:39.250 am.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.045 (0.046) seconds
+Test Suite 'NativeChatAppConfigurationTests' started at 2026-11-13 9:05:39.250 am.
+Test Suite 'NativeChatAppConfigurationTests' passed at 2026-11-13 9:05:39.250 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'NativeProductionEnvironmentTests' started at 2026-11-13 9:05:39.250 am.
+Test Suite 'NativeProductionEnvironmentTests' passed at 2026-11-13 9:05:41.331 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 2.080 (2.080) seconds
+Test Suite 'NativeProductionRichViewportTests' started at 2026-11-13 9:05:41.331 am.
+Test Suite 'NativeProductionRichViewportTests' passed at 2026-11-13 9:05:46.143 am.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 4.812 (4.812) seconds
+Test Suite 'NativeProductionViewportTests' started at 2026-11-13 9:05:46.143 am.
+Test Suite 'NativeProductionViewportTests' passed at 2026-11-13 9:05:52.994 am.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 6.851 (6.852) seconds
+Test Suite 'SynologyChatNativeTests.xctest' passed at 2026-11-13 9:05:52.994 am.
+	 Executed 50 tests, with 0 failures (0 unexpected) in 13.863 (13.868) seconds
+Test Suite 'All tests' passed at 2026-11-13 9:05:52.994 am.
+	 Executed 50 tests, with 0 failures (0 unexpected) in 13.863 (13.869) seconds

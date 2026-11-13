@@ -1,0 +1,53 @@
+{
+  "channel_id": 93,
+  "comment_count": 0,
+  "create_at": 1792184505037,
+  "creator_id": 10,
+  "delete_at": 0,
+  "hashtags": [],
+  "hashtags_additional": [],
+  "is_sticky": false,
+  "last_comment_at": 0,
+  "last_pin_at": 0,
+  "mentions": [],
+  "message": "Native poll contract test \u2014 Peter.",
+  "mobile_token": "",
+  "post_id": 399431958754,
+  "props": {
+    "encrypted": false,
+    "forward": {
+      "type": "none"
+    },
+    "safe_url": true,
+    "static_url": false,
+    "vote": {
+      "choices": [
+        {
+          "count": 0,
+          "id": "c9718d7b-257a-419b-8c4a-f1325829212b",
+          "text": "Native option A",
+          "voters": []
+        },
+        {
+          "count": 0,
+          "id": "665b2084-eaee-4e10-80a7-85b1cd057399",
+          "text": "Native option B",
+          "voters": []
+        }
+      ],
+      "cronjob_id": 0,
+      "options": {
+        "add_option": true,
+        "anonymous": false,
+        "expire_at": 0,
+        "multiple": true
+      },
+      "state": "open"
+    }
+  },
+  "reactions": [],
+  "thread_id": 0,
+  "type": "vote",
+  "update_at": 0,
+  "url_props": []
+}

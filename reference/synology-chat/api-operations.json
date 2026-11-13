@@ -1,0 +1,1164 @@
+{
+  "source_file": "server-synochat-common.js",
+  "source_sha256": "f6a209632b1e2fb37f4c237c70bf693aa3e3616789bc2bf4c059623dc88b901c",
+  "evidence_kind": "literal source extraction; not runtime validation",
+  "operations": [
+    {
+      "alias": "Misc_ntp",
+      "api": "SYNO.Chat.Misc",
+      "method": "ntp",
+      "version": 1,
+      "source_character_offset": 8344,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Misc_acl",
+      "api": "SYNO.Chat.Misc",
+      "method": "acl",
+      "version": 1,
+      "source_character_offset": 8399,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Login",
+      "api": "SYNO.Chat.User",
+      "method": "login",
+      "version": 2,
+      "source_character_offset": 8454,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Logout",
+      "api": "SYNO.API.Auth",
+      "method": "logout",
+      "version": 6,
+      "source_character_offset": 8508,
+      "verification": "static-only"
+    },
+    {
+      "alias": "File_thumbnail",
+      "api": "SYNO.Core.File.Thumbnail",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 8563,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Named_create",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 8634,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Named_join",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "join",
+      "version": 1,
+      "source_character_offset": 8705,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Named_disjoin",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "disjoin",
+      "version": 1,
+      "source_character_offset": 8772,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Named_invite",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "invite",
+      "version": 1,
+      "source_character_offset": 8845,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Named_set",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 8916,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_anonymous_initiate",
+      "api": "SYNO.Chat.Channel.Anonymous",
+      "method": "initiate",
+      "version": 2,
+      "source_character_offset": 8981,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_anonymous_promote",
+      "api": "SYNO.Chat.Channel.Anonymous",
+      "method": "promote",
+      "version": 2,
+      "source_character_offset": 9072,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_enter",
+      "api": "SYNO.Chat.Channel",
+      "method": "enter",
+      "version": 2,
+      "source_character_offset": 9161,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_leave",
+      "api": "SYNO.Chat.Channel",
+      "method": "leave",
+      "version": 2,
+      "source_character_offset": 9226,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_list",
+      "api": "SYNO.Chat.Channel",
+      "method": "list",
+      "version": 5,
+      "source_character_offset": 9291,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_hide",
+      "api": "SYNO.Chat.Channel",
+      "method": "hide",
+      "version": 2,
+      "source_character_offset": 9354,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/organization-review.json"
+    },
+    {
+      "alias": "Channel_show",
+      "api": "SYNO.Chat.Channel",
+      "method": "show",
+      "version": 2,
+      "source_character_offset": 9417,
+      "verification": "static-only",
+      "native_observation": "Calling show/v2 with channel_id did not restore last_hide_at on the current NAS; native workflow removed this call. Official-source and native live opening via Channel.enter restored it."
+    },
+    {
+      "alias": "Channel_view",
+      "api": "SYNO.Chat.Channel",
+      "method": "view",
+      "version": 2,
+      "source_character_offset": 9480,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_star",
+      "api": "SYNO.Chat.Channel",
+      "method": "star",
+      "version": 2,
+      "source_character_offset": 9543,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/organization-review.json"
+    },
+    {
+      "alias": "Channel_unstar",
+      "api": "SYNO.Chat.Channel",
+      "method": "unstar",
+      "version": 2,
+      "source_character_offset": 9606,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/organization-review.json"
+    },
+    {
+      "alias": "Channel_rescue",
+      "api": "SYNO.Chat.Channel",
+      "method": "rescue",
+      "version": 2,
+      "source_character_offset": 9673,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_close",
+      "api": "SYNO.Chat.Channel",
+      "method": "close",
+      "version": 4,
+      "source_character_offset": 9740,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_hide_global",
+      "api": "SYNO.Chat.Channel",
+      "method": "hide_global",
+      "version": 4,
+      "source_character_offset": 9805,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_archive",
+      "api": "SYNO.Chat.Channel",
+      "method": "archive",
+      "version": 2,
+      "source_character_offset": 9882,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_get",
+      "api": "SYNO.Chat.Channel",
+      "method": "get",
+      "version": 4,
+      "source_character_offset": 9951,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_kick",
+      "api": "SYNO.Chat.Channel.Named",
+      "method": "kick",
+      "version": 1,
+      "source_character_offset": 10012,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_member_get",
+      "api": "SYNO.Chat.Channel.Member",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 10081,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_hashtag_list",
+      "api": "SYNO.Chat.Channel.Hashtag",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 10156,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_preference_get",
+      "api": "SYNO.Chat.Channel.Preference",
+      "method": "get",
+      "version": 3,
+      "source_character_offset": 10235,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_preference_set",
+      "api": "SYNO.Chat.Channel.Preference",
+      "method": "set",
+      "version": 3,
+      "source_character_offset": 10318,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_hidden_initiate",
+      "api": "SYNO.Chat.Channel.Hidden",
+      "method": "initiate",
+      "version": 1,
+      "source_character_offset": 10401,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_guest_list",
+      "api": "SYNO.Chat.Channel.GuestUser",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 10486,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_guest_register",
+      "api": "SYNO.Chat.Channel.GuestUser",
+      "method": "register",
+      "version": 1,
+      "source_character_offset": 10565,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_guest_kick",
+      "api": "SYNO.Chat.Channel.GuestUser",
+      "method": "kick",
+      "version": 1,
+      "source_character_offset": 10652,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_guest_set",
+      "api": "SYNO.Chat.Channel.GuestUser",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 10731,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_guest_resend_email",
+      "api": "SYNO.Chat.Channel.GuestUser",
+      "method": "resend_email",
+      "version": 1,
+      "source_character_offset": 10808,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_chatbot_initiate",
+      "api": "SYNO.Chat.Channel.Chatbot",
+      "method": "initiate",
+      "version": 1,
+      "source_character_offset": 10903,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_chatbot_block",
+      "api": "SYNO.Chat.Channel.Chatbot",
+      "method": "block",
+      "version": 1,
+      "source_character_offset": 10990,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Channel_chatbot_list_blocked",
+      "api": "SYNO.Chat.Channel.Chatbot",
+      "method": "list_blocked",
+      "version": 1,
+      "source_character_offset": 11071,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_list",
+      "api": "SYNO.Chat.User",
+      "method": "list",
+      "version": 2,
+      "source_character_offset": 11166,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_set",
+      "api": "SYNO.Chat.User",
+      "method": "set",
+      "version": 3,
+      "source_character_offset": 11223,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_notify_encrypt",
+      "api": "SYNO.Chat.User",
+      "method": "notify_encrypt",
+      "version": 2,
+      "source_character_offset": 11298,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_preference_get",
+      "api": "SYNO.Chat.User.Preference",
+      "method": "get",
+      "version": 4,
+      "source_character_offset": 11375,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_preference_set",
+      "api": "SYNO.Chat.User.Preference",
+      "method": "set",
+      "version": 4,
+      "source_character_offset": 11452,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_update_key",
+      "api": "SYNO.Chat.User",
+      "method": "update_key",
+      "version": 2,
+      "source_character_offset": 11529,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_change_password",
+      "api": "SYNO.Chat.User",
+      "method": "change_password",
+      "version": 2,
+      "source_character_offset": 11598,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_avatar_get",
+      "api": "SYNO.Chat.User.Avatar",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 11677,
+      "verification": "static-only"
+    },
+    {
+      "alias": "User_privilege_user_count",
+      "api": "SYNO.Chat.User",
+      "method": "privilege_user_count",
+      "version": 2,
+      "source_character_offset": 11746,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_stick",
+      "api": "SYNO.Chat.Post",
+      "method": "stick",
+      "version": 5,
+      "source_character_offset": 11835,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_unstick",
+      "api": "SYNO.Chat.Post",
+      "method": "unstick",
+      "version": 5,
+      "source_character_offset": 11894,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_create",
+      "api": "SYNO.Chat.Post",
+      "method": "create",
+      "version": 5,
+      "source_character_offset": 11957,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_list",
+      "api": "SYNO.Chat.Post",
+      "method": "list",
+      "version": 5,
+      "source_character_offset": 12036,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_star",
+      "api": "SYNO.Chat.Post",
+      "method": "star",
+      "version": 5,
+      "source_character_offset": 12093,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_unstar",
+      "api": "SYNO.Chat.Post",
+      "method": "unstar",
+      "version": 5,
+      "source_character_offset": 12150,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_search",
+      "api": "SYNO.Chat.Post",
+      "method": "search",
+      "version": 5,
+      "source_character_offset": 12211,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_get_read_status",
+      "api": "SYNO.Chat.Post",
+      "method": "get_read_status",
+      "version": 6,
+      "source_character_offset": 12272,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Thread_list",
+      "api": "SYNO.Chat.Post",
+      "method": "thread_list",
+      "version": 5,
+      "source_character_offset": 12351,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_admin_search",
+      "api": "SYNO.Chat.Post",
+      "method": "admin_search",
+      "version": 5,
+      "source_character_offset": 12417,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_delete",
+      "api": "SYNO.Chat.Post",
+      "method": "delete",
+      "version": 8,
+      "source_character_offset": 12490,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_set",
+      "api": "SYNO.Chat.Post",
+      "method": "set",
+      "version": 8,
+      "source_character_offset": 12551,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_pin",
+      "api": "SYNO.Chat.Post",
+      "method": "pin",
+      "version": 5,
+      "source_character_offset": 12606,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_unpin",
+      "api": "SYNO.Chat.Post",
+      "method": "unpin",
+      "version": 5,
+      "source_character_offset": 12661,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_forward",
+      "api": "SYNO.Chat.Post",
+      "method": "forward",
+      "version": 5,
+      "source_character_offset": 12720,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/forward-review.json"
+    },
+    {
+      "alias": "Post_hide_og",
+      "api": "SYNO.Chat.Post",
+      "method": "hide_og",
+      "version": 5,
+      "source_character_offset": 12783,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_file_get",
+      "api": "SYNO.Chat.Post.File",
+      "method": "get",
+      "version": 2,
+      "source_character_offset": 12846,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_file_thumbnail",
+      "api": "SYNO.Chat.Post.File",
+      "method": "thumbnail",
+      "version": 2,
+      "source_character_offset": 12911,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_batch_delete",
+      "api": "SYNO.Chat.Post",
+      "method": "batch_delete",
+      "version": 5,
+      "source_character_offset": 12988,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_file_og",
+      "api": "SYNO.Chat.Post.File",
+      "method": "og",
+      "version": 2,
+      "source_character_offset": 13061,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_file_doc_convert",
+      "api": "SYNO.Chat.Post.File",
+      "method": "doc_convert",
+      "version": 2,
+      "source_character_offset": 13124,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_file_video_link",
+      "api": "SYNO.Chat.Post.File",
+      "method": "video_link",
+      "version": 2,
+      "source_character_offset": 13205,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_reaction_set",
+      "api": "SYNO.Chat.Post.Reaction",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 13284,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_reaction_delete",
+      "api": "SYNO.Chat.Post.Reaction",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 13357,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_hashtag_set",
+      "api": "SYNO.Chat.Post.Hashtag",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 13436,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_hashtag_delete",
+      "api": "SYNO.Chat.Post.Hashtag",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 13507,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_snippet_set",
+      "api": "SYNO.Chat.Post.Snippet",
+      "method": "set",
+      "version": 2,
+      "source_character_offset": 13584,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/snippet-review.json"
+    },
+    {
+      "alias": "Post_snippet_get",
+      "api": "SYNO.Chat.Post.Snippet",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 13655,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/snippet-review.json"
+    },
+    {
+      "alias": "Post_reminder_set",
+      "api": "SYNO.Chat.Post.Reminder",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 13726,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/reminder-review.json"
+    },
+    {
+      "alias": "Post_reminder_list",
+      "api": "SYNO.Chat.Post.Reminder",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 13799,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/reminder-review.json"
+    },
+    {
+      "alias": "Post_reminder_delete",
+      "api": "SYNO.Chat.Post.Reminder",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 13874,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/reminder-review.json"
+    },
+    {
+      "alias": "Post_reminder_get",
+      "api": "SYNO.Chat.Post.Reminder",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 13953,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-18/reminder-review.json"
+    },
+    {
+      "alias": "Post_schedule_set",
+      "api": "SYNO.Chat.Post.Schedule",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 14026,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/schedule-review.json"
+    },
+    {
+      "alias": "Post_schedule_list",
+      "api": "SYNO.Chat.Post.Schedule",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 14099,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/schedule-review.json"
+    },
+    {
+      "alias": "Post_schedule_delete",
+      "api": "SYNO.Chat.Post.Schedule",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 14174,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/schedule-review.json"
+    },
+    {
+      "alias": "Post_schedule_create",
+      "api": "SYNO.Chat.Post.Schedule",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 14253,
+      "verification": "live-scoped",
+      "native_evidence": "evidence/2026-10-16/schedule-review.json"
+    },
+    {
+      "alias": "Post_vote_create",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 14332,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_vote_close",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "close",
+      "version": 1,
+      "source_character_offset": 14421,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_vote_delete",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 14490,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_vote_set",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 14561,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_vote_get_choices",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "get_choices",
+      "version": 1,
+      "source_character_offset": 14626,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_vote_vote",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "vote",
+      "version": 1,
+      "source_character_offset": 14707,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_vote_create_option",
+      "api": "SYNO.Chat.Post.Vote",
+      "method": "create_option",
+      "version": 1,
+      "source_character_offset": 14774,
+      "verification": "native-live-verified-scoped",
+      "native_evidence": "evidence/2026-10-16/poll-review.json"
+    },
+    {
+      "alias": "Post_subscribe_view",
+      "api": "SYNO.Chat.Post.Subscribe",
+      "method": "view",
+      "version": 2,
+      "source_character_offset": 14859,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_subscribe_create",
+      "api": "SYNO.Chat.Post.Subscribe",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 14936,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_subscribe_delete",
+      "api": "SYNO.Chat.Post.Subscribe",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 15017,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Post_attachment_trigger",
+      "api": "SYNO.Chat.Post.Attachment",
+      "method": "trigger",
+      "version": 1,
+      "source_character_offset": 15098,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_get",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "get",
+      "version": 5,
+      "source_character_offset": 15183,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_set",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "set",
+      "version": 5,
+      "source_character_offset": 15255,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_set_batch_delete",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "set_batch_delete",
+      "version": 2,
+      "source_character_offset": 15327,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_background_job_status",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "background_job_status",
+      "version": 2,
+      "source_character_offset": 15425,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_import",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "import",
+      "version": 2,
+      "source_character_offset": 15533,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_import_status",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "import_status",
+      "version": 2,
+      "source_character_offset": 15629,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_import_log",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "log",
+      "version": 2,
+      "source_character_offset": 15721,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_import_log_export",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "log_export",
+      "version": 2,
+      "source_character_offset": 15800,
+      "verification": "static-only"
+    },
+    {
+      "alias": "AdminSetting_refresh_permission",
+      "api": "SYNO.Chat.Admin.Setting",
+      "method": "refresh_permission",
+      "version": 2,
+      "source_character_offset": 15893,
+      "verification": "static-only"
+    },
+    {
+      "alias": "LDAP_get",
+      "api": "SYNO.Core.Directory.LDAP",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 15995,
+      "verification": "static-only"
+    },
+    {
+      "alias": "SMTP_get",
+      "api": "SYNO.Core.Notification.Mail.Conf",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 16060,
+      "verification": "static-only"
+    },
+    {
+      "alias": "DriveSharing_create_link",
+      "api": "SYNO.SynologyDrive.Sharing",
+      "method": "create_link",
+      "version": 1,
+      "source_character_offset": 16133,
+      "verification": "static-only"
+    },
+    {
+      "alias": "DriveFile_get",
+      "api": "SYNO.SynologyDrive.Files",
+      "method": "get",
+      "version": 2,
+      "source_character_offset": 16224,
+      "verification": "static-only"
+    },
+    {
+      "alias": "DriveSharing_update",
+      "api": "SYNO.SynologyDrive.Sharing",
+      "method": "update",
+      "version": 1,
+      "source_character_offset": 16294,
+      "verification": "static-only"
+    },
+    {
+      "alias": "DriveSettings_list",
+      "api": "SYNO.SynologyDrive.Settings",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 16375,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Domain_get",
+      "api": "SYNO.Core.Directory.Domain",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 16454,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Bot_set",
+      "api": "SYNO.Chat.Bot",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 16550,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Bot_enable",
+      "api": "SYNO.Chat.Bot",
+      "method": "enable",
+      "version": 1,
+      "source_character_offset": 16623,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Bot_disable",
+      "api": "SYNO.Chat.Bot",
+      "method": "disable",
+      "version": 1,
+      "source_character_offset": 16682,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Bot_delete",
+      "api": "SYNO.Chat.Bot",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 16743,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Bot_regen_token",
+      "api": "SYNO.Chat.Bot",
+      "method": "regen_token",
+      "version": 1,
+      "source_character_offset": 16802,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_incoming_list",
+      "api": "SYNO.Chat.Webhook.Incoming",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 16871,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_incoming_create",
+      "api": "SYNO.Chat.Webhook.Incoming",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 16952,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_incoming_get",
+      "api": "SYNO.Chat.Webhook.Incoming",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 17037,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_incoming_set",
+      "api": "SYNO.Chat.Webhook.Incoming",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 17116,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_outgoing_list",
+      "api": "SYNO.Chat.Webhook.Outgoing",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 17195,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_outgoing_create",
+      "api": "SYNO.Chat.Webhook.Outgoing",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 17276,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_outgoing_get",
+      "api": "SYNO.Chat.Webhook.Outgoing",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 17361,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_outgoing_set",
+      "api": "SYNO.Chat.Webhook.Outgoing",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 17440,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_slash_get",
+      "api": "SYNO.Chat.Webhook.Slash",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 17519,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_slash_set",
+      "api": "SYNO.Chat.Webhook.Slash",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 17592,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_slash_create",
+      "api": "SYNO.Chat.Webhook.Slash",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 17665,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_slash_list",
+      "api": "SYNO.Chat.Webhook.Slash",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 17744,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Webhook_slash_execute",
+      "api": "SYNO.Chat.Webhook.Slash",
+      "method": "execute",
+      "version": 2,
+      "source_character_offset": 17819,
+      "verification": "static-only"
+    },
+    {
+      "alias": "External_incoming",
+      "api": "SYNO.Chat.External",
+      "method": "incoming",
+      "version": 2,
+      "source_character_offset": 17900,
+      "verification": "static-only"
+    },
+    {
+      "alias": "External_chatbot",
+      "api": "SYNO.Chat.External",
+      "method": "chatbot",
+      "version": 2,
+      "source_character_offset": 17973,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Chatbot_create",
+      "api": "SYNO.Chat.Chatbot",
+      "method": "create",
+      "version": 1,
+      "source_character_offset": 18044,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Chatbot_get",
+      "api": "SYNO.Chat.Chatbot",
+      "method": "get",
+      "version": 1,
+      "source_character_offset": 18111,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Chatbot_set",
+      "api": "SYNO.Chat.Chatbot",
+      "method": "set",
+      "version": 1,
+      "source_character_offset": 18172,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Sticker_get",
+      "api": "SYNO.Chat.Sticker",
+      "method": "get",
+      "version": 2,
+      "source_character_offset": 18233,
+      "verification": "static-only"
+    },
+    {
+      "alias": "App_list",
+      "api": "SYNO.Chat.App",
+      "method": "list",
+      "version": 2,
+      "source_character_offset": 18294,
+      "verification": "static-only"
+    },
+    {
+      "alias": "App_icon",
+      "api": "SYNO.Chat.App",
+      "method": "icon",
+      "version": 2,
+      "source_character_offset": 18349,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Archive_list",
+      "api": "SYNO.Chat.Archive",
+      "method": "list",
+      "version": 1,
+      "source_character_offset": 18404,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Archive_list_name",
+      "api": "SYNO.Chat.Archive",
+      "method": "list_name",
+      "version": 1,
+      "source_character_offset": 18467,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Archive_delete",
+      "api": "SYNO.Chat.Archive",
+      "method": "delete",
+      "version": 1,
+      "source_character_offset": 18540,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Personal_device_list",
+      "api": "SYNO.Personal.Notification.Device",
+      "method": "list",
+      "version": 2,
+      "source_character_offset": 18607,
+      "verification": "static-only"
+    },
+    {
+      "alias": "Personal_device_unpair",
+      "api": "SYNO.Personal.Notification.Device",
+      "method": "unpair",
+      "version": 1,
+      "source_character_offset": 18752,
+      "verification": "static-only"
+    }
+  ]
+}
